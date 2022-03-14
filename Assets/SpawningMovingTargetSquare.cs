@@ -5,7 +5,10 @@ using UnityEngine;
 public class SpawningMovingTargetSquare : MonoBehaviour
 {
     float timer = 0;
+    bool isSpawned = false;
     public GameObject newObject;
+    public GameObject targetObject;
+    GameObject[] UnspawnObjects;
     // Use this for initialization
     void Start() 
     {
@@ -15,11 +18,12 @@ public class SpawningMovingTargetSquare : MonoBehaviour
     void Update()
     {
         timer += Time.deltaTime;
-        
-
        
+
+
+
         float rangeEnemyAmount = Random.Range(5, 10);
-        if (timer >= 10)
+        if (timer >= 10 && isSpawned == false)
         {
             for (int i = 0; i < rangeEnemyAmount; i++)
             {
@@ -28,8 +32,26 @@ public class SpawningMovingTargetSquare : MonoBehaviour
                 Vector3 newPosition = new Vector3(rangeX, rangeY);
                 GameObject t = (GameObject)(Instantiate(newObject, newPosition, Quaternion.identity));
             }
-            
-            timer = 0;
+
+            isSpawned = true;
         }
+
+
+
+        if (timer >= 15)
+        {
+            UnspawnObjects = GameObject.FindGameObjectsWithTag("Unspawned");
+
+            foreach (GameObject g in UnspawnObjects)
+            {
+                Vector3 newPosition = new Vector3(g.transform.position.x,g.transform.position.y);
+                GameObject t = (GameObject)(Instantiate(targetObject, newPosition, Quaternion.identity));
+                Destroy(g);
+            }
+
+            timer = 0;
+            isSpawned = false;
+        }
+
     }
 }
