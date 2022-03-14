@@ -19,7 +19,7 @@ public class Bullet : MonoBehaviour
         GetComponent<Rigidbody2D>().velocity = v;
     }
 
-    void OnCollisionEnter2D(Collision2D coll)
+    void OnTriggerEnter2D(Collider2D coll)
     {
         if (coll.gameObject.tag == "Target") {
             Destroy(coll.gameObject);
