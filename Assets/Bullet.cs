@@ -24,6 +24,7 @@ public class Bullet : MonoBehaviour
         if (coll.gameObject.tag == "Target") {
             Destroy(coll.gameObject);
             Destroy(gameObject);
+            
         }
         if (coll.gameObject.tag == "Border")
         {

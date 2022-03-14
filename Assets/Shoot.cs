@@ -6,11 +6,12 @@ public class Shoot : MonoBehaviour
 {
     public GameObject bullet;
     public float timeStamp;
-  
+    public float speed = GlobalVariable.attackspeed;
+
     // Start is called before the first frame update
     void Start()
     {
-        timeStamp = Time.time + 0.25f;
+        timeStamp = Time.time + speed;
     }
 
     // Update is called once per frame
@@ -26,20 +27,8 @@ public class Shoot : MonoBehaviour
 
     void Update()
     {
-        /*
-
-        if (timeStamp <= Time.time )
-        {
-            timeStamp = Time.time + 1;
-            GameObject b = (GameObject)(Instantiate(bullet, transform.position + transform.up * 0.5f, Quaternion.identity));
-
-
-
-            b.GetComponent<Rigidbody2D>().AddForce(GameObject.FindGameObjectWithTag("Target").transform.position * 200);
-        }
-
-
-    */
+        speed = GlobalVariable.attackspeed;
+       
 
 
     }
@@ -51,7 +40,7 @@ public class Shoot : MonoBehaviour
        
         if (timeStamp <= Time.time)
         {
-            timeStamp = Time.time + 0.25f;
+            timeStamp = Time.time + +speed;
             GameObject b = (GameObject)(Instantiate(bullet, transform.position, Quaternion.identity));
             b.GetComponent<Rigidbody2D>().AddForce((coll.transform.position - GameObject.FindGameObjectWithTag("PLayer").transform.position) * 200);
 
