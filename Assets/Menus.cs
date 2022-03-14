@@ -16,7 +16,7 @@ public class Menus : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
 
         if (timeStamp >= Time.time)

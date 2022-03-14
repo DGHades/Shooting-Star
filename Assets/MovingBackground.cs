@@ -12,7 +12,7 @@ public class MovingBackground : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         gameObject.transform.Translate(Vector3.down * 0.05f);
 

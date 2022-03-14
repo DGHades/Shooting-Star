@@ -25,7 +25,7 @@ public class PlayerOpticTurn : MonoBehaviour
         }
     }
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         Vector3 moveDirection = gameObject.transform.position - _origPos;
         if (moveDirection != Vector3.zero)

@@ -15,7 +15,7 @@ public class GlobalVariable : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         PlayerPos = GameObject.FindGameObjectWithTag("PLayer").transform.position;
 
