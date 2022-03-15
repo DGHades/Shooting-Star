@@ -22,7 +22,7 @@ public class SpawningMovingTargetSquare : MonoBehaviour
         timer += Time.deltaTime;
        
         
-
+        
 
         float rangeEnemyAmount = Random.Range(5, 10);
         if (timer >= 5 && isSpawned == false)
@@ -51,8 +51,8 @@ public class SpawningMovingTargetSquare : MonoBehaviour
             isAnimated = true;
         }
 
-
-        if (timer >= 10)
+        UnspawnObjects = GameObject.FindGameObjectsWithTag("ParticleSpawn");
+        if (UnspawnObjects.Length == 0 && isAnimated == true)
         {
             UnspawnObjects = GameObject.FindGameObjectsWithTag("Unspawned");
 
@@ -68,7 +68,9 @@ public class SpawningMovingTargetSquare : MonoBehaviour
             timer = 0;
             isSpawned = false;
             isAnimated = false;
+
         }
+        
 
     }
 

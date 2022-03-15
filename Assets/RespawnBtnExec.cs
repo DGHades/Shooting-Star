@@ -23,7 +23,7 @@ public class RespawnBtnExec : MonoBehaviour
     {
 
 
-        Debug.Log("Hallo");
+       
         RespawnObjects = GameObject.FindGameObjectsWithTag("RespawnMenu");
 
         SceneManager.LoadScene(0);
