@@ -12,6 +12,7 @@ TagManager:
   - RespawnMenu
   - Unspawned
   - ParticleSpawn
+  - ParticleDestruction
   layers:
   - Default
   - TransparentFX

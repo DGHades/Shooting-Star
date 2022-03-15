@@ -116,6 +116,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e16ddc33eaad4054eb47e0ec5b913d27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  particleObject: {fileID: 4778007565827158124, guid: cc6712830db035a42924861da52e7775,
+    type: 3}
 --- !u!70 &2311007220512929718
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
