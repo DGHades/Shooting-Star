@@ -37,22 +37,25 @@ public class MovePlayer : MonoBehaviour
     }
     private void OnTriggerExit2D(Collider2D other)
     {
-        if (stopTop == true)
+
+        if (other.gameObject.name == "BorderTop")
         {
             stopTop = false;
         }
-        if (stopBot == true)
+        if (other.gameObject.name == "BorderBottom")
         {
             stopBot = false;
         }
-        if (stopLeft == true)
+        if (other.gameObject.name == "BorderLeft")
         {
             stopLeft = false;
         }
-        if (stopRight == true)
+        if (other.gameObject.name == "BorderRight")
         {
             stopRight = false;
         }
+
+      
 
     }
 
