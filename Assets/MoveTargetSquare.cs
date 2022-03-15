@@ -30,7 +30,6 @@ public class MoveTargetSquare : MonoBehaviour
         GetComponent<Rigidbody2D>().velocity = v;
 
 
-       
     }
 
     void Direction() 

@@ -6,8 +6,10 @@ public class SpawningMovingTargetSquare : MonoBehaviour
 {
     float timer = 0;
     bool isSpawned = false;
+    bool isAnimated = false;
     public GameObject newObject;
     public GameObject targetObject;
+    public GameObject particleObject;
     GameObject[] UnspawnObjects;
     // Use this for initialization
     void Start() 
@@ -19,11 +21,11 @@ public class SpawningMovingTargetSquare : MonoBehaviour
     {
         timer += Time.deltaTime;
        
-
+        
 
 
         float rangeEnemyAmount = Random.Range(5, 10);
-        if (timer >= 10 && isSpawned == false)
+        if (timer >= 5 && isSpawned == false)
         {
             for (int i = 0; i < rangeEnemyAmount; i++)
             {
@@ -36,9 +38,21 @@ public class SpawningMovingTargetSquare : MonoBehaviour
             isSpawned = true;
         }
 
+        if (timer >= 9 && isAnimated == false)
+        {
+            UnspawnObjects = GameObject.FindGameObjectsWithTag("Unspawned");
+
+            foreach (GameObject g in UnspawnObjects)
+            {
+                
+                SpawnAnim(g);
+            }
+
+            isAnimated = true;
+        }
 
 
-        if (timer >= 15)
+        if (timer >= 10)
         {
             UnspawnObjects = GameObject.FindGameObjectsWithTag("Unspawned");
 
@@ -47,11 +61,42 @@ public class SpawningMovingTargetSquare : MonoBehaviour
                 Vector3 newPosition = new Vector3(g.transform.position.x,g.transform.position.y);
                 GameObject t = (GameObject)(Instantiate(targetObject, newPosition, Quaternion.identity));
                 Destroy(g);
+                
             }
 
+          
             timer = 0;
             isSpawned = false;
+            isAnimated = false;
         }
 
     }
+
+    void SpawnAnim(GameObject g) 
+    {
+        int i = 0;
+        do
+        {
+            float rangeX = Random.Range(-5, 5);
+            float rangeY = Random.Range(-5, 5);
+            
+            Vector3 newPosition = new Vector3(g.transform.position.x + rangeX, g.transform.position.y + rangeY);
+            GameObject t = (GameObject)(Instantiate(particleObject, newPosition, Quaternion.identity));
+
+            t.GetComponent<Rigidbody2D>().AddForce((g.transform.position - t.transform.position) * 300);
+
+            Vector3 dir = g.transform.position - t.transform.position;
+
+            float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg - 90;
+
+            t.transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+
+
+            i++;
+        } while (i < 30);
+        
+
+    }
+
+
 }
