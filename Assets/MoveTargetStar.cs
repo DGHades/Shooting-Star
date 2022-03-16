@@ -16,7 +16,7 @@ public class MoveTargetStar : MonoBehaviour
     void FixedUpdate()
     {
 
-        transform.Rotate(0, 0, 50 * Time.deltaTime); //rotates 50 degrees per second around z axis
+        transform.Rotate(0, 0, 200 * Time.deltaTime); //rotates 50 degrees per second around z axis
 
 
 

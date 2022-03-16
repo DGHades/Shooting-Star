@@ -19,7 +19,7 @@ public class Shoot : MonoBehaviour
     void OnTriggerStay2D(Collider2D coll)
     {
 
-        if (coll.gameObject.tag == "Target")
+        if (coll.gameObject.tag == "TargetSquare" || coll.gameObject.tag == "TargetStar")
         {
             Shooting(coll);
         }

@@ -26,37 +26,36 @@ public class Bullet : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D coll)
     {
-        if (coll.gameObject.name == "MovingTargetSquare")
-        {
+       
 
 
-            if (coll.gameObject.tag == "Target")
+            if (coll.gameObject.tag == "TargetSquare")
             {
 
                 coll.gameObject.GetComponent<ManageMovingTargetSquareHealth>().GotHit(attackDmg);
                 Destroy(gameObject);
 
             }
-        }
-        else if (coll.gameObject.name == "MovingTargetStar")
-        {
-            if (coll.gameObject.tag == "Target")
+        
+       
+            if (coll.gameObject.tag == "TargetStar")
             {
 
                 coll.gameObject.GetComponent<ManageMovingTargetStarHealth>().GotHit(attackDmg);
                 Destroy(gameObject);
 
             }
-            if (coll.gameObject.tag == "Border")
-            {
-
-                Destroy(gameObject);
-            }
 
 
+        
+        if (coll.gameObject.tag == "Border")
+        {
 
+            Destroy(gameObject);
         }
 
 
     }
+
+    
 }

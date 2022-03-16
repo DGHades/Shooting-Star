@@ -62,7 +62,7 @@ public class MovePlayer : MonoBehaviour
     void OnTriggerEnter2D(Collider2D collision)
     {
 
-        if (collision.gameObject.tag == "Target")
+        if (collision.gameObject.tag == "TargetSquare" || collision.gameObject.tag == "TargetStar")
         {
             
 

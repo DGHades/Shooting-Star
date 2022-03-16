@@ -59,13 +59,14 @@ public class SpawningMovingTargetStar : MonoBehaviour
             if (UnspawnObjects.Length == 0 && isAnimated == true)
             {
                 UnspawnObjects = GameObject.FindGameObjectsWithTag("UnspawnedStar");
-                Debug.Log(UnspawnObjects.Length);
+                
                 foreach (GameObject g in UnspawnObjects)
                 {
                     Vector3 newPosition = new Vector3(g.transform.position.x, g.transform.position.y);
                     GameObject t = (GameObject)(Instantiate(targetObject, newPosition, Quaternion.identity));
-                    t.GetComponent<ManageMovingTargetSquareHealth>().type = ManageMovingTargetSquareHealth.TARGET_BOULDER;
+                    t.GetComponent<ManageMovingTargetStarHealth>().type = ManageMovingTargetStarHealth.TARGET_BOULDER;
                     Destroy(g);
+                    Debug.Log(g.name);
 
                 }
 
