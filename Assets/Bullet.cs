@@ -11,7 +11,7 @@ public class Bullet : MonoBehaviour
     void Start()
     {
         attackDmg = GlobalVariable.attackDmg;
-        Vector3 scaling = new Vector3(gameObject.transform.localScale.x * (attackDmg/100), gameObject.transform.localScale.y * (attackDmg / 100));
+        Vector3 scaling = new Vector3(gameObject.transform.localScale.x * (attackDmg / 100), gameObject.transform.localScale.y * (attackDmg / 100));
         gameObject.transform.localScale = scaling;
     }
 
@@ -26,19 +26,37 @@ public class Bullet : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D coll)
     {
-        if (coll.gameObject.tag == "Target" ) {
-            
-            coll.gameObject.GetComponent<ManageMovingTargetSquareHealth>().GotHit(attackDmg);
-            Destroy(gameObject);
-            
-        }
-        if (coll.gameObject.tag == "Border")
+        if (coll.gameObject.name == "MovingTargetSquare")
         {
-            
-            Destroy(gameObject);
+
+
+            if (coll.gameObject.tag == "Target")
+            {
+
+                coll.gameObject.GetComponent<ManageMovingTargetSquareHealth>().GotHit(attackDmg);
+                Destroy(gameObject);
+
+            }
         }
+        else if (coll.gameObject.name == "MovingTargetStar")
+        {
+            if (coll.gameObject.tag == "Target")
+            {
+
+                coll.gameObject.GetComponent<ManageMovingTargetStarHealth>().GotHit(attackDmg);
+                Destroy(gameObject);
+
+            }
+            if (coll.gameObject.tag == "Border")
+            {
+
+                Destroy(gameObject);
+            }
+
+
+
+        }
+
 
     }
-
-    
 }
