@@ -18,6 +18,8 @@ public class MoveTargetStar : MonoBehaviour
 
         transform.Rotate(0, 0, 200 * Time.deltaTime); //rotates 50 degrees per second around z axis
 
+        ChangeDirection();
+
 
 
     }
@@ -48,4 +50,17 @@ public class MoveTargetStar : MonoBehaviour
 
 
     }
+
+
+    void ChangeDirection() 
+    {
+        float checker = Random.Range(1, 180);
+        if (checker == 100)
+        {
+            Direction();
+        }
+    
+    }
+
+
 }
