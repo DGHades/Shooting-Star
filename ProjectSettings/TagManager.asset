@@ -14,6 +14,8 @@ TagManager:
   - ParticleSpawn
   - ParticleDestruction
   - UnspawnedStar
+  - TargetStar
+  - TargetSquare
   layers:
   - Default
   - TransparentFX
