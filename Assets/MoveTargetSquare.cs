@@ -6,7 +6,7 @@ using UnityEngine;
 public class MoveTargetSquare : MonoBehaviour
 {
     // Start is called before the first frame update
-    
+   
     void Start()
     {
         Direction();

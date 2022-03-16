@@ -7,9 +7,10 @@ public class Bullet : MonoBehaviour
     // Start is called before the first frame update
     GameObject bullet;
     public GameObject particleObject;
+    float attackDmg;
     void Start()
     {
-        
+        attackDmg = GlobalVariable.attackDmg;
     }
 
     // Update is called once per frame
@@ -23,10 +24,9 @@ public class Bullet : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D coll)
     {
-        if (coll.gameObject.tag == "Target") {
-            SpawnAnim(coll.gameObject);
-            Destroy(coll.gameObject);
-
+        if (coll.gameObject.tag == "Target" ) {
+            
+            coll.gameObject.GetComponent<ManageMovingTargetSquareHealth>().GotHit(attackDmg);
             Destroy(gameObject);
             
         }
@@ -38,48 +38,5 @@ public class Bullet : MonoBehaviour
 
     }
 
-    void SpawnAnim(GameObject g)
-    {
-        int i = 0;
-        do
-        {
-            float rangeX = Random.Range(-1f, 1f);
-            float rangeY = Random.Range(-1f, 1f);
-
-            /*
-            if (rangeX > 0)
-            {
-                rangeX -= 5;
-            }
-            else
-            {
-                rangeX += 5;
-            }
-
-            if (rangeY > 0)
-            {
-                rangeY -= 5;
-            }
-            else
-            {
-                rangeY += 5;
-            }
-            */
-            Vector3 newPosition = new Vector3(g.transform.position.x + rangeX, g.transform.position.y + rangeY);
-            GameObject t = (GameObject)(Instantiate(particleObject, newPosition, Quaternion.identity));
-
-            t.GetComponent<Rigidbody2D>().AddForce((t.transform.position- g.transform.position) * 50);
-
-            Vector3 dir = g.transform.position - t.transform.position;
-
-            float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg - 90;
-
-            t.transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
-
-
-            i++;
-        } while (i < 30);
-
-
-    }
+    
 }

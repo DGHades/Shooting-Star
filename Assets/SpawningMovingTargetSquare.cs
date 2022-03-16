@@ -60,6 +60,7 @@ public class SpawningMovingTargetSquare : MonoBehaviour
             {
                 Vector3 newPosition = new Vector3(g.transform.position.x,g.transform.position.y);
                 GameObject t = (GameObject)(Instantiate(targetObject, newPosition, Quaternion.identity));
+                t.GetComponent<ManageMovingTargetSquareHealth>().type = ManageMovingTargetSquareHealth.TARGET_BOULDER;
                 Destroy(g);
                 
             }
