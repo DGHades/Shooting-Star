@@ -45,25 +45,6 @@ public class ManageMovingTargetSquareHealth : MonoBehaviour
             float rangeX = Random.Range(-1f, 1f);
             float rangeY = Random.Range(-1f, 1f);
 
-            /*
-            if (rangeX > 0)
-            {
-                rangeX -= 5;
-            }
-            else
-            {
-                rangeX += 5;
-            }
-
-            if (rangeY > 0)
-            {
-                rangeY -= 5;
-            }
-            else
-            {
-                rangeY += 5;
-            }
-            */
             Vector3 newPosition = new Vector3(g.transform.position.x + rangeX, g.transform.position.y + rangeY);
             GameObject t = (GameObject)(Instantiate(particleObject, newPosition, Quaternion.identity));
 

@@ -11,6 +11,8 @@ public class Bullet : MonoBehaviour
     void Start()
     {
         attackDmg = GlobalVariable.attackDmg;
+        Vector3 scaling = new Vector3(gameObject.transform.localScale.x * (attackDmg/100), gameObject.transform.localScale.y * (attackDmg / 100));
+        gameObject.transform.localScale = scaling;
     }
 
     // Update is called once per frame
