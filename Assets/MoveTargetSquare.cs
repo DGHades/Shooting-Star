@@ -13,8 +13,8 @@ public class MoveTargetSquare : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-       
-       transform.Rotate(0, 0, 50 * Time.deltaTime); //rotates 50 degrees per second around z axis
+        //rotates 50 degrees per second around z axis
+        transform.Rotate(0, 0, 50 * Time.deltaTime); 
         Vector2 v = GetComponent<Rigidbody2D>().velocity;
         v = v.normalized;
         v *= 2.5f;
