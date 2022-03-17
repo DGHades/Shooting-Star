@@ -4,11 +4,9 @@ using UnityEngine;
 
 public class MovePlayer : MonoBehaviour
 {
-    // Start is called before the first frame update
     public bool stopTop = false,stopBot=false,stopLeft =false,stopRight=false;
     GameObject[] RespawnObjects;
-
-
+    // Start is called before the first frame update
     void Start()
     {
         RespawnObjects = GameObject.FindGameObjectsWithTag("RespawnMenu");
@@ -17,6 +15,7 @@ public class MovePlayer : MonoBehaviour
     
     void OnTriggerStay2D(Collider2D other)
     {
+        //Stop if Player Object hits any Border
         if (other.gameObject.name == "BorderTop")
         {
             stopTop = true;
@@ -33,11 +32,10 @@ public class MovePlayer : MonoBehaviour
         {
             stopRight = true;
         }
-
     }
     private void OnTriggerExit2D(Collider2D other)
     {
-
+        //Re-Activate movement in direction that has been blocked
         if (other.gameObject.name == "BorderTop")
         {
             stopTop = false;
@@ -54,39 +52,30 @@ public class MovePlayer : MonoBehaviour
         {
             stopRight = false;
         }
-
-      
-
     }
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-
+        //On Collision with Target, Player Object gest Destroyed aka dies
+        //and Activate Respawn Button/Menu before
         if (collision.gameObject.tag == "TargetSquare" || collision.gameObject.tag == "TargetStar")
         {
-            
-
             foreach (GameObject g in RespawnObjects)
             {
-                Debug.Log(g.name);
                 g.SetActive(true);
-
             }
             Destroy(gameObject);
         }
-
     }
 
     // Update is called once per frame
     void FixedUpdate()
         {
-
-
-
+            //Movement
+            //Block input on Border hit
             if (Input.GetKey(KeyCode.LeftArrow) && stopLeft == false)
             {
                 gameObject.transform.Translate(Vector3.left * 0.1f);
-
             }
             if (Input.GetKey(KeyCode.UpArrow) && stopTop == false)
             {
@@ -100,8 +89,6 @@ public class MovePlayer : MonoBehaviour
             {
                 gameObject.transform.Translate(Vector3.right * 0.1f);
             }
-
         }
-       
     }
 
