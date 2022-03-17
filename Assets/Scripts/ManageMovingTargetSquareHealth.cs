@@ -33,6 +33,8 @@ public class ManageMovingTargetSquareHealth : MonoBehaviour
         {
             //Do destroy Animation before Destroying Object
             DestroyAnim(gameObject);
+            GlobalVariable.score++;
+            GlobalVariable.fillbarValue++;
             destroyTarget();
         }
 

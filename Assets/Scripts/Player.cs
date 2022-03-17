@@ -6,26 +6,7 @@ public class Player : MonoBehaviour
     public GameObject playerOptic;
     public float attackDmg, attackspeed;
     Vector3 _origPos = new Vector3();
-    void OnTriggerStay2D(Collider2D other)
-    {
-        //Stop if Player Object hits any Border
-        if (other.gameObject.name == "BorderTop")
-        {
-            stopTop = true;
-        }
-        if (other.gameObject.name == "BorderBottom")
-        {
-            stopBot = true;
-        }
-        if (other.gameObject.name == "BorderLeft")
-        {
-            stopLeft = true;
-        }
-        if (other.gameObject.name == "BorderRight")
-        {
-            stopRight = true;
-        }
-    }
+
     private void OnTriggerExit2D(Collider2D other)
     {
         //Re-Activate movement in direction that has been blocked
@@ -56,11 +37,28 @@ public class Player : MonoBehaviour
         }
     }
 
-    void OnTriggerEnter2D(Collider2D target)
+    void OnTriggerEnter2D(Collider2D collision)
     {
         //On Collision with Target, Player Object gest Destroyed aka dies
         //and Activate Respawn Button/Menu before
         // TODO
+
+        if (collision.gameObject.name == "BorderTop")
+        {
+            stopTop = true;
+        }
+        if (collision.gameObject.name == "BorderBottom")
+        {
+            stopBot = true;
+        }
+        if (collision.gameObject.name == "BorderLeft")
+        {
+            stopLeft = true;
+        }
+        if (collision.gameObject.name == "BorderRight")
+        {
+            stopRight = true;
+        }
     }
 
     // Update is called once per frame
