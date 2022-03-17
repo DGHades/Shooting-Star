@@ -6,30 +6,17 @@ using UnityEngine.SceneManagement;
 
 public class RespawnBtnExec : MonoBehaviour
 {
-    // Start is called before the first frame update
-    GameObject Player;
-    GameObject[] RespawnObjects;
-
     public Button btn;
-
+    // Start is called before the first frame update
     public void Start()
     {
+        //set Button
         btn = btn.GetComponent<Button>();
         btn.onClick.AddListener(OnClick);
     }
-
-
     public void OnClick() 
     {
-
-
-       
-        RespawnObjects = GameObject.FindGameObjectsWithTag("RespawnMenu");
-
+        //Reload scene
         SceneManager.LoadScene(0);
-        
-       
     }
-
-
 }
