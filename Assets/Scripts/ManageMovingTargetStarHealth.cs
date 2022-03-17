@@ -33,6 +33,7 @@ public class ManageMovingTargetStarHealth : MonoBehaviour
         {
             //Do destroy Animation before Destroying Object
             DestroyAnim(gameObject);
+            GlobalVariable.score += 2;
             destroyTarget();
         }
 

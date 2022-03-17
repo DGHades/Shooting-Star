@@ -9,6 +9,8 @@ public class GlobalVariable : MonoBehaviour
     public static float attackspeed;
     public static float attackDmg;
     public static bool spawnStars;
+    public static int score;
+    public static float waveScore;
 
     //For future uses
     GameObject PlayerChecker;
@@ -20,6 +22,8 @@ public class GlobalVariable : MonoBehaviour
         attackspeed = 1;
         attackDmg = 100;
         spawnStars = true;
+        score = 0;
+        waveScore = 25;
     }
 
     // Update is called once per frame
