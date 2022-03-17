@@ -17,18 +17,18 @@ public class MoveTargetSquare : MonoBehaviour
     {
        
        transform.Rotate(0, 0, 50 * Time.deltaTime); //rotates 50 degrees per second around z axis
-
-     
-
-    }
-    void OnCollisionEnter2D(Collision2D coll)
-    {
-
         Vector2 v = GetComponent<Rigidbody2D>().velocity;
         v = v.normalized;
         v *= 2.5f;
         GetComponent<Rigidbody2D>().velocity = v;
 
+
+
+    }
+    void OnCollisionEnter2D(Collision2D coll)
+    {
+
+       
 
     }
 

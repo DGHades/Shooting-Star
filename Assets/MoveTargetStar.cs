@@ -20,17 +20,18 @@ public class MoveTargetStar : MonoBehaviour
 
         ChangeDirection();
 
+        Vector2 v = GetComponent<Rigidbody2D>().velocity;
+        v = v.normalized;
+        v *= 2.5f;
+        GetComponent<Rigidbody2D>().velocity = v;
+
 
 
     }
     void OnCollisionEnter2D(Collision2D coll)
     {
 
-        Vector2 v = GetComponent<Rigidbody2D>().velocity;
-        v = v.normalized;
-        v *= 2.5f;
-        GetComponent<Rigidbody2D>().velocity = v;
-
+       
 
     }
 
