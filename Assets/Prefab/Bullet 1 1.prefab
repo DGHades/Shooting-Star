@@ -48,6 +48,8 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -113,11 +115,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 2788322286696064337}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e16ddc33eaad4054eb47e0ec5b913d27, type: 3}
+  m_Script: {fileID: 11500000, guid: 054d44f048a469349b0dcb4b6ec2c7da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  particleObject: {fileID: 4778007565827158124, guid: cc6712830db035a42924861da52e7775,
+  particleObject: {fileID: 2589414017418798589, guid: 6bed5d9bba48933479c4ab6986db8ffa,
     type: 3}
+  prefabBullet: {fileID: 2788322286696064337}
 --- !u!70 &2311007220512929718
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
