@@ -6,12 +6,10 @@ using UnityEngine;
 public class MoveTargetSquare : MonoBehaviour
 {
     // Start is called before the first frame update
-   
     void Start()
     {
         Direction();
     }
-
     // Update is called once per frame
     void FixedUpdate()
     {
@@ -25,27 +23,18 @@ public class MoveTargetSquare : MonoBehaviour
 
 
     }
-    void OnCollisionEnter2D(Collision2D coll)
-    {
-
-       
-
-    }
-
     void Direction() 
     {
+        //Create random Direction on Spawning
         var number = Random.Range(1, -1);
         var numberTwo = Random.Range(1, -1);
         do
         {
+            //Get Random number that is NOT 0
             number = Random.Range(1, -1);
             numberTwo = Random.Range(1, -1);
         } while (number != 0 && numberTwo != 0);
-
+        //Add speed
         GetComponent<Rigidbody2D>().velocity = Random.onUnitSphere * 2.5f;
-
-       
-
-
     }
 }
