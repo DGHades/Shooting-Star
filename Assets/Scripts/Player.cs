@@ -7,8 +7,10 @@ public class Player : MonoBehaviour
     public float attackDmg, attackspeed;
     Vector3 _origPos = new Vector3();
 
-    public Button respawnBtn;
-
+    private void Start()
+    {
+      
+    }
     private void OnTriggerExit2D(Collider2D other)
     {
         //Re-Activate movement in direction that has been blocked
@@ -45,7 +47,6 @@ public class Player : MonoBehaviour
         //and Activate Respawn Button/Menu before
         if (collision.gameObject.tag == "TargetStar" || collision.gameObject.tag == "TargetSquare")
         {
-            respawnBtn.gameObject.SetActive(true);
             attackDmg = 0;
             attackspeed = 999999999;
             stopTop = true;

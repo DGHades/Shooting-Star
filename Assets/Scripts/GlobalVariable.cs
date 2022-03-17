@@ -15,6 +15,7 @@ public class GlobalVariable : MonoBehaviour
     public static float waveScore;
     public static float fillbarMin;
     public static float fillbarValue;
+    public static bool ItemSelected;
     public GameObject scoreTMP;
     
     //For future uses
@@ -31,7 +32,7 @@ public class GlobalVariable : MonoBehaviour
         waveScore = 25;
         fillbarMin = 0;
         fillbarValue = 0;
-        
+        ItemSelected = false;
     }
 
     // Update is called once per frame

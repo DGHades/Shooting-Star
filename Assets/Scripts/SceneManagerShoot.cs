@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class SceneManagerShoot : MonoBehaviour
 {
     public Button btn;
+    public Canvas MainMenue;
     // Start is called before the first frame update
     public void Start()
     {
@@ -15,8 +16,7 @@ public class SceneManagerShoot : MonoBehaviour
     }
     public void OnClick()
     {
-        //Reload scene
-        SceneManager.LoadScene(0);
+        //Reload scene Not Needed I guess
     }
 
     // Update is called once per frame
