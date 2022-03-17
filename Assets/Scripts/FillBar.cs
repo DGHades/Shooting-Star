@@ -29,7 +29,8 @@ public class FillBar : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+        slider.minValue = GlobalVariable.fillbarMin;
         slider.maxValue = GlobalVariable.waveScore;
-        CurrentValue = GlobalVariable.score;
+        CurrentValue = GlobalVariable.fillbarValue;
     }
 }
