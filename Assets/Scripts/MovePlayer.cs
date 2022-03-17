@@ -16,22 +16,7 @@ public class MovePlayer : MonoBehaviour
     void OnTriggerStay2D(Collider2D other)
     {
         //Stop if Player Object hits any Border
-        if (other.gameObject.name == "BorderTop")
-        {
-            stopTop = true;
-        }
-        if (other.gameObject.name == "BorderBottom")
-        {
-            stopBot = true;
-        }
-        if (other.gameObject.name == "BorderLeft")
-        {
-            stopLeft = true;
-        }
-        if (other.gameObject.name == "BorderRight")
-        {
-            stopRight = true;
-        }
+        
     }
     private void OnTriggerExit2D(Collider2D other)
     {
@@ -65,6 +50,22 @@ public class MovePlayer : MonoBehaviour
                 g.SetActive(true);
             }
             Destroy(gameObject);
+        }
+        if (collision.gameObject.name == "BorderTop")
+        {
+            stopTop = true;
+        }
+        if (collision.gameObject.name == "BorderBottom")
+        {
+            stopBot = true;
+        }
+        if (collision.gameObject.name == "BorderLeft")
+        {
+            stopLeft = true;
+        }
+        if (collision.gameObject.name == "BorderRight")
+        {
+            stopRight = true;
         }
     }
 
