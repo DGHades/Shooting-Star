@@ -1,11 +1,13 @@
 ﻿using UnityEngine;
-
+using UnityEngine.UI;
 public class Player : MonoBehaviour
 {
     private bool stopTop = false, stopBot = false, stopLeft = false, stopRight = false;
     public GameObject playerOptic;
     public float attackDmg, attackspeed;
     Vector3 _origPos = new Vector3();
+
+    public Button respawnBtn;
 
     private void OnTriggerExit2D(Collider2D other)
     {
@@ -41,8 +43,16 @@ public class Player : MonoBehaviour
     {
         //On Collision with Target, Player Object gest Destroyed aka dies
         //and Activate Respawn Button/Menu before
-        // TODO
-
+        if (collision.gameObject.tag == "TargetStar" || collision.gameObject.tag == "TargetSquare")
+        {
+            respawnBtn.gameObject.SetActive(true);
+            attackDmg = 0;
+            attackspeed = 999999999;
+            stopTop = true;
+            stopBot = true;
+            stopLeft = true;
+            stopRight = true;
+        }
         if (collision.gameObject.name == "BorderTop")
         {
             stopTop = true;
