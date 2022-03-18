@@ -19,6 +19,10 @@ public class SpawningMovingTargetSquare : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+        if (GlobalVariable.startGame == true)
+        {
+
+        
         //update timer
         timer += Time.deltaTime;
         //Set random enemy amount
@@ -67,6 +71,7 @@ public class SpawningMovingTargetSquare : MonoBehaviour
             timer = 0;
             isSpawned = false;
             isAnimated = false;
+        }
         }
     }
 
