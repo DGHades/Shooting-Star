@@ -16,6 +16,7 @@ public class GlobalVariable : MonoBehaviour
     public static float fillbarMin;
     public static float fillbarValue;
     public static bool ItemSelected;
+    public static bool startGame;
     public GameObject scoreTMP;
     
     //For future uses
@@ -33,6 +34,7 @@ public class GlobalVariable : MonoBehaviour
         fillbarMin = 0;
         fillbarValue = 0;
         ItemSelected = false;
+        startGame = false;
     }
 
     // Update is called once per frame
