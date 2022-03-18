@@ -16,7 +16,7 @@ public class FadeOut : MonoBehaviour
         CanvasGroup canvasGroup = GetComponent<CanvasGroup>();
         while (canvasGroup.alpha > 0)
         {
-            canvasGroup.alpha -= Time.deltaTime / 2;
+            canvasGroup.alpha -= Time.deltaTime * 2;
             yield return null;
         }
         GlobalVariable.startGame = true;
