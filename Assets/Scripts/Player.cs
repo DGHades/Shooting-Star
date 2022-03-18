@@ -5,12 +5,15 @@ public class Player : MonoBehaviour
 {
     private bool stopTop = false, stopBot = false, stopLeft = false, stopRight = false;
     public GameObject playerOptic;
+    public Canvas DieMenue;
+    public Canvas BeforeStartMenue;
     public float attackDmg, attackspeed;
     Vector3 _origPos = new Vector3();
 
     private void Start()
     {
-      
+        BeforeStartMenue.gameObject.SetActive(true);
+        DieMenue.gameObject.SetActive(false);
     }
     private void OnTriggerExit2D(Collider2D other)
     {
@@ -54,7 +57,7 @@ public class Player : MonoBehaviour
             stopBot = true;
             stopLeft = true;
             stopRight = true;
-            SceneManager.LoadScene(1);
+            DieMenue.gameObject.SetActive(true);
         }
         if (collision.gameObject.name == "BorderTop")
         {

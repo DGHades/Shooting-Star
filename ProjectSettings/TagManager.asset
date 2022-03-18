@@ -16,6 +16,8 @@ TagManager:
   - UnspawnedStar
   - TargetStar
   - TargetSquare
+  - BeforeStartMenue
+  - DieMenue
   layers:
   - Default
   - TransparentFX
