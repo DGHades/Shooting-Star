@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class FadeOut : MonoBehaviour
 {
+
     public void FadeMe()
     {
         GlobalVariable.ItemSelected = true;
@@ -18,6 +19,7 @@ public class FadeOut : MonoBehaviour
             canvasGroup.alpha -= Time.deltaTime / 2;
             yield return null;
         }
+        GlobalVariable.startGame = true;
         canvasGroup.interactable = false;
         yield return null;
     }
