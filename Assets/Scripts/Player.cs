@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 public class Player : MonoBehaviour
 {
     private bool stopTop = false, stopBot = false, stopLeft = false, stopRight = false;
@@ -53,6 +54,7 @@ public class Player : MonoBehaviour
             stopBot = true;
             stopLeft = true;
             stopRight = true;
+            SceneManager.LoadScene(1);
         }
         if (collision.gameObject.name == "BorderTop")
         {
