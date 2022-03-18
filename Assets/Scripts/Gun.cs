@@ -7,7 +7,7 @@ public class Gun : MonoBehaviour
     // Start is called before the first frame update
     public Player player;
 
-    void OnTriggerEnter2D(Collider2D target)
+    void OnTriggerStay2D(Collider2D target)
     {
         //On Collision with Target, Player Object gest Destroyed aka dies
         //and Activate Respawn Button/Menu before
