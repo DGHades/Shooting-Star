@@ -7,6 +7,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 361112160141510741, guid: 693b8d91087e96148ba9dbda35a5e62c,
+        type: 3}
+      propertyPath: ShapeModule.radius.value
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 361112160141510741, guid: 693b8d91087e96148ba9dbda35a5e62c,
+        type: 3}
+      propertyPath: ShapeModule.radiusThickness
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 411108840148918076, guid: 693b8d91087e96148ba9dbda35a5e62c,
         type: 3}
       propertyPath: m_RootOrder
@@ -133,5 +143,5 @@ MonoBehaviour:
   type: 0
   particleObject: {fileID: 4778007565827158124, guid: cc6712830db035a42924861da52e7775,
     type: 3}
-  particleSystem: {fileID: 2394524614171277257}
+  sparticleSystem: {fileID: 2394524614171277257}
   sr: {fileID: 2417711326639808675}

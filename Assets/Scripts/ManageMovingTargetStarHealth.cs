@@ -7,9 +7,9 @@ public class ManageMovingTargetStarHealth : MonoBehaviour
     public float health, type;
     public static int TARGET_BOULDER;
     public GameObject particleObject;
-    public ParticleSystem particleSystem;
+    public ParticleSystem sparticleSystem;
     public SpriteRenderer sr;
-    float dur;
+    bool once;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,6 +20,7 @@ public class ManageMovingTargetStarHealth : MonoBehaviour
         {
             health = 150;
         }
+        once = false;
     }
 
     // Update is called once per frame
@@ -36,9 +37,8 @@ public class ManageMovingTargetStarHealth : MonoBehaviour
         {
             //Do destroy Animation before Destroying Object
             DestroyAnim(gameObject);
-            GlobalVariable.score += 2;
-            GlobalVariable.fillbarValue += 2;
-            destroyTarget();
+            
+            
         }
 
     }
@@ -50,15 +50,21 @@ public class ManageMovingTargetStarHealth : MonoBehaviour
     }
     void DestroyAnim(GameObject g)
     {
-        dur = particleSystem.main.duration;
-        var em = particleSystem.emission;
+        if (once == false)
+        {
+            GlobalVariable.score += 2;
+            GlobalVariable.fillbarValue += 2;
 
-        em.enabled = true;
-        particleSystem.Play();
+            var dur = sparticleSystem.main.duration;
+            Debug.Log(dur);
+            var em = sparticleSystem.emission;
 
-        Destroy(sr);
-        Invoke(nameof(destroyTarget), dur);
+            em.enabled = true;
+            sparticleSystem.Play();
 
-
+            Destroy(sr);
+            Invoke(nameof(destroyTarget), dur);
+            once = true;
+        }
     }
 }

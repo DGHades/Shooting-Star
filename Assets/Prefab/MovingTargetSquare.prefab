@@ -152,7 +152,7 @@ MonoBehaviour:
   type: 0
   particleObject: {fileID: 4778007565827158124, guid: cc6712830db035a42924861da52e7775,
     type: 3}
-  particleSystem: {fileID: 361112160141510741}
+  sparticleSystem: {fileID: 361112160141510741}
   sr: {fileID: 411108840148918079}
 --- !u!1 &8885001831237974269
 GameObject:
@@ -194,7 +194,7 @@ ParticleSystem:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8885001831237974269}
   serializedVersion: 7
-  lengthInSec: 10
+  lengthInSec: 0.1
   simulationSpeed: 1
   stopAction: 0
   cullingMode: 0
@@ -817,7 +817,7 @@ ParticleSystem:
     angle: 25
     length: 5
     boxThickness: {x: 0, y: 0, z: 0}
-    radiusThickness: 1
+    radiusThickness: 0
     donutRadius: 0.2
     m_Position: {x: 0, y: 0, z: 0}
     m_Rotation: {x: 0, y: 0, z: 0}
@@ -900,7 +900,7 @@ ParticleSystem:
     sphericalDirectionAmount: 0
     randomPositionAmount: 0
     radius:
-      value: 1
+      value: 0.25
       mode: 0
       spread: 0
       speed:

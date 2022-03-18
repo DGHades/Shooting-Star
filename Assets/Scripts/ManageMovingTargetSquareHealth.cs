@@ -7,9 +7,9 @@ public class ManageMovingTargetSquareHealth : MonoBehaviour
     public float health, type;
     public static int TARGET_BOULDER;
     public GameObject particleObject;
-    public ParticleSystem particleSystem;
+    public ParticleSystem sparticleSystem;
     public SpriteRenderer sr;
-    float dur;
+    bool once;
     
     // Start is called before the first frame update
     void Start()
@@ -22,7 +22,7 @@ public class ManageMovingTargetSquareHealth : MonoBehaviour
             health = 100;
         }
 
-        
+        once = false;
         
         
     }
@@ -40,8 +40,7 @@ public class ManageMovingTargetSquareHealth : MonoBehaviour
         if (health <= 0)
         {
             //Do destroy Animation before Destroying Object
-            GlobalVariable.score++;
-            GlobalVariable.fillbarValue++;
+            
             DestroyAnim(gameObject);
         }
 
@@ -54,16 +53,21 @@ public class ManageMovingTargetSquareHealth : MonoBehaviour
     }
     void DestroyAnim(GameObject g)
     {
-        dur = particleSystem.main.duration;
-        var em = particleSystem.emission;
+        if (once == false)
+        {
+            GlobalVariable.score++;
+            GlobalVariable.fillbarValue++;
 
-        em.enabled = true;
-        particleSystem.Play();
+            var dur = sparticleSystem.main.duration;
+            var em = sparticleSystem.emission;
 
-        Destroy(sr);
-        Invoke(nameof(destroyTarget), dur);
+            em.enabled = true;
+            sparticleSystem.Play();
 
-       
+            Destroy(sr);
+            Invoke(nameof(destroyTarget), dur);
 
+            once = true;
+        }
     }
 }
