@@ -19,7 +19,11 @@ public class ManageWaves : MonoBehaviour
             GlobalVariable.fillbarMin = 0;
             GlobalVariable.waveScore *= 1.5f;
             GlobalVariable.fillbarValue = 0;
+            GlobalVariable.waveCount++;
         }
-        
+        if (GlobalVariable.waveCount == 2)
+        {
+            GlobalVariable.spawnStars = true;
+        }
     }
 }

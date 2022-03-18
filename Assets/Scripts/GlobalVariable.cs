@@ -13,12 +13,14 @@ public class GlobalVariable : MonoBehaviour
     public static bool spawnStars;
     public static int score;
     public static float waveScore;
+    public static int waveCount;
     public static float fillbarMin;
     public static float fillbarValue;
     public static bool ItemSelected;
     public static bool startGame;
     public GameObject scoreTMP;
-    
+    public GameObject waveTMP;
+
     //For future uses
     GameObject PlayerChecker;
     Vector2 PlayerPos;
@@ -28,18 +30,21 @@ public class GlobalVariable : MonoBehaviour
         //Global Variable script is started on Respawn
         attackspeed = 0.1f;
         attackDmg = 100;
-        spawnStars = true;
+        spawnStars = false;
         score = 0;
         waveScore = 25;
         fillbarMin = 0;
         fillbarValue = 0;
         ItemSelected = false;
         startGame = false;
+        waveCount = 1;
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
         scoreTMP.GetComponent<TMPro.TextMeshProUGUI>().text = "Score: " + GlobalVariable.score;
+        waveTMP.GetComponent<TMPro.TextMeshProUGUI>().text = "Level: " + GlobalVariable.waveCount;
+
     }
 }
