@@ -258,6 +258,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a00a6ceb4ed78bb44852682b9dff186e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DieMenue: {fileID: 0}
+  BeforeStartMenue: {fileID: 0}
 --- !u!114 &85101784
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -673,6 +675,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a00a6ceb4ed78bb44852682b9dff186e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DieMenue: {fileID: 0}
+  BeforeStartMenue: {fileID: 0}
 --- !u!1 &317903308
 GameObject:
   m_ObjectHideFlags: 0
@@ -1820,7 +1824,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -660.44, y: -410}
+  m_AnchoredPosition: {x: -485.3, y: -314.9}
   m_SizeDelta: {x: 313.13, y: 67.912964}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1086670458
@@ -2472,6 +2476,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a00a6ceb4ed78bb44852682b9dff186e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DieMenue: {fileID: 0}
+  BeforeStartMenue: {fileID: 0}
 --- !u!114 &1182909235
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2853,6 +2859,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a00a6ceb4ed78bb44852682b9dff186e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DieMenue: {fileID: 0}
+  BeforeStartMenue: {fileID: 0}
 --- !u!114 &1371687917
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3789,6 +3797,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a00a6ceb4ed78bb44852682b9dff186e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DieMenue: {fileID: 0}
+  BeforeStartMenue: {fileID: 0}
 --- !u!114 &1992805564
 MonoBehaviour:
   m_ObjectHideFlags: 0
