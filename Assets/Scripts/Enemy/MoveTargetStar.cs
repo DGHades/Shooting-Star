@@ -1,28 +1,20 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class MoveTargetStar : MonoBehaviour
+public class MoveTargetStar : IMovementEnemy
 {
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        Direction();
-    }
-    // Update is called once per frame
-    void FixedUpdate()
+    // Move is called once per frame
+    public void Move(GameObject gameObject)
     {
         //rotates 200 degrees per second around z axis
-        transform.Rotate(0, 0, 200 * Time.deltaTime); 
-        ChangeDirection();
+        gameObject.transform.Rotate(0, 0, 200 * Time.deltaTime);
+        ChangeDirection(gameObject);
         //Keep Fixed Velocity
-        Vector2 v = GetComponent<Rigidbody2D>().velocity;
+        Vector2 v = gameObject.GetComponent<Rigidbody2D>().velocity;
         v = v.normalized;
         v *= 2.5f;
-        GetComponent<Rigidbody2D>().velocity = v;
+        gameObject.GetComponent<Rigidbody2D>().velocity = v;
     }
-    void Direction()
+    public void Direction(GameObject gameObject)
     {
         //Create random Direction on Spawning
         var number = Random.Range(1, -1);
@@ -34,15 +26,15 @@ public class MoveTargetStar : MonoBehaviour
             numberTwo = Random.Range(1, -1);
         } while (number != 0 && numberTwo != 0);
         //Add speed
-        GetComponent<Rigidbody2D>().velocity = Random.onUnitSphere * 2.5f;
+        gameObject.GetComponent<Rigidbody2D>().velocity = Random.onUnitSphere * 2.5f;
     }
-    void ChangeDirection() 
+    void ChangeDirection(GameObject gameObject)
     {
         //Do Direction(); randomly if checker hits 100
         float checker = Random.Range(1, 180);
         if (checker == 100)
         {
-            Direction();
+            Direction(gameObject);
         }
     }
 }

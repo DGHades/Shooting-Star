@@ -10,7 +10,6 @@ public class GlobalVariable : MonoBehaviour
     //Declare every needed Global Variable
     public static float attackspeed;
     public static float attackDmg;
-    public static bool spawnStars;
     public static int score;
     public static float waveScore;
     public static int waveCount;
@@ -30,7 +29,6 @@ public class GlobalVariable : MonoBehaviour
         //Global Variable script is started on Respawn
         attackspeed = 0.1f;
         attackDmg = 100;
-        spawnStars = false;
         score = 0;
         waveScore = 25;
         fillbarMin = 0;

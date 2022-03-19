@@ -26,22 +26,15 @@ public class BaseBullet : MonoBehaviour
     void OnTriggerEnter2D(Collider2D coll)
     {
         //Check with what the Bullet Collided
-        if (coll.gameObject.tag == "TargetSquare")
+        if (coll.gameObject.tag == "TargetSquare" || coll.gameObject.tag == "TargetStar")
         {
             //Get Health component of Object and use GotHit();
-            coll.gameObject.GetComponent<ManageMovingTargetSquareHealth>().GotHit(attackDmg);
+            coll.gameObject.GetComponent<Enemy>().GotHit(attackDmg);
             //Destroy Bullet
             Destroy(gameObject);
 
         }
-        if (coll.gameObject.tag == "TargetStar")
-        {
-            //Get Health component of Object and use GotHit();
-            coll.gameObject.GetComponent<ManageMovingTargetStarHealth>().GotHit(attackDmg);
-            //Destroy Bullet
-            Destroy(gameObject);
 
-        }
         if (coll.gameObject.tag == "Border")
         {
             //Destroy Bullet if it hits Border
