@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 679022372487544251}
   - component: {fileID: 679022372487544250}
   - component: {fileID: 679022372487544245}
-  - component: {fileID: 8209387818392725927}
   - component: {fileID: 3449268137981860064}
+  - component: {fileID: 1730658485755531282}
   m_Layer: 0
   m_Name: Bullet 1 1 1
   m_TagString: Bullet
@@ -108,21 +108,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &8209387818392725927
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 679022372487544244}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 054d44f048a469349b0dcb4b6ec2c7da, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  particleObject: {fileID: 2589414017418798589, guid: 6bed5d9bba48933479c4ab6986db8ffa,
-    type: 3}
-  attackDmg: 0
 --- !u!60 &3449268137981860064
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -159,6 +144,20 @@ PolygonCollider2D:
       - {x: 0.49719432, y: -0.0020931782}
       - {x: 0.49719432, y: 0.0044016168}
       - {x: 0.0029762834, y: 0.24719347}
+--- !u!114 &1730658485755531282
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 679022372487544244}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 875ea65ad6f5aa24e9b5b2854d0b155f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  particleObject: {fileID: 679022372487544244}
+  attackDmg: 0
 --- !u!1 &3449268139185194069
 GameObject:
   m_ObjectHideFlags: 0

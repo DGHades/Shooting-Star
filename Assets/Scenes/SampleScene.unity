@@ -2922,7 +2922,6 @@ GameObject:
   - component: {fileID: 644140748}
   - component: {fileID: 644140747}
   - component: {fileID: 644140750}
-  - component: {fileID: 644140751}
   m_Layer: 0
   m_Name: PlayerManager
   m_TagString: PLayer
@@ -3043,20 +3042,6 @@ MonoBehaviour:
   BeforeStartMenue: {fileID: 1042339931}
   attackDmg: 100
   attackspeed: 100
---- !u!114 &644140751
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 644140746}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 245ed241f3fa47a49963a9f35950bc14, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  score: {fileID: 2062930186}
-  HighScore: {fileID: 1924901713}
 --- !u!1 &677486789
 GameObject:
   m_ObjectHideFlags: 0
@@ -5637,7 +5622,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeStamp: 0
-  bulletObj: {fileID: 2788322286696064337, guid: ec40cc6aeaec7b04fae15961fcd6e91a,
+  bulletObj: {fileID: 679022372487544244, guid: 68d9652f19149e1429b8416d28c1c080,
     type: 3}
   player: {fileID: 644140750}
 --- !u!58 &1548862194
