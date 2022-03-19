@@ -2885,14 +2885,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 644140746}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ea8f891721640be33870a998712911ce, type: 3}
+  m_Script: {fileID: 11500000, guid: 63430656c49fe3b40a0fcc1cf848492c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   playerOptic: {fileID: 582585347}
-  DieMenue: {fileID: 1042339931}
-  BeforeStartMenue: {fileID: 1860989279}
-  attackDmg: 100
-  attackspeed: 0.0001
+  BeforeDieMenue: {fileID: 1042339931}
+  BeforeStartMenue: {fileID: 1042339931}
+  attackDmg: 0
+  attackspeed: 0
 --- !u!1 &677486789
 GameObject:
   m_ObjectHideFlags: 0
@@ -5216,10 +5216,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0bb5f20cda50cfbc79a9aa0351140542, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeStamp: 0
-  bulletObj: {fileID: 679022372487544244, guid: 68d9652f19149e1429b8416d28c1c080,
-    type: 3}
-  player: {fileID: 644140750}
 --- !u!58 &1548862194
 CircleCollider2D:
   m_ObjectHideFlags: 0
