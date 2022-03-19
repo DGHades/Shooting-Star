@@ -38,6 +38,10 @@ public class GlobalVariable : MonoBehaviour
         waveCount = 1;
     }
 
+    void Update()
+    {
+
+    }
     // Update is called once per frame
     void FixedUpdate()
     {
