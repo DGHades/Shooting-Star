@@ -6,6 +6,8 @@ public class EnemyManager : MonoBehaviour
     public Enemy[] entitiesToSpawn;
     public Spawner spawner;
     private int spawnedEntities;
+    [SerializeField]
+    private ManageWaves manageWaves;
     GameObject[] unspawnObjects;
 
     // Start is called before the first frame update
@@ -23,6 +25,7 @@ public class EnemyManager : MonoBehaviour
     // Check can spawn and spawn them
     void FixedUpdate()
     {
+        if (!GlobalVariable.startGame) return;
         //check if every particle from spawning is deleted
         foreach (Enemy enemy in entitiesToSpawn)
         {
@@ -31,7 +34,9 @@ public class EnemyManager : MonoBehaviour
             if (enemy.waveAmount <= GlobalVariable.waveCount)
             {
                 if (enemy.spawnAmount >= GameObject.FindGameObjectsWithTag(enemy.gameObject.tag).Length)
+                {
                     StartCoroutine(spawner.Spawn(enemy.gameObject));
+                }
             }
         }
 

@@ -4,7 +4,6 @@ using UnityEngine;
 public class Spawner : MonoBehaviour
 {
     // Start is called before the first frame update
-    GameObject[] unspawnObjects;
 
     public IEnumerator<WaitForSeconds> Spawn(GameObject gameObj)
     {
@@ -21,7 +20,5 @@ public class Spawner : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
         enemy.sr.color = new Color(0.67f, 0.24f, 0.47f, 1f);
         enemy.unlockEnemyWhenSpawned();
-
     }
-
 }

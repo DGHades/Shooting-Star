@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using System;
+using System.Reflection;
+using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
@@ -15,10 +17,8 @@ public class Enemy : MonoBehaviour
     public void Awake()
     {
         //REWORK
-        if (gameObject.tag == "TargetSquare")
-            movementScript = new MoveTargetSquare();
-        else
-            movementScript = new MoveTargetStar();
+
+        movementScript = (IMovementEnemy)System.Reflection.Assembly.GetAssembly(Type.GetType("Move" + gameObject.tag)).CreateInstance("Move" + gameObject.tag);
     }
 
     // Is called when a bullet hits the enemy in BaseBullet.cs
