@@ -11,7 +11,7 @@ public class GlobalVariable : MonoBehaviour
     public static float attackspeed;
     public static float attackDmg;
     public static bool spawnStars;
-    public static int score;
+    public static int score; 
     public static float waveScore;
     public static int waveCount;
     public static float fillbarMin;
@@ -40,6 +40,10 @@ public class GlobalVariable : MonoBehaviour
         waveCount = 1;
     }
 
+    void Update()
+    {
+
+    }
     // Update is called once per frame
     void FixedUpdate()
     {
