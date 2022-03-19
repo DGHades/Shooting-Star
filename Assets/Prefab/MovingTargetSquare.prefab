@@ -141,6 +141,7 @@ MonoBehaviour:
     type: 3}
   sr: {fileID: 411108840148918079}
   spawnAmount: 5
+  waveAmount: 0
   health: 119.2
   isSpawned: 0
   isAnimated: 1
