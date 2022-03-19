@@ -2422,6 +2422,7 @@ GameObject:
   - component: {fileID: 582585350}
   - component: {fileID: 582585349}
   - component: {fileID: 582585352}
+  - component: {fileID: 582585351}
   m_Layer: 0
   m_Name: PlayerOptic
   m_TagString: Untagged
@@ -2515,6 +2516,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &582585351
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 582585347}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33188b1fafe0bba459829fc9abcaac57, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!60 &582585352
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -2891,8 +2904,8 @@ MonoBehaviour:
   playerOptic: {fileID: 582585347}
   BeforeDieMenue: {fileID: 1042339931}
   BeforeStartMenue: {fileID: 1042339931}
-  attackDmg: 0
-  attackspeed: 0
+  attackDmg: 100
+  attackspeed: 100
 --- !u!1 &677486789
 GameObject:
   m_ObjectHideFlags: 0
@@ -5213,9 +5226,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1548862191}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0bb5f20cda50cfbc79a9aa0351140542, type: 3}
+  m_Script: {fileID: 11500000, guid: 147b02a36b6e0a54d8c98cdebe87ecf9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timeStamp: 0
+  bulletObj: {fileID: 2788322286696064337, guid: ec40cc6aeaec7b04fae15961fcd6e91a,
+    type: 3}
+  player: {fileID: 644140750}
 --- !u!58 &1548862194
 CircleCollider2D:
   m_ObjectHideFlags: 0
