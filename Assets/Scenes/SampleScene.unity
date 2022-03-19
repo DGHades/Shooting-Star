@@ -3041,7 +3041,7 @@ MonoBehaviour:
   BeforeDieMenue: {fileID: 1042339931}
   BeforeStartMenue: {fileID: 1042339931}
   attackDmg: 100
-  attackspeed: 100
+  attackspeed: 0
 --- !u!1 &677486789
 GameObject:
   m_ObjectHideFlags: 0
@@ -6731,8 +6731,9 @@ GameObject:
   - component: {fileID: 1924901712}
   - component: {fileID: 1924901714}
   - component: {fileID: 1924901713}
+  - component: {fileID: 1924901715}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: Highscore
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6854,6 +6855,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1924901711}
   m_CullTransparentMesh: 1
+--- !u!114 &1924901715
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1924901711}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 105091ffcf230bd7ebf2e4a70ec95e60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  score: {fileID: 2062930186}
+  HighScore: {fileID: 1924901713}
 --- !u!1 &1932034538
 GameObject:
   m_ObjectHideFlags: 0
