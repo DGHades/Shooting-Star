@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 public class Player : MonoBehaviour
 {
@@ -49,7 +48,7 @@ public class Player : MonoBehaviour
     {
         //On Collision with Target, Player Object gest Destroyed aka dies
         //and Activate Respawn Button/Menu before
-        if (collision.gameObject.tag == "TargetStar" || collision.gameObject.tag == "TargetSquare")
+        if (collision.gameObject.tag.StartsWith("Target"))
         {
             attackDmg = 0;
             attackspeed = 999999999;

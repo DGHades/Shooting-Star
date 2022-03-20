@@ -26,7 +26,7 @@ public class BaseBullet : MonoBehaviour
     void OnTriggerEnter2D(Collider2D coll)
     {
         //Check with what the Bullet Collided
-        if (coll.gameObject.tag == "TargetSquare" || coll.gameObject.tag == "TargetStar")
+        if (coll.gameObject.tag.StartsWith("Target"))
         {
             //Get Health component of Object and use GotHit();
             coll.gameObject.GetComponent<Enemy>().GotHit(attackDmg);

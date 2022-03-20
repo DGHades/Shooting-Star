@@ -3,7 +3,7 @@
 public class Gun : MonoBehaviour
 {
     public float timeStamp;
-    public GameObject bulletObj;
+    public BaseBullet bulletObj;
     // Start is called before the first frame update
     public Player player;
 
@@ -12,9 +12,8 @@ public class Gun : MonoBehaviour
         //On Collision with Target, Player Object gest Destroyed aka dies
         //and Activate Respawn Button/Menu before
         // TODO
-        if (target.gameObject.tag == "TargetSquare" || target.gameObject.tag == "TargetStar")
+        if (target.gameObject.tag.StartsWith("Target"))
         {
-            Debug.Log("Shot: " + target.gameObject.tag);
             shoot(target);
         }
     }
