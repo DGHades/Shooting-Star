@@ -12,6 +12,7 @@ public class Enemy : MonoBehaviour
     public int spawnAmount;
     public int waveAmount;
     public float health;
+    public float bulletDamage;
     public bool isSpawned = false;
     public bool isAnimated = true;
     public void Awake()

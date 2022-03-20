@@ -148,6 +148,11 @@ PrefabInstance:
       propertyPath: spawnAmount
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 4431642538719470671, guid: 693b8d91087e96148ba9dbda35a5e62c,
+        type: 3}
+      propertyPath: bulletDamage
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: 693b8d91087e96148ba9dbda35a5e62c, type: 3}

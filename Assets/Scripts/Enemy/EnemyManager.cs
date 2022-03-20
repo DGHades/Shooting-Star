@@ -41,4 +41,16 @@ public class EnemyManager : MonoBehaviour
         }
 
     }
+    // Destruction of the game scene
+    void EndGame()
+    {
+        StopAllCoroutines();
+        foreach (Enemy enemy in entitiesToSpawn)
+            unspawnObjects = GameObject.FindGameObjectsWithTag(enemy.gameObject.tag);
+        foreach (GameObject gameObject in unspawnObjects)
+            Destroy(gameObject);
+
+        Destroy(this);
+
+    }
 }

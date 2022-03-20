@@ -5610,6 +5610,20 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1844168444}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1548862192
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1548862191}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84ef25e6783259362a10bff4d28ab031, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletBlueprint: {fileID: 11400000, guid: 55ecbd9abf603f0628071e309c6d4020, type: 2}
+  bullet: {fileID: 3451682976122469827, guid: 68d9652f19149e1429b8416d28c1c080, type: 3}
 --- !u!114 &1548862193
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5623,8 +5637,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeStamp: 0
-  bulletObj: {fileID: 679022372487544244, guid: 68d9652f19149e1429b8416d28c1c080,
-    type: 3}
+  bulletHolder: {fileID: 1548862192}
   player: {fileID: 644140750}
 --- !u!58 &1548862194
 CircleCollider2D:
@@ -7574,7 +7587,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 118.06, y: -27.350006}
+  m_AnchoredPosition: {x: 118.06, y: -27.349976}
   m_SizeDelta: {x: 198.53, y: 24.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &2101902341

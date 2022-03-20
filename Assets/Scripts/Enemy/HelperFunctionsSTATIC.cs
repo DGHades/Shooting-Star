@@ -25,7 +25,7 @@ public static class HelperFunctionsSTATIC
             //counter
             i++;
             //do 30 particles, change if looks better
-        } while (i < 30);
+        } while (i < 60);
     }
     public static void DestroyAnim(Enemy enemy)
     {
