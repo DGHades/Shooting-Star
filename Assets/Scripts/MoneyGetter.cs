@@ -10,10 +10,4 @@ public class MoneyGetter : MonoBehaviour
     {
         Money.text = PlayerPrefs.GetInt("Revenue").ToString();
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-       
-    }
 }

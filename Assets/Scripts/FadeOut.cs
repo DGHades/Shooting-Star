@@ -5,13 +5,30 @@ using UnityEngine.SceneManagement;
 public class FadeOut : MonoBehaviour
 {
     public GameObject CanvasMenue;
-    public void FadeMe()
+    public void StartGameWithUpgrade()
     {
         GlobalVariable.ItemSelected = true;
-        StartCoroutine(DoFade());
+        StartCoroutine(DoFadeWithUpGrade());
+    }
+    public void StartWithoutUpgrade()
+    {
+        StartCoroutine(DoFadeWithOutupGrade());
+    }
+    IEnumerator DoFadeWithOutupGrade()
+    {
+        StartCoroutine(StartGame());
+        yield return null;
     }
 
-    IEnumerator DoFade()
+    IEnumerator DoFadeWithUpGrade()
+    {
+        if (PlayerPrefs.GetInt("Revenue") > 1000)
+        {
+            StartCoroutine(StartGame());
+            yield return null;
+        }
+    }
+    IEnumerator StartGame()
     {
         CanvasGroup canvasGroup = GetComponent<CanvasGroup>();
         while (canvasGroup.alpha > 0)
@@ -23,16 +40,5 @@ public class FadeOut : MonoBehaviour
         canvasGroup.alpha = 1;
         GlobalVariable.startGame = true;
         yield return null;
-    }
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }

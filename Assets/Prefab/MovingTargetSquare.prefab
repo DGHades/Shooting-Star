@@ -175,7 +175,7 @@ PrefabInstance:
     - target: {fileID: 1177082366645464930, guid: f5844b5a6f1503d4cb52db37d97b6133,
         type: 3}
       propertyPath: simulationSpeed
-      value: 0.03
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1177082366645464930, guid: f5844b5a6f1503d4cb52db37d97b6133,
         type: 3}
@@ -240,7 +240,7 @@ PrefabInstance:
     - target: {fileID: 1177082366645464930, guid: f5844b5a6f1503d4cb52db37d97b6133,
         type: 3}
       propertyPath: EmissionModule.enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1177082366645464930, guid: f5844b5a6f1503d4cb52db37d97b6133,
         type: 3}
@@ -877,6 +877,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.size
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5081877731475811103, guid: f5844b5a6f1503d4cb52db37d97b6133,
+        type: 3}
+      propertyPath: m_ApplyActiveColorSpace
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5081877731475811103, guid: f5844b5a6f1503d4cb52db37d97b6133,
         type: 3}
