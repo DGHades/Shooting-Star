@@ -10,12 +10,13 @@ public class Bullet : MonoBehaviour
         if (coll.gameObject.tag == "Border")
         {
             //Destroy Bullet if it hits Border
-            Destroy(gameObject);
+            blueprint.RemoveBullet(gameObject);
+            Destroy(this);
         }
-        else
+        else if (coll.gameObject.tag == target.tag)
         {
 
-            blueprint.OnTriggerEnter2D(coll);
+            blueprint.OnTargetHit(coll, gameObject);
         }
     }
     public void SetBlueprintAndTarget(BaseBulletBlueprint blueprint, GameObject target)
@@ -23,5 +24,14 @@ public class Bullet : MonoBehaviour
         this.blueprint = blueprint;
         this.target = target;
         health = blueprint.bulletHealth;
+        Debug.Log(this.target);
+    }
+    /// <summary>
+    /// This function is called when the MonoBehaviour will be destroyed.
+    /// </summary>
+    void OnDestroy()
+    {
+        blueprint.RemoveBullet(gameObject);
+        Debug.Log("WTF");
     }
 }
