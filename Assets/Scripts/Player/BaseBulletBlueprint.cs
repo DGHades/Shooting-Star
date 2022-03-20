@@ -27,7 +27,7 @@ public class BaseBulletBlueprint : ScriptableObject
     public virtual void Spawn(GameObject bulletObj, Transform currentPos, GameObject target)
     {
         this.bullet = (GameObject)(Instantiate(bulletObj, currentPos.position, Quaternion.identity));
-        bullet.GetComponent<Rigidbody2D>().AddForce((currentPos.position + target.transform.position) * bulletForce);
+        bullet.GetComponent<Rigidbody2D>().AddForce((target.transform.position - currentPos.position) * 200);
         //Calculate Rotation to Target direction
         Vector3 dir = target.transform.position - currentPos.position;
         float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
