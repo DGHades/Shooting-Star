@@ -83,6 +83,8 @@ public class Player : MonoBehaviour
     {
         //Movement
         //Block input on Border hit
+        if (GlobalVariable.startGame == true)
+        {
         if (Input.GetKey(KeyCode.LeftArrow) && stopLeft == false)
         {
             gameObject.transform.Translate(Vector3.left * 0.1f);
@@ -99,7 +101,7 @@ public class Player : MonoBehaviour
         {
             gameObject.transform.Translate(Vector3.right * 0.1f);
         }
-
+        }
         //Change player looking direction in moving direction
         Vector3 moveDirection = playerOptic.gameObject.transform.position - _origPos;
         //only do if player is moving
