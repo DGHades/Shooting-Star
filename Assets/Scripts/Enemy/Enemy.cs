@@ -16,6 +16,7 @@ public class Enemy : MonoBehaviour
     public bool isSpawned = false;
     public bool isAnimated = true;
     bool destroyed = false;
+    bool stopRotation = false;
     public void Awake()
     {
         //REWORK
@@ -31,6 +32,8 @@ public class Enemy : MonoBehaviour
         if (health <= 0)
         {
             //Do destroy Animation before Destroying Object
+            stopRotation = true;
+            lockEnemy();
             HelperFunctionsSTATIC.DestroyAnim(this, destroyed);
             destroyed = true;
             GlobalVariable.score += 2;
@@ -44,14 +47,21 @@ public class Enemy : MonoBehaviour
     /// </summary>
     void FixedUpdate()
     {
-        if (movementScript != null && isSpawned)
+        if (movementScript != null && isSpawned && !stopRotation)
             movementScript.Move(gameObject);
+       
     }
     public void unlockEnemyWhenSpawned()
     {
         gameObject.GetComponent<CircleCollider2D>().enabled = true;
         isSpawned = true;
         movementScript.Direction(gameObject);
+    }
+    public void lockEnemy()
+    {
+        gameObject.GetComponent<CircleCollider2D>().enabled = false;
+        isSpawned = false;
+        gameObject.GetComponent<Rigidbody2D>().velocity = new Vector3(0,0);
     }
     public bool canSpawn()
     {
