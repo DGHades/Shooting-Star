@@ -15,10 +15,11 @@ public class Enemy : MonoBehaviour
     public float bulletDamage;
     public bool isSpawned = false;
     public bool isAnimated = true;
+    bool destroyed = false;
     public void Awake()
     {
         //REWORK
-
+       
         movementScript = (IMovementEnemy)System.Reflection.Assembly.GetAssembly(Type.GetType("Move" + gameObject.tag)).CreateInstance("Move" + gameObject.tag);
     }
 
@@ -30,7 +31,8 @@ public class Enemy : MonoBehaviour
         if (health <= 0)
         {
             //Do destroy Animation before Destroying Object
-            HelperFunctionsSTATIC.DestroyAnim(this);
+            HelperFunctionsSTATIC.DestroyAnim(this, destroyed);
+            destroyed = true;
             GlobalVariable.score += 2;
             GlobalVariable.fillbarValue += 2;
             GlobalVariable.money += 1;

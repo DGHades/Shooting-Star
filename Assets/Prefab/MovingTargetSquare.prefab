@@ -135,10 +135,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0a64d0be0c64349aa5d5ac7cbdc04cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  particleObject: {fileID: 4778007565827158124, guid: cc6712830db035a42924861da52e7775,
+  particleObject: {fileID: 2589414017418798589, guid: 6bed5d9bba48933479c4ab6986db8ffa,
     type: 3}
-  sparticleSystem: {fileID: 1177082366645464930, guid: f5844b5a6f1503d4cb52db37d97b6133,
-    type: 3}
+  sparticleSystem: {fileID: 361112160141510741}
   sr: {fileID: 411108840148918079}
   spawnAmount: 5
   waveAmount: 0
@@ -153,6 +152,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 411108840148918076}
     m_Modifications:
+    - target: {fileID: 1177082366645464930, guid: f5844b5a6f1503d4cb52db37d97b6133,
+        type: 3}
+      propertyPath: EmissionModule.enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1177082366645464930, guid: f5844b5a6f1503d4cb52db37d97b6133,
+        type: 3}
+      propertyPath: EmissionModule.m_Bursts.Array.data[0].countCurve.scalar
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 4873502900608975819, guid: f5844b5a6f1503d4cb52db37d97b6133,
         type: 3}
       propertyPath: m_RootOrder
@@ -213,11 +222,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: SquareExplosion
       objectReference: {fileID: 0}
+    - target: {fileID: 7933906180092075978, guid: f5844b5a6f1503d4cb52db37d97b6133,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f5844b5a6f1503d4cb52db37d97b6133, type: 3}
 --- !u!4 &6265934954566919420 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4873502900608975819, guid: f5844b5a6f1503d4cb52db37d97b6133,
+    type: 3}
+  m_PrefabInstance: {fileID: 1537763449063892791}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &361112160141510741 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 1177082366645464930, guid: f5844b5a6f1503d4cb52db37d97b6133,
     type: 3}
   m_PrefabInstance: {fileID: 1537763449063892791}
   m_PrefabAsset: {fileID: 0}
