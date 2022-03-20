@@ -6161,7 +6161,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletBlueprint: {fileID: 11400000, guid: 55ecbd9abf603f0628071e309c6d4020, type: 2}
-  bullet: {fileID: 3451682976122469827, guid: 68d9652f19149e1429b8416d28c1c080, type: 3}
+  bullet: {fileID: -4699726641209812194, guid: ec40cc6aeaec7b04fae15961fcd6e91a, type: 3}
 --- !u!114 &1548862193
 MonoBehaviour:
   m_ObjectHideFlags: 0
