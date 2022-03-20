@@ -57,6 +57,7 @@ public class Player : MonoBehaviour
             stopLeft = true;
             stopRight = true;
             BeforeDieMenue.gameObject.SetActive(true);
+            GlobalVariable.stopGame = true;
         }
         if (collision.gameObject.name == "BorderTop")
         {
