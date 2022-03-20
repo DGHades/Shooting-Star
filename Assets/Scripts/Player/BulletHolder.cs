@@ -49,9 +49,14 @@ public class BulletHolder : MonoBehaviour
     {
         if (state == baseBulletState.ready)
         {
+            bulletBlueprint.Initialize();
             bulletBlueprint.Spawn(bullet.gameObject, transform, gameObject);
             bulletBlueprint.AfterSpawn();
             state = baseBulletState.shot;
         }
+    }
+    public void Upgrade(BaseBulletBlueprint blueprint)
+    {
+        bulletBlueprint = blueprint;
     }
 }

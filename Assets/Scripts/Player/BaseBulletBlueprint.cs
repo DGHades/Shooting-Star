@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 
 [CreateAssetMenu]
 public class BaseBulletBlueprint : ScriptableObject
@@ -9,41 +10,51 @@ public class BaseBulletBlueprint : ScriptableObject
     public float movementSpeed;
     public float bulletHealth;
     public float bulletForce;
-    protected GameObject bullet;
+    public Transform playerTransform;
+    protected List<GameObject> bullets;
 
+    public virtual void Initialize()
+    {
+        bullets = new List<GameObject> { };
+    }
     // Move is called once per frame
     public virtual void Move()
     {
         //Fix the Velocity of Object
-        if (bullet == null) return;
-        Vector2 v = bullet.GetComponent<Rigidbody2D>().velocity;
-        v = v.normalized;
-        v *= movementSpeed;
-
-        bullet.GetComponent<Rigidbody2D>().velocity = v;
+        foreach (GameObject bullet in bullets)
+        {
+            Vector2 v = bullet.GetComponent<Rigidbody2D>().velocity;
+            v = v.normalized;
+            v *= movementSpeed;
+            bullet.GetComponent<Rigidbody2D>().velocity = v;
+        }
 
     }
 
     public virtual void Spawn(GameObject bulletObj, Transform currentPos, GameObject target)
     {
-        this.bullet = (GameObject)(Instantiate(bulletObj, currentPos.position, Quaternion.identity));
-        bullet.GetComponent<Rigidbody2D>().AddForce((target.transform.position - currentPos.position) * 200);
+        GameObject bullet = (GameObject)(Instantiate(bulletObj, currentPos.position, Quaternion.identity));
+        bullet.GetComponent<Rigidbody2D>().AddForce((target.transform.position - currentPos.position) * bulletForce);
         //Calculate Rotation to Target direction
         Vector3 dir = target.transform.position - currentPos.position;
         float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
         //Set rotation
         bullet.transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
         bullet.GetComponent<Bullet>().SetBlueprintAndTarget(this, target);
+        bullets.Add(bullet);
     }
     public virtual void AfterSpawn()
     {
         //Scale Bullet size with attack DMG (Bigger for more DMG)
-        Vector3 scaling = new Vector3(bullet.transform.localScale.x * (attackDmg / 100), bullet.transform.localScale.y * (attackDmg / 100));
-        bullet.transform.localScale = scaling;
+        foreach (GameObject bullet in bullets)
+        {
+            Vector3 scaling = new Vector3(bullet.transform.localScale.x * (attackDmg / 100), bullet.transform.localScale.y * (attackDmg / 100));
+            bullet.transform.localScale = scaling;
 
+        }
     }
 
-    public virtual void OnTriggerEnter2D(Collider2D coll)
+    public virtual void OnTargetHit(Collider2D coll, GameObject bullet)
     {
         //Check with what the Bullet Collided
         if (coll.gameObject.tag.StartsWith("Target"))
@@ -51,15 +62,19 @@ public class BaseBulletBlueprint : ScriptableObject
             //Get Health component of Object and use GotHit();
             Enemy enemy = coll.gameObject.GetComponent<Enemy>();
             enemy.GotHit(attackDmg);
-            if (bullet != null)
-                TakeDamage(enemy.bulletDamage);
+            TakeDamage(enemy.bulletDamage, bullet);
 
         }
     }
-    public virtual void TakeDamage(float bulletDamage)
+    public virtual void TakeDamage(float bulletDamage, GameObject bullet)
     {
         bullet.GetComponent<Bullet>().health -= bulletDamage;
         if (bullet.GetComponent<Bullet>().health <= 0)
-            Destroy(bullet);
+            RemoveBullet(bullet);
+    }
+    public virtual void RemoveBullet(GameObject gameObject)
+    {
+        bullets.Remove(gameObject);
+        Destroy(gameObject);
     }
 }
