@@ -1,13 +1,11 @@
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
-public class HighscoreManager : MonoBehaviour
+public class TextManager : MonoBehaviour
 {
     public TextMeshProUGUI score;
     public TextMeshProUGUI HighScore;
-
     public TextMeshProUGUI Revenue;
-    public GameObject BeforeDieMenue;
     // Start is called before the first frame update
 
     void Start()
@@ -26,13 +24,14 @@ public class HighscoreManager : MonoBehaviour
         }
         if (GlobalVariable.stopGame == true) //Kinda Weird Solution
         {
+
+            PlayerPrefs.SetInt("Revenue", GlobalVariable.money + PlayerPrefs.GetInt("Revenue"));
+            Revenue.text = "Revenue: " + GlobalVariable.money.ToString();
             GlobalVariable.stopGame = false;
         }
     }
 
     private void Awake() //AWAKES ON TRUEFALSE SOLUTION
     {
-        PlayerPrefs.SetInt("Revenue", GlobalVariable.money + PlayerPrefs.GetInt("Revenue"));
-        Revenue.text = "Revenue: " + GlobalVariable.money.ToString();
     }
 }
