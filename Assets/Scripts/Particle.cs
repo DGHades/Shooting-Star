@@ -13,7 +13,7 @@ public class Particle : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         //Delete if hits Unspawned Object
-        if (collision.gameObject.tag == "Unspawned" || collision.gameObject.tag == "UnspawnedStar")
+        if (collision.gameObject.tag.StartsWith("Target"))
         {
             Destroy(gameObject);
         }

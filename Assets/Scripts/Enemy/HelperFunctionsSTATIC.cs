@@ -2,6 +2,7 @@ using UnityEngine;
 
 public static class HelperFunctionsSTATIC
 {
+    
     // Start is called before the first frame update
     public static void SpawnAnim(Enemy enemy)
     {
@@ -27,9 +28,13 @@ public static class HelperFunctionsSTATIC
             //do 30 particles, change if looks better
         } while (i < 60);
     }
-    public static void DestroyAnim(Enemy enemy)
+    public static void DestroyAnim(Enemy enemy, bool destroyed)
     {
+       
+        if (destroyed == false)
+        {
 
+       
         GlobalVariable.score += 2;
         GlobalVariable.fillbarValue += 2;
 
@@ -41,6 +46,7 @@ public static class HelperFunctionsSTATIC
 
         Object.Destroy(enemy.sr);
         enemy.Invoke(nameof(enemy.destroyTarget), dur);
+        }
     }
 }
 
