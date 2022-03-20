@@ -33,6 +33,7 @@ public class Enemy : MonoBehaviour
             HelperFunctionsSTATIC.DestroyAnim(this);
             GlobalVariable.score += 2;
             GlobalVariable.fillbarValue += 2;
+            GlobalVariable.money += 1;
         }
 
     }

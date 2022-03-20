@@ -10,13 +10,15 @@ public class GlobalVariable : MonoBehaviour
     //Declare every needed Global Variable
     public static float attackspeed;
     public static float attackDmg;
-    public static int score;
     public static float waveScore;
-    public static int waveCount;
     public static float fillbarMin;
     public static float fillbarValue;
+    public static int score;
+    public static int money;
+    public static int waveCount;
     public static bool ItemSelected;
     public static bool startGame;
+    public static bool stopGame;
     public GameObject scoreTMP;
     public GameObject waveTMP;
 
@@ -35,7 +37,9 @@ public class GlobalVariable : MonoBehaviour
         fillbarValue = 0;
         ItemSelected = false;
         startGame = false;
+        stopGame = false;
         waveCount = 1;
+        money = 0;
     }
 
     void Update()
