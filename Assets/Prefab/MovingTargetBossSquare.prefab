@@ -137,8 +137,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   particleObject: {fileID: 2589414017418798589, guid: 6bed5d9bba48933479c4ab6986db8ffa,
     type: 3}
-  sparticleSystem: {fileID: 1177082366645464930, guid: f5844b5a6f1503d4cb52db37d97b6133,
+  destroyParticleSystem: {fileID: 1177082366645464930, guid: f5844b5a6f1503d4cb52db37d97b6133,
     type: 3}
+  spawnParticleSystem: {fileID: 0}
   sr: {fileID: 8039462726581228792}
   spawnAmount: 0
   waveAmount: 5
