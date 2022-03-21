@@ -2,22 +2,41 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MoveTargetTriangle : MonoBehaviour
+public class MoveTargetTriangle : IMovementEnemy
 {
-    public GameObject player;
-    public float movementSpeed;
-    // Start is called before the first frame update
-    void Start()
+    // Move is called once per frame
+    public void Move(GameObject gameObject)
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        Vector2 v = player.GetComponent<Rigidbody2D>().velocity;
+        //rotates 200 degrees per second around z axis
+        gameObject.transform.Rotate(0, 0, 200 * Time.deltaTime);
+        ChangeDirection(gameObject);
+        //Keep Fixed Velocity
+        Vector2 v = gameObject.GetComponent<Rigidbody2D>().velocity;
         v = v.normalized;
-        v *= movementSpeed;
-        player.GetComponent<Rigidbody2D>().velocity = v;
+        v *= 2.5f;
+        gameObject.GetComponent<Rigidbody2D>().velocity = v;
+    }
+    public void Direction(GameObject gameObject)
+    {
+        //Create random Direction on Spawning
+        var number = Random.Range(1, -1);
+        var numberTwo = Random.Range(1, -1);
+        do
+        {
+            //Get Random number that is NOT 0
+            number = Random.Range(1, -1);
+            numberTwo = Random.Range(1, -1);
+        } while (number != 0 && numberTwo != 0);
+        //Add speed
+        gameObject.GetComponent<Rigidbody2D>().velocity = Random.onUnitSphere * 2.5f;
+    }
+    void ChangeDirection(GameObject gameObject)
+    {
+        //Do Direction(); randomly if checker hits 100
+        float checker = Random.Range(1, 180);
+        if (checker == 100)
+        {
+            Direction(gameObject);
+        }
     }
 }
