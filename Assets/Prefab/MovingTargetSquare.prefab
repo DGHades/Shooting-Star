@@ -245,7 +245,7 @@ PrefabInstance:
     - target: {fileID: 1177082366645464930, guid: f5844b5a6f1503d4cb52db37d97b6133,
         type: 3}
       propertyPath: EmissionModule.enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1177082366645464930, guid: f5844b5a6f1503d4cb52db37d97b6133,
         type: 3}
@@ -499,6 +499,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1177082366645464930, guid: f5844b5a6f1503d4cb52db37d97b6133,
         type: 3}
+      propertyPath: InitialModule.startSpeed.minScalar
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1177082366645464930, guid: f5844b5a6f1503d4cb52db37d97b6133,
+        type: 3}
       propertyPath: RotationBySpeedModule.curve.scalar
       value: 1
       objectReference: {fileID: 0}
@@ -606,7 +611,7 @@ PrefabInstance:
     - target: {fileID: 1177082366645464930, guid: f5844b5a6f1503d4cb52db37d97b6133,
         type: 3}
       propertyPath: ColorModule.gradient.maxGradient.atime0
-      value: 47802
+      value: 64186
       objectReference: {fileID: 0}
     - target: {fileID: 1177082366645464930, guid: f5844b5a6f1503d4cb52db37d97b6133,
         type: 3}
@@ -1745,6 +1750,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1177082366645464930, guid: f5844b5a6f1503d4cb52db37d97b6133,
         type: 3}
+      propertyPath: VelocityModule.speedModifier.maxCurve.m_Curve.Array.data[0].time
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1177082366645464930, guid: f5844b5a6f1503d4cb52db37d97b6133,
+        type: 3}
       propertyPath: VelocityModule.speedModifier.maxCurve.m_Curve.Array.data[1].time
       value: 0.44024408
       objectReference: {fileID: 0}
@@ -1822,6 +1832,11 @@ PrefabInstance:
         type: 3}
       propertyPath: UVModule.frameOverTime.maxCurve.m_Curve.Array.data[1].tangentMode
       value: 34
+      objectReference: {fileID: 0}
+    - target: {fileID: 1177082366645464930, guid: f5844b5a6f1503d4cb52db37d97b6133,
+        type: 3}
+      propertyPath: VelocityModule.speedModifier.maxCurve.m_Curve.Array.data[0].value
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1177082366645464930, guid: f5844b5a6f1503d4cb52db37d97b6133,
         type: 3}
@@ -2088,6 +2103,11 @@ PrefabInstance:
       propertyPath: m_ApplyActiveColorSpace
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5081877731475811103, guid: f5844b5a6f1503d4cb52db37d97b6133,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 42f8615c7d7e1a943b04402a5d52aa99, type: 2}
     - target: {fileID: 5081877731475811103, guid: f5844b5a6f1503d4cb52db37d97b6133,
         type: 3}
       propertyPath: m_Materials.Array.data[1]
