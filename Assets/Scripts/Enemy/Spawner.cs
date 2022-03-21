@@ -17,7 +17,7 @@ public class Spawner : MonoBehaviour
         yield return new WaitForSeconds(2);
         //yield on a new YieldInstruction that waits for 5 seconds.
         HelperFunctionsSTATIC.SpawnAnim(enemy);
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.7f);
         var em = enemy.spawnParticleSystem.emission;
         em.enabled = false;
         enemy.sr.color = new Color(0.67f, 0.24f, 0.47f, 1f);

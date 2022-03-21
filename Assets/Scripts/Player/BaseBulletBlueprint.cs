@@ -12,6 +12,8 @@ public class BaseBulletBlueprint : ScriptableObject
     public float bulletForce;
     public Transform playerTransform;
     protected List<GameObject> bullets;
+    
+
 
     public virtual void Initialize()
     {
@@ -74,6 +76,9 @@ public class BaseBulletBlueprint : ScriptableObject
     }
     public virtual void RemoveBullet(GameObject gameObject)
     {
+        Destroy(gameObject.GetComponent<SpriteRenderer>());
+
+        
         bullets.Remove(gameObject);
         Destroy(gameObject);
     }
