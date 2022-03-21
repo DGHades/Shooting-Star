@@ -8,7 +8,8 @@ public class Enemy : MonoBehaviour
 {
 
     public GameObject particleObject;
-    public ParticleSystem sparticleSystem;
+    public ParticleSystem destroyParticleSystem;
+    public ParticleSystem spawnParticleSystem;
     public IMovementEnemy movementScript;
     public SpriteRenderer sr;
     public int spawnAmount;
