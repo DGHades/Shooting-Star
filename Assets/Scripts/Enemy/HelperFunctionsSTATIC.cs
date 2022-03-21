@@ -10,11 +10,11 @@ public static class HelperFunctionsSTATIC
 
        
 
-            var dur = enemy.sparticleSystem.main.duration;
-            var em = enemy.sparticleSystem.emission;
+            var dur = enemy.spawnParticleSystem.main.duration;
+            var em = enemy.spawnParticleSystem.emission;
             //enemy.sparticleSystem.speed
             em.enabled = true;
-            enemy.sparticleSystem.Play();
+            enemy.spawnParticleSystem.Play();
 
            
           
@@ -30,11 +30,11 @@ public static class HelperFunctionsSTATIC
         GlobalVariable.score += 2;
         GlobalVariable.fillbarValue += 2;
 
-        var dur = enemy.sparticleSystem.main.duration;
-        var em = enemy.sparticleSystem.emission;
+        var dur = enemy.destroyParticleSystem.main.duration;
+        var em = enemy.destroyParticleSystem.emission;
 
         em.enabled = true;
-        enemy.sparticleSystem.Play();
+        enemy.destroyParticleSystem.Play();
 
         Object.Destroy(enemy.sr);
         enemy.Invoke(nameof(enemy.destroyTarget), dur);
