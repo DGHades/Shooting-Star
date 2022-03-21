@@ -2,41 +2,39 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MoveTargetTriangle : IMovementEnemy
+public class MoveTargetTriangle : MonoBehaviour
 {
-    // Move is called once per frame
-    public void Move(GameObject gameObject)
+    public GameObject player;
+    public float moveSpeed = 5f;
+    private Rigidbody2D rb;
+    private Vector2 movement;
+    Collider2D test;
+
+    // Start is called before the first frame update
+    void Start()
     {
-        //rotates 200 degrees per second around z axis
-        gameObject.transform.Rotate(0, 0, 200 * Time.deltaTime);
-        ChangeDirection(gameObject);
-        //Keep Fixed Velocity
-        Vector2 v = gameObject.GetComponent<Rigidbody2D>().velocity;
-        v = v.normalized;
-        v *= 2.5f;
-        gameObject.GetComponent<Rigidbody2D>().velocity = v;
+        player = GameObject.FindGameObjectWithTag("PLayer");
+        rb = this.GetComponent<Rigidbody2D>(); 
+        test = gameObject.GetComponent<Collider2D>();
     }
-    public void Direction(GameObject gameObject)
+
+    // Update is called once per frame
+    void Update()
     {
-        //Create random Direction on Spawning
-        var number = Random.Range(1, -1);
-        var numberTwo = Random.Range(1, -1);
-        do
-        {
-            //Get Random number that is NOT 0
-            number = Random.Range(1, -1);
-            numberTwo = Random.Range(1, -1);
-        } while (number != 0 && numberTwo != 0);
-        //Add speed
-        gameObject.GetComponent<Rigidbody2D>().velocity = Random.onUnitSphere * 2.5f;
-    }
-    void ChangeDirection(GameObject gameObject)
-    {
-        //Do Direction(); randomly if checker hits 100
-        float checker = Random.Range(1, 180);
-        if (checker == 100)
-        {
-            Direction(gameObject);
+        if (test.enabled) { 
+        Vector3 direction = player.transform.position - transform.position;
+        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+        rb.rotation = angle;
+        direction.Normalize();
+        movement = direction;
         }
+    }
+    private void FixedUpdate()
+    {
+        moveCharacter(movement);
+    }
+    void moveCharacter(Vector2 direction)
+    {
+        rb.MovePosition((Vector2)transform.position + (direction * moveSpeed * Time.deltaTime));
     }
 }

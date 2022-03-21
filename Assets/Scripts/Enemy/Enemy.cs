@@ -43,7 +43,6 @@ public class Enemy : MonoBehaviour
             GlobalVariable.fillbarValue += 2;
             GlobalVariable.money += 1;
         }
-
     }
     /// <summary>
     /// This function is called every fixed framerate frame, if the MonoBehaviour is enabled.
@@ -52,7 +51,6 @@ public class Enemy : MonoBehaviour
     {
         if (movementScript != null && isSpawned && !stopRotation)
             movementScript.Move(gameObject);
-       
     }
     public void unlockEnemyWhenSpawned()
     {
