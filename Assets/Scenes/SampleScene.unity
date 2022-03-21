@@ -3258,7 +3258,7 @@ GameObject:
   - component: {fileID: 644140750}
   m_Layer: 0
   m_Name: PlayerManager
-  m_TagString: PLayer
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5418,7 +5418,7 @@ MonoBehaviour:
   - {fileID: 4431642538719470671, guid: 693b8d91087e96148ba9dbda35a5e62c, type: 3}
   - {fileID: 1853716694992083923, guid: 063567fecaf1d1f45be55ef0c9f9133b, type: 3}
   - {fileID: -862118971515059013, guid: d8e32d7b4a888554f9f2a4dbf12ff23e, type: 3}
-  - {fileID: 8592494479995244607, guid: 900c0f489b97f024e8633fa558da90d6, type: 3}
+  - {fileID: 3985650195670458552, guid: 900c0f489b97f024e8633fa558da90d6, type: 3}
   spawner: {fileID: 105490733}
   manageWaves: {fileID: 1268685450}
 --- !u!4 &1246367665

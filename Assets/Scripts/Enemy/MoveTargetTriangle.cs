@@ -4,22 +4,21 @@ using UnityEngine;
 
 public class MoveTargetTriangle : IMovementEnemy
 {
-    public GameObject player;
     public float moveSpeed = 5f;
     private Rigidbody2D rb;
     private Vector2 movement;
 
     // Move is called once per frame
-    public void Move(GameObject gameObject)
+    public void Move(GameObject gameObject,GameObject target)
     {
-        
         rb = gameObject.GetComponent<Rigidbody2D>();
-        Vector3 direction = player.transform.position - gameObject.transform.position;
+        Vector3 direction = target.transform.position - gameObject.transform.position;
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
         rb.rotation = angle;
         direction.Normalize();
         movement = direction;
-
+       
+        rb.MovePosition(gameObject.transform.position + (direction * moveSpeed * Time.deltaTime));
     }
     public void Direction(GameObject gameObject)
     {

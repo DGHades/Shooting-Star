@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MoveTargetBossSquare : IMovementEnemy
 {
-    public void Move(GameObject gameObject)
+    public void Move(GameObject gameObject, GameObject target)
     {
         //rotates 50 degrees per second around z axis
         gameObject.transform.Rotate(0, 0, 50 * Time.deltaTime);
