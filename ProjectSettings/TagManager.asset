@@ -18,6 +18,7 @@ TagManager:
   - TargetSquare
   - BeforeStartMenue
   - DieMenue
+  - TargetBossSquare
   layers:
   - Default
   - TransparentFX

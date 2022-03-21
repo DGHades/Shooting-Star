@@ -32,6 +32,5 @@ public class Bullet : MonoBehaviour
     void OnDestroy()
     {
         blueprint.RemoveBullet(gameObject);
-        Debug.Log("WTF");
     }
 }

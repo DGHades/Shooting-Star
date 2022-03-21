@@ -22,7 +22,7 @@ public class Enemy : MonoBehaviour
     public void Awake()
     {
         //REWORK
-       
+
         movementScript = (IMovementEnemy)System.Reflection.Assembly.GetAssembly(Type.GetType("Move" + gameObject.tag)).CreateInstance("Move" + gameObject.tag);
     }
 
