@@ -2239,7 +2239,7 @@ PrefabInstance:
     - target: {fileID: 1177082366645464930, guid: f5844b5a6f1503d4cb52db37d97b6133,
         type: 3}
       propertyPath: EmissionModule.enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1177082366645464930, guid: f5844b5a6f1503d4cb52db37d97b6133,
         type: 3}
@@ -2365,6 +2365,11 @@ PrefabInstance:
         type: 3}
       propertyPath: ShapeModule.radiusThickness
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1177082366645464930, guid: f5844b5a6f1503d4cb52db37d97b6133,
+        type: 3}
+      propertyPath: UVModule.sprites.Array.size
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1177082366645464930, guid: f5844b5a6f1503d4cb52db37d97b6133,
         type: 3}
@@ -4114,6 +4119,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5081877731475811103, guid: f5844b5a6f1503d4cb52db37d97b6133,
         type: 3}
+      propertyPath: m_SortingLayer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5081877731475811103, guid: f5844b5a6f1503d4cb52db37d97b6133,
+        type: 3}
+      propertyPath: m_SortingLayerID
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5081877731475811103, guid: f5844b5a6f1503d4cb52db37d97b6133,
+        type: 3}
       propertyPath: m_MaxParticleSize
       value: 1
       objectReference: {fileID: 0}
@@ -4136,7 +4151,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+      objectReference: {fileID: 2100000, guid: 42f8615c7d7e1a943b04402a5d52aa99, type: 2}
     - target: {fileID: 5081877731475811103, guid: f5844b5a6f1503d4cb52db37d97b6133,
         type: 3}
       propertyPath: m_Materials.Array.data[1]
