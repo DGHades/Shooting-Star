@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: -2640038763347871967}
   - component: {fileID: 6368596741304269426}
   - component: {fileID: 8592494479995244607}
+  - component: {fileID: 274272512238603014}
   m_Layer: 0
   m_Name: MovingTargetTriangle
   m_TagString: TargetTriangle
@@ -115,7 +116,7 @@ CircleCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3144921313012614203}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
@@ -147,6 +148,20 @@ MonoBehaviour:
   bulletDamage: 100
   isSpawned: 0
   isAnimated: 1
+--- !u!114 &274272512238603014
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3144921313012614203}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c3bdfae3ff552c4c92e04cfff7f3808, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  moveSpeed: 0.5
 --- !u!1001 &5339965339231705577
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -14,7 +14,7 @@ public class Gun : MonoBehaviour
     /// </summary>
     void Start()
     {
-        findUpgradeAndUprade("AutoTargetingBullet");
+        //findUpgradeAndUprade("AutoTargetingBullet");
     }
     void OnTriggerStay2D(Collider2D target)
     {
