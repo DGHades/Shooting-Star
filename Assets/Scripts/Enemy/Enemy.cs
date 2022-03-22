@@ -15,6 +15,7 @@ public class Enemy : MonoBehaviour
     public SpriteRenderer sr;
     public int spawnAmount;
     public int spawnEachWave;
+    public int waveCount;
     public float health;
     public float bulletDamage;
     public bool isSpawned = false;

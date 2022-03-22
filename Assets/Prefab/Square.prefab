@@ -143,7 +143,8 @@ MonoBehaviour:
   target: {fileID: 0}
   sr: {fileID: 411108840148918079}
   spawnAmount: 5
-  waveAmount: 0
+  spawnEachWave: 1
+  waveCount: 1
   health: 119.2
   bulletDamage: 5
   isSpawned: 0
