@@ -16,7 +16,6 @@ public class BulletHolder : MonoBehaviour
     }
     baseBulletState state = new baseBulletState();
 
-
     /// <summary>
     /// This function is called every fixed framerate frame, if the MonoBehaviour is enabled.
     /// </summary>
@@ -27,12 +26,10 @@ public class BulletHolder : MonoBehaviour
             case baseBulletState.ready:
                 break;
             case baseBulletState.shot:
-                bulletBlueprint.Move();
                 state = baseBulletState.cooldown;
                 cooldown = bulletBlueprint.cooldown;
                 break;
             case baseBulletState.cooldown:
-                bulletBlueprint.Move();
                 if (cooldown > 0)
                 {
                     cooldown -= Time.deltaTime;
@@ -49,9 +46,7 @@ public class BulletHolder : MonoBehaviour
     {
         if (state == baseBulletState.ready)
         {
-            bulletBlueprint.Initialize();
             bulletBlueprint.Spawn(bullet.gameObject, transform, gameObject);
-            bulletBlueprint.AfterSpawn();
             state = baseBulletState.shot;
         }
     }

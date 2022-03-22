@@ -1,36 +1,34 @@
+using System;
 using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
     private BaseBulletBlueprint blueprint;
-    public GameObject target;
     public float health;
+    public bool hasTarget = false;
+    public bool hasHealth = false;
+    public GameObject target = null;
+    /// <summary>
+    /// Update is called every frame, if the MonoBehaviour is enabled.
+    /// </summary>
+    void Update()
+    {
+        blueprint.Move(this);
+    }
     public virtual void OnTriggerEnter2D(Collider2D coll)
     {
-        if (coll.gameObject.tag == "Border")
+        if (coll.gameObject.tag.Contains("Border"))
         {
-            //Destroy Bullet if it hits Border
-            blueprint.RemoveBullet(gameObject);
-            Destroy(this);
+            Destroy(gameObject);
         }
-        else if (coll.gameObject.tag == target.tag)
+        else
         {
+            blueprint.OnTargetHit(coll, this);
+        }
 
-            blueprint.OnTargetHit(coll, gameObject);
-        }
     }
-    public void SetBlueprintAndTarget(BaseBulletBlueprint blueprint, GameObject target)
+    public void SetBlueprint(BaseBulletBlueprint blueprint)
     {
         this.blueprint = blueprint;
-        this.target = target;
-        health = blueprint.bulletHealth;
-        Debug.Log(this.target);
-    }
-    /// <summary>
-    /// This function is called when the MonoBehaviour will be destroyed.
-    /// </summary>
-    void OnDestroy()
-    {
-        blueprint.RemoveBullet(gameObject);
     }
 }
