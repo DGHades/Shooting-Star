@@ -142,8 +142,10 @@ MonoBehaviour:
   spawnParticleSystem: {fileID: 712619505693751429}
   target: {fileID: 0}
   sr: {fileID: 411108840148918079}
+  Camera: {fileID: 0}
+  Glitch: {fileID: 0}
   spawnAmount: 5
-  waveAmount: 0
+  spawnEachWave: 1
   health: 100
   bulletDamage: 50
   isSpawned: 0
