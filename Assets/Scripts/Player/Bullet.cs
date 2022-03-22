@@ -16,6 +16,16 @@ public class Bullet : MonoBehaviour
     /// </summary>
     void Update()
     {
+        if (!markedForDestruction)
+        {
+            blueprint.Move(this);
+        }
+    }
+    /// <summary>
+    /// This function is called every fixed framerate frame, if the MonoBehaviour is enabled.
+    /// </summary>
+    void FixedUpdate()
+    {
         if (markedForDestruction)
         {
             Destroy(GetComponent<SpriteRenderer>());
@@ -28,19 +38,13 @@ public class Bullet : MonoBehaviour
             Invoke(nameof(DestroyBullet), dur);
 
         }
-        else
-        {
-
-            blueprint.Move(this);
-        }
     }
-
     public virtual void OnTriggerEnter2D(Collider2D coll)
     {
         var em = hitParticleSystem.emission;
         em.enabled = true;
         hitParticleSystem.Play();
-        if (coll.gameObject.tag.StartsWith("Border"))
+        if (coll.gameObject.tag == "Border")
         {
             Destroy(gameObject);
         }
