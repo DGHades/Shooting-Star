@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 8123210353723346397}
   m_Layer: 0
   m_Name: Circle
-  m_TagString: TargetCircle
+  m_TagString: TargetSquare
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -145,7 +145,7 @@ MonoBehaviour:
   sr: {fileID: 8859664404222069758}
   spawnAmount: 1
   waveAmount: 0
-  health: 50
+  health: 100
   bulletDamage: 50
   isSpawned: 0
   isAnimated: 1

@@ -7,14 +7,14 @@ public class Gun : MonoBehaviour
     public BulletHolder bulletHolder;
     // Start is called before the first frame update
     public Player player;
-
+   
     /// <summary>
     /// Start is called on the frame when a script is enabled just before
     /// any of the Update methods is called the first time.
     /// </summary>
     void Start()
     {
-        findUpgradeAndUprade("AutoTargetingBullet");
+        //findUpgradeAndUprade("AutoTargetingBullet");
     }
     void OnTriggerStay2D(Collider2D target)
     {

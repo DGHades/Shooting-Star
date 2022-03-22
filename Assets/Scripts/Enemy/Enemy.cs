@@ -13,6 +13,9 @@ public class Enemy : MonoBehaviour
     public IMovementEnemy movementScript;
     public GameObject target;
     public SpriteRenderer sr;
+    public GameObject Camera;
+    public AnalogGlitch Glitch;
+
     public int spawnAmount;
     public int spawnEachWave;
     public float health;
@@ -31,15 +34,20 @@ public class Enemy : MonoBehaviour
     public void Start()
     {
         target = GameObject.FindGameObjectWithTag("Player");
+        Camera = GameObject.FindGameObjectWithTag("MainCamera");
     }
     // Is called when a bullet hits the enemy in BaseBullet.cs
     public void GotHit(float damage)
     {
+        
+        float duration = 0.1f;
+        float magnitude = 0.2f;
         //Subtract DMG from Health of Object
         health -= damage;
         if (health <= 0)
         {
             //Do destroy Animation before Destroying Object
+            StartCoroutine(shake(duration,magnitude));
             stopRotation = true;
             lockEnemy();
             HelperFunctionsSTATIC.DestroyAnim(this, destroyed);
@@ -48,6 +56,22 @@ public class Enemy : MonoBehaviour
             GlobalVariable.fillbarValue += 2;
             GlobalVariable.money += 1;
         }
+    }
+
+    public IEnumerator shake(float duration, float magnitude)
+    {
+        Vector3 originalPos = new Vector3(0, 0, -10);
+        float elapsedTime = 0;
+        while (elapsedTime < duration)
+        {
+            float xOffset = UnityEngine.Random.Range(-0.5f, 0.5f) * magnitude;
+            float yOffset = UnityEngine.Random.Range(-0.5f, 0.5f) * magnitude;
+
+            Camera.transform.position = originalPos + new Vector3(xOffset, yOffset, originalPos.z);
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+        Camera.transform.position = originalPos;
     }
     /// <summary>
     /// This function is called every fixed framerate frame, if the MonoBehaviour is enabled.

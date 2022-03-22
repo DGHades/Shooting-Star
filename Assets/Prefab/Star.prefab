@@ -156,7 +156,7 @@ PrefabInstance:
     - target: {fileID: 4431642538719470671, guid: 693b8d91087e96148ba9dbda35a5e62c,
         type: 3}
       propertyPath: health
-      value: 150
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 4431642538719470671, guid: 693b8d91087e96148ba9dbda35a5e62c,
         type: 3}
@@ -176,7 +176,7 @@ PrefabInstance:
     - target: {fileID: 4431642538719470671, guid: 693b8d91087e96148ba9dbda35a5e62c,
         type: 3}
       propertyPath: bulletDamage
-      value: 10
+      value: 50
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 0}
