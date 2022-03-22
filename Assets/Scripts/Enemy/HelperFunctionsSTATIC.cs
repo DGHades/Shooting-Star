@@ -27,8 +27,6 @@ public static class HelperFunctionsSTATIC
         {
 
        
-        GlobalVariable.score += 2;
-        GlobalVariable.fillbarValue += 2;
 
         var dur = enemy.destroyParticleSystem.main.duration;
         var em = enemy.destroyParticleSystem.emission;
