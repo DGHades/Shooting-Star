@@ -5225,7 +5225,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -5.28, y: 3.15}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!50 &1124128313
@@ -5419,6 +5419,8 @@ MonoBehaviour:
   - {fileID: 1853716694992083923, guid: 063567fecaf1d1f45be55ef0c9f9133b, type: 3}
   - {fileID: -862118971515059013, guid: d8e32d7b4a888554f9f2a4dbf12ff23e, type: 3}
   - {fileID: 3985650195670458552, guid: 900c0f489b97f024e8633fa558da90d6, type: 3}
+  - {fileID: 8123210353723346397, guid: 08f093aa506b2854880a39bdcb581762, type: 3}
+  - {fileID: 9219459436689050753, guid: a8315eeb650a9c941b3589415d2510f4, type: 3}
   spawner: {fileID: 105490733}
   manageWaves: {fileID: 1268685450}
 --- !u!4 &1246367665
@@ -5656,7 +5658,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1294140973
 GameObject:
@@ -8445,7 +8447,7 @@ PrefabInstance:
     - target: {fileID: 8703415888530064593, guid: ccdeccbb75cb9dc49bddafe2516948b7,
         type: 3}
       propertyPath: m_RootOrder
-      value: 10
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 8703415888530064593, guid: ccdeccbb75cb9dc49bddafe2516948b7,
         type: 3}

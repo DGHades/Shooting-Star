@@ -20,6 +20,7 @@ TagManager:
   - DieMenue
   - TargetBossSquare
   - TargetTriangle
+  - TargetCircle
   layers:
   - Default
   - TransparentFX

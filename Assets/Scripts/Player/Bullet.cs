@@ -9,6 +9,7 @@ public class Bullet : MonoBehaviour
     public bool hasHealth = false;
     public GameObject target = null;
     public ParticleSystem hitParticleSystem;
+    
     public bool markedForDestruction = false;
     /// <summary>
     /// Update is called every frame, if the MonoBehaviour is enabled.
@@ -27,13 +28,20 @@ public class Bullet : MonoBehaviour
     {
         if (markedForDestruction)
         {
-            Destroy(gameObject);
+            Destroy(GetComponent<SpriteRenderer>());
+            Destroy(GetComponent<Collider2D>());
+            Destroy(GetComponent<TrailRenderer>());
+            Destroy(GetComponent<Rigidbody2D>());
+            var dur = hitParticleSystem.main.duration;
+            var em = hitParticleSystem.emission;
+            em.enabled = false;
+            Invoke(nameof(DestroyBullet), dur);
+
         }
     }
     public virtual void OnTriggerEnter2D(Collider2D coll)
     {
         var em = hitParticleSystem.emission;
-        var dur = hitParticleSystem.main.duration;
         em.enabled = true;
         hitParticleSystem.Play();
         if (coll.gameObject.tag == "Border")
@@ -66,5 +74,9 @@ public class Bullet : MonoBehaviour
         {
             return true;
         }
+    }
+    public void DestroyBullet() 
+    {
+        Destroy(gameObject);
     }
 }
