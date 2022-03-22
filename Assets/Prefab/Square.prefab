@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4251086524303058138}
   - component: {fileID: 4431642538719470671}
   m_Layer: 0
-  m_Name: MovingTargetSquare
+  m_Name: Square
   m_TagString: TargetSquare
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -140,6 +140,7 @@ MonoBehaviour:
     type: 3}
   destroyParticleSystem: {fileID: 6473031288177134151}
   spawnParticleSystem: {fileID: 712619505693751429}
+  target: {fileID: 0}
   sr: {fileID: 411108840148918079}
   spawnAmount: 5
   waveAmount: 0

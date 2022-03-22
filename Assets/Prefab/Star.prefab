@@ -111,7 +111,7 @@ PrefabInstance:
     - target: {fileID: 411108840148918083, guid: 693b8d91087e96148ba9dbda35a5e62c,
         type: 3}
       propertyPath: m_Name
-      value: MovingTargetStar Variant
+      value: Star
       objectReference: {fileID: 0}
     - target: {fileID: 411108840148918083, guid: 693b8d91087e96148ba9dbda35a5e62c,
         type: 3}

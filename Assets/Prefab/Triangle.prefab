@@ -4886,7 +4886,7 @@ GameObject:
   - component: {fileID: -6440231066218818400}
   - component: {fileID: 1229143234947629041}
   m_Layer: 0
-  m_Name: MovingTargetTriangle
+  m_Name: Triangle
   m_TagString: TargetTriangle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4975,6 +4975,7 @@ MonoBehaviour:
     type: 3}
   destroyParticleSystem: {fileID: 2197884565099236017}
   spawnParticleSystem: {fileID: 2337556517580319047}
+  target: {fileID: 0}
   sr: {fileID: 3985650195670458553}
   spawnAmount: 1
   waveAmount: 1
