@@ -31,7 +31,7 @@ public class EnemyManager : MonoBehaviour
         {
             // Check Spawn conditions
 
-            if (enemy.waveAmount <= GlobalVariable.waveCount)
+            if (GlobalVariable.waveCount % enemy.spawnEachWave == 0 || (enemy.waveCount != 0 && enemy.waveCount == GlobalVariable.waveCount))
             {
                 if (enemy.spawnAmount >= GameObject.FindGameObjectsWithTag(enemy.gameObject.tag).Length)
                 {

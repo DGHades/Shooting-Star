@@ -17,7 +17,8 @@ public class Enemy : MonoBehaviour
     public AnalogGlitch Glitch;
 
     public int spawnAmount;
-    public int waveAmount;
+    public int spawnEachWave;
+    public int waveCount;
     public float health;
     public float bulletDamage;
     public bool isSpawned = false;
@@ -27,7 +28,7 @@ public class Enemy : MonoBehaviour
     public void Awake()
     {
         //REWORK
-        
+
         movementScript = (IMovementEnemy)System.Reflection.Assembly.GetAssembly(Type.GetType("Move" + gameObject.tag)).CreateInstance("Move" + gameObject.tag);
     }
 
@@ -91,7 +92,7 @@ public class Enemy : MonoBehaviour
     {
         gameObject.GetComponent<CircleCollider2D>().enabled = false;
         isSpawned = false;
-        gameObject.GetComponent<Rigidbody2D>().velocity = new Vector3(0,0);
+        gameObject.GetComponent<Rigidbody2D>().velocity = new Vector3(0, 0);
     }
     public bool canSpawn()
     {
