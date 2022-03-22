@@ -65,6 +65,6 @@ public class BaseBulletBlueprint : ScriptableObject
     {
         bullet.GetComponent<Bullet>().health -= bulletDamage;
         if (bullet.GetComponent<Bullet>().health <= 0)
-            Destroy(bullet);
+            bullet.markedForDestruction = true;
     }
 }

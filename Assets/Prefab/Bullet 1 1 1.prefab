@@ -156,8 +156,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7bcc2e1f536cafd879c1c633b4a68901, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  blueprint: {fileID: 11400000, guid: 55ecbd9abf603f0628071e309c6d4020, type: 2}
   health: 0
+  hasTarget: 0
+  hasHealth: 0
+  target: {fileID: 0}
+  hitParticleSystem: {fileID: 0}
 --- !u!1 &3449268139185194069
 GameObject:
   m_ObjectHideFlags: 0

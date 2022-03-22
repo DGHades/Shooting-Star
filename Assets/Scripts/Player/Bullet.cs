@@ -9,12 +9,21 @@ public class Bullet : MonoBehaviour
     public bool hasHealth = false;
     public GameObject target = null;
     public ParticleSystem hitParticleSystem;
+    public bool markedForDestruction = false;
     /// <summary>
     /// Update is called every frame, if the MonoBehaviour is enabled.
     /// </summary>
     void Update()
     {
-        blueprint.Move(this);
+        if (markedForDestruction)
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+
+            blueprint.Move(this);
+        }
     }
 
     public virtual void OnTriggerEnter2D(Collider2D coll)
@@ -25,9 +34,9 @@ public class Bullet : MonoBehaviour
         hitParticleSystem.Play();
         if (coll.gameObject.tag.StartsWith("Border"))
         {
-            Destroy(this);
+            Destroy(gameObject);
         }
-        else
+        else if (!markedForDestruction)
         {
             blueprint.OnTargetHit(coll, this);
         }
@@ -36,5 +45,22 @@ public class Bullet : MonoBehaviour
     public void SetBlueprint(BaseBulletBlueprint blueprint)
     {
         this.blueprint = blueprint;
+    }
+    public void SetTargetNull()
+    {
+        markedForDestruction = true;
+        target = null;
+    }
+    public bool CheckTarget()
+    {
+        if (target == null)
+        {
+            markedForDestruction = true;
+            return false;
+        }
+        else
+        {
+            return true;
+        }
     }
 }

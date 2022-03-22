@@ -7,7 +7,7 @@ public class AutoTargetingBulletBlueprint : BaseBulletBlueprint
     {
         attackDmg = 100;
         cooldown = 0.2f;
-        movementSpeed = 0.3f;
+        movementSpeed = 0.03f;
         bulletHealth = 0;
         bulletForce = 100;
         bullet.target = target;
@@ -28,7 +28,7 @@ public class AutoTargetingBulletBlueprint : BaseBulletBlueprint
     // Move is called once per frame
     public override void Move(Bullet bullet)
     {
-
+        if (!bullet.CheckTarget()) return;
         bullet.GetComponent<Rigidbody2D>().AddForce((bullet.target.transform.position - bullet.transform.position) * bulletForce);
         Vector3 dir = bullet.target.transform.position - bullet.transform.position;
         float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
@@ -39,14 +39,25 @@ public class AutoTargetingBulletBlueprint : BaseBulletBlueprint
     public override void OnTargetHit(Collider2D coll, Bullet bullet)
     {
         //Check with what the Bullet Collided
-        if (coll.gameObject.tag == bullet.target.gameObject.tag)
+        if (bullet.CheckTarget())
         {
-            //Get Health component of Object and use GotHit();
-            Enemy enemy = coll.gameObject.GetComponent<Enemy>();
-            enemy.GotHit(attackDmg);
-            TakeDamage(enemy.bulletDamage, bullet);
+            if (coll.gameObject.tag == bullet.target.gameObject.tag)
+            {
+                //Get Health component of Object and use GotHit();
+                Enemy enemy = coll.gameObject.GetComponent<Enemy>();
+                enemy.GotHit(attackDmg);
+                TakeDamage(enemy.bulletDamage, bullet);
+
+            }
 
         }
+        else
+        {
+            bullet.SetTargetNull();
+
+        }
+
+
     }
 
 }
