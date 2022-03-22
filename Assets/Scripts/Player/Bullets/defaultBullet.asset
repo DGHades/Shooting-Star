@@ -15,6 +15,5 @@ MonoBehaviour:
   attackDmg: 150
   cooldown: 1
   movementSpeed: 50
-  bulletHealth: 1000
+  bulletHealth: 100
   bulletForce: 200
-  playerTransform: {fileID: 0}
