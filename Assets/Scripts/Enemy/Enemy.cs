@@ -11,6 +11,7 @@ public class Enemy : MonoBehaviour
     public ParticleSystem destroyParticleSystem;
     public ParticleSystem spawnParticleSystem;
     public IMovementEnemy movementScript;
+    public GameObject target;
     public SpriteRenderer sr;
     public int spawnAmount;
     public int waveAmount;
@@ -23,10 +24,14 @@ public class Enemy : MonoBehaviour
     public void Awake()
     {
         //REWORK
-
+        
         movementScript = (IMovementEnemy)System.Reflection.Assembly.GetAssembly(Type.GetType("Move" + gameObject.tag)).CreateInstance("Move" + gameObject.tag);
     }
 
+    public void Start()
+    {
+        target = GameObject.FindGameObjectWithTag("Player");
+    }
     // Is called when a bullet hits the enemy in BaseBullet.cs
     public void GotHit(float damage)
     {
@@ -43,7 +48,6 @@ public class Enemy : MonoBehaviour
             GlobalVariable.fillbarValue += 2;
             GlobalVariable.money += 1;
         }
-
     }
     /// <summary>
     /// This function is called every fixed framerate frame, if the MonoBehaviour is enabled.
@@ -51,8 +55,7 @@ public class Enemy : MonoBehaviour
     void FixedUpdate()
     {
         if (movementScript != null && isSpawned && !stopRotation)
-            movementScript.Move(gameObject);
-       
+            movementScript.Move(gameObject, target);
     }
     public void unlockEnemyWhenSpawned()
     {

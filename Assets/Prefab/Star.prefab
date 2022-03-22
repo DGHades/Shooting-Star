@@ -9,6 +9,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 361112160141510741, guid: 693b8d91087e96148ba9dbda35a5e62c,
         type: 3}
+      propertyPath: EmissionModule.enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 361112160141510741, guid: 693b8d91087e96148ba9dbda35a5e62c,
+        type: 3}
       propertyPath: ShapeModule.radius.value
       value: 0.2
       objectReference: {fileID: 0}
@@ -106,7 +111,7 @@ PrefabInstance:
     - target: {fileID: 411108840148918083, guid: 693b8d91087e96148ba9dbda35a5e62c,
         type: 3}
       propertyPath: m_Name
-      value: MovingTargetStar Variant
+      value: Star
       objectReference: {fileID: 0}
     - target: {fileID: 411108840148918083, guid: 693b8d91087e96148ba9dbda35a5e62c,
         type: 3}
@@ -117,6 +122,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TagString
       value: TargetStar
+      objectReference: {fileID: 0}
+    - target: {fileID: 2950279469468323507, guid: 693b8d91087e96148ba9dbda35a5e62c,
+        type: 3}
+      propertyPath: EmissionModule.enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4251086524303058138, guid: 693b8d91087e96148ba9dbda35a5e62c,
         type: 3}

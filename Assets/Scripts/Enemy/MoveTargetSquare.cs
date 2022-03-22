@@ -4,7 +4,7 @@
 public class MoveTargetSquare : IMovementEnemy
 {
     // Move is called once per frame
-    public void Move(GameObject gameObject)
+    public void Move(GameObject gameObject, GameObject target)
     {
         //rotates 50 degrees per second around z axis
         gameObject.transform.Rotate(0, 0, 50 * Time.deltaTime);

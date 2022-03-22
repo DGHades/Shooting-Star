@@ -3,7 +3,7 @@
 public class MoveTargetStar : IMovementEnemy
 {
     // Move is called once per frame
-    public void Move(GameObject gameObject)
+    public void Move(GameObject gameObject, GameObject target)
     {
         //rotates 200 degrees per second around z axis
         gameObject.transform.Rotate(0, 0, 200 * Time.deltaTime);
