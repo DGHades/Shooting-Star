@@ -14,8 +14,6 @@ public class Enemy : MonoBehaviour
     public GameObject target;
     public SpriteRenderer sr;
     public GameObject Camera;
-    public AnalogGlitch Glitch;
-    public Spawner Spawner;
 
     public int spawnAmount;
     public int spawnEachWave;

@@ -8,6 +8,6 @@ public class MoneyGetter : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Money.text = PlayerPrefs.GetInt("Revenue").ToString();
+        Money.text = "Money: " + PlayerPrefs.GetInt("Revenue").ToString();
     }
 }
