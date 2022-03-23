@@ -15,6 +15,7 @@ public class Enemy : MonoBehaviour
     public SpriteRenderer sr;
     public GameObject Camera;
     public AnalogGlitch Glitch;
+    public Spawner Spawner;
 
     public int spawnAmount;
     public int spawnEachWave;
@@ -27,7 +28,6 @@ public class Enemy : MonoBehaviour
     public void Awake()
     {
         //REWORK
-
         movementScript = (IMovementEnemy)System.Reflection.Assembly.GetAssembly(Type.GetType("Move" + gameObject.tag)).CreateInstance("Move" + gameObject.tag);
     }
 
@@ -55,6 +55,7 @@ public class Enemy : MonoBehaviour
             GlobalVariable.score += 2;
             GlobalVariable.fillbarValue += 2;
             GlobalVariable.money += 1;
+            
         }
     }
 

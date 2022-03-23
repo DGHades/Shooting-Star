@@ -8,6 +8,7 @@ public class ManageWaves : MonoBehaviour
     public GameObject Menue;
     public GameObject Player;
     public Spawner Spawner;
+    public GameObject[] MyGameObjectList;
     // Start is called before the first frame update
     void Start()
     {
@@ -30,11 +31,24 @@ public class ManageWaves : MonoBehaviour
             Menue.SetActive(true);
             Player.transform.position = new Vector3(0,0,0);
 
+            GlobalVariable.startGame = false;
+            GlobalVariable.stopGame = true;
+
             //KILL ALL ENEMYS
-            Spawner.EnemyObject.Clear();
+            FillArray("Square");
+            FillArray("Triangle");
+            FillArray("Circle");
+            FillArray("Star");
         }
     }
-
+    void FillArray(string name)
+    {
+        MyGameObjectList = GameObject.FindGameObjectsWithTag("Target" + name);
+        for (int i = 0; i < MyGameObjectList.Length; i++)
+        {
+            Destroy(MyGameObjectList[i]);
+        }
+    }
     //Need better Solution. For TestCases it works fine 
     public IEnumerator Shake(float duration)
     {
