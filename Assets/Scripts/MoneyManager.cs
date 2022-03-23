@@ -4,7 +4,11 @@ using UnityEngine;
 
 public class MoneyManager : MonoBehaviour
 {
-    public int MoneyPayment = 1000;
+    public int _MoneyPayment = 1000;
+    public int MoneyPayment {
+            get { return _MoneyPayment; }
+            set { _MoneyPayment = value; }
+        }
     public void PayMent()
     {
         StartCoroutine(TakeMoney());

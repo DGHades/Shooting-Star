@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 public class FadeOut : MonoBehaviour
 {
     public GameObject CanvasMenue;
+    public MoneyManager MoneyManager;
     public void StartGameWithUpgrade()
     {
         GlobalVariable.ItemSelected = true;
@@ -22,7 +23,7 @@ public class FadeOut : MonoBehaviour
 
     IEnumerator DoFadeWithUpGrade()
     {
-        if (PlayerPrefs.GetInt("Revenue") > 1000)
+        if (PlayerPrefs.GetInt("Revenue") > MoneyManager.MoneyPayment)
         {
             StartCoroutine(StartGame());
             yield return null;

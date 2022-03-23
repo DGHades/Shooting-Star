@@ -4,10 +4,14 @@ using UnityEngine;
 public class ManageWaves : MonoBehaviour
 {
     public AnalogGlitch Glitch;
+    public MoneyManager MoneyManager;
+    public GameObject Menue;
+    public GameObject Player;
+    public Spawner Spawner;
     // Start is called before the first frame update
     void Start()
     {
-
+        
     }
 
     // Update is called once per frame
@@ -22,8 +26,16 @@ public class ManageWaves : MonoBehaviour
 
             float duration = 0.1f;
             StartCoroutine(Shake(duration));
+            MoneyManager.MoneyPayment = 0;
+            Menue.SetActive(true);
+            Player.transform.position = new Vector3(0,0,0);
+
+            //KILL ALL ENEMYS
+            Spawner.EnemyObject.Clear();
         }
     }
+
+    //Need better Solution. For TestCases it works fine 
     public IEnumerator Shake(float duration)
     {
         float elapsedTime = 0;
