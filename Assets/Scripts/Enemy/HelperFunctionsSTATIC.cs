@@ -25,9 +25,6 @@ public static class HelperFunctionsSTATIC
        
         if (!destroyed)
         {
-
-       
-
         var dur = enemy.destroyParticleSystem.main.duration;
         var em = enemy.destroyParticleSystem.emission;
 
@@ -36,6 +33,7 @@ public static class HelperFunctionsSTATIC
 
         Object.Destroy(enemy.sr);
         enemy.Invoke(nameof(enemy.destroyTarget), dur);
+        
         }
     }
 }
