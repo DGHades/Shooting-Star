@@ -59,6 +59,10 @@ public class BaseBulletBlueprint : ScriptableObject
             enemy.GotHit(attackDmg);
             if (bullet.hasHealth)
                 TakeDamage(enemy.bulletDamage, bullet);
+            else
+            {
+                bullet.markedForDestruction = true;
+            }
         }
     }
     public virtual void TakeDamage(float bulletDamage, Bullet bullet)

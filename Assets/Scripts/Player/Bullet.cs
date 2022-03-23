@@ -9,48 +9,58 @@ public class Bullet : MonoBehaviour
     public bool hasHealth = false;
     public GameObject target = null;
     public ParticleSystem hitParticleSystem;
-    
     public bool markedForDestruction = false;
     /// <summary>
     /// Update is called every frame, if the MonoBehaviour is enabled.
     /// </summary>
     void Update()
     {
-        if (!markedForDestruction)
-        {
-            blueprint.Move(this);
-        }
+       
+
     }
     /// <summary>
     /// This function is called every fixed framerate frame, if the MonoBehaviour is enabled.
     /// </summary>
     void FixedUpdate()
     {
-        if (markedForDestruction)
+        
+        
+        if (!markedForDestruction)
         {
-            Destroy(GetComponent<SpriteRenderer>());
-            Destroy(GetComponent<Collider2D>());
-            Destroy(GetComponent<TrailRenderer>());
-            Destroy(GetComponent<Rigidbody2D>());
-            var dur = hitParticleSystem.main.duration;
-            var em = hitParticleSystem.emission;
-            em.enabled = false;
-            Invoke(nameof(DestroyBullet), dur);
-
+            blueprint.Move(this);
         }
+    }
+
+    private void SplashAnim() 
+    {
+        Destroy(GetComponent<SpriteRenderer>());
+        Destroy(GetComponent<Collider2D>());
+        Destroy(GetComponent<TrailRenderer>());
+        Destroy(GetComponent<Rigidbody2D>());
+        var dur = hitParticleSystem.main.duration;
+        Invoke(nameof(DestroyBullet), dur);
+
     }
     public virtual void OnTriggerEnter2D(Collider2D coll)
     {
-        var em = hitParticleSystem.emission;
-        em.enabled = true;
-        hitParticleSystem.Play();
+       
         if (coll.gameObject.tag == "Border")
         {
-            Destroy(gameObject);
+            var em = hitParticleSystem.emission;
+            em.enabled = true;
+            hitParticleSystem.Play();
+            markedForDestruction = true;
         }
         else if (!markedForDestruction)
         {
             blueprint.OnTargetHit(coll, this);
+        }
+        if (markedForDestruction)
+        {
+            var em = hitParticleSystem.emission;
+            em.enabled = true;
+            hitParticleSystem.Play();
+            SplashAnim();
         }
 
     }
