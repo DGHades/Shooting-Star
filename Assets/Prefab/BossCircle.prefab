@@ -9889,9 +9889,10 @@ MonoBehaviour:
   sr: {fileID: 5642294513713129416}
   Camera: {fileID: 0}
   Glitch: {fileID: 0}
+  Spawner: {fileID: 0}
   spawnAmount: 2
   spawnEachWave: 2
-  health: 200
+  health: 700
   bulletDamage: 50
   isSpawned: 0
   isAnimated: 1
