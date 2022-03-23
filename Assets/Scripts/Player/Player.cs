@@ -8,11 +8,39 @@ public class Player : MonoBehaviour
     public Canvas BeforeStartMenue;
     public float attackDmg, attackspeed;
     Vector3 _origPos = new Vector3();
+    public ParticleSystem spawnBurstParticleSystem;
+    public ParticleSystem spawnExplosionParticleSystem;
+    bool once = false;
 
     private void Start()
     {
         BeforeStartMenue.gameObject.SetActive(true);
         BeforeDieMenue.gameObject.SetActive(false);
+    }
+
+    private void StartAnim()
+    {
+        
+        var em = spawnBurstParticleSystem.emission;
+
+        em.enabled = true;
+        spawnBurstParticleSystem.Play();
+       
+       
+         em = spawnExplosionParticleSystem.emission;
+
+        em.enabled = true;
+        spawnExplosionParticleSystem.Play();
+
+        Invoke(nameof(StopAnim), 0.2f);
+        
+    }
+    private void StopAnim() 
+    {
+        var em = spawnBurstParticleSystem.emission;
+        em.enabled = false;
+        em = spawnExplosionParticleSystem.emission;
+        em.enabled = false;
     }
     private void OnTriggerExit2D(Collider2D other)
     {
@@ -81,9 +109,17 @@ public class Player : MonoBehaviour
     // Controls
     void FixedUpdate()
     {
+        if (GlobalVariable.startGame && !once)
+        {
+            StartAnim();
+            once = true;
+        }
+        
+
+       
         //Movement
         //Block input on Border hit
-        if (GlobalVariable.startGame == true)
+        if (GlobalVariable.startGame)
         {
         if (Input.GetKey(KeyCode.LeftArrow) && stopLeft == false)
         {
@@ -102,6 +138,7 @@ public class Player : MonoBehaviour
             gameObject.transform.Translate(Vector3.right * 0.1f);
         }
         }
+        
         //Change player looking direction in moving direction
         Vector3 moveDirection = playerOptic.gameObject.transform.position - _origPos;
         //only do if player is moving
@@ -114,5 +151,6 @@ public class Player : MonoBehaviour
         //position behind player looking direction because calculation actually 
         //calculates from != player moving direction
         _origPos = playerOptic.gameObject.transform.position;
+
     }
 }

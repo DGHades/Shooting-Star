@@ -41,5 +41,6 @@ public class FadeOut : MonoBehaviour
         canvasGroup.alpha = 1;
         GlobalVariable.startGame = true;
         yield return null;
+       
     }
 }
