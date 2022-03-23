@@ -5099,6 +5099,7 @@ MonoBehaviour:
   - {fileID: 3985650195670458552, guid: 900c0f489b97f024e8633fa558da90d6, type: 3}
   - {fileID: 8123210353723346397, guid: 08f093aa506b2854880a39bdcb581762, type: 3}
   - {fileID: 9219459436689050753, guid: a8315eeb650a9c941b3589415d2510f4, type: 3}
+  - {fileID: 8083559272108565281, guid: ce407c25c98ec7342a43f0a10a67f622, type: 3}
   spawner: {fileID: 105490733}
   manageWaves: {fileID: 1268685450}
 --- !u!4 &1246367665
