@@ -28,22 +28,21 @@ public class Bullet : MonoBehaviour
     {
         if (markedForDestruction)
         {
+            var em = hitParticleSystem.emission;
+            em.enabled = true;
+            hitParticleSystem.Play();
             Destroy(GetComponent<SpriteRenderer>());
             Destroy(GetComponent<Collider2D>());
             Destroy(GetComponent<TrailRenderer>());
             Destroy(GetComponent<Rigidbody2D>());
             var dur = hitParticleSystem.main.duration;
-            var em = hitParticleSystem.emission;
-            em.enabled = false;
             Invoke(nameof(DestroyBullet), dur);
 
         }
     }
     public virtual void OnTriggerEnter2D(Collider2D coll)
     {
-        var em = hitParticleSystem.emission;
-        em.enabled = true;
-        hitParticleSystem.Play();
+       
         if (coll.gameObject.tag == "Border")
         {
             Destroy(gameObject);
