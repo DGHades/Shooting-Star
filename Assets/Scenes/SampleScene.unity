@@ -1490,6 +1490,7 @@ GameObject:
   - component: {fileID: 284161363}
   - component: {fileID: 284161365}
   - component: {fileID: 284161364}
+  - component: {fileID: 284161366}
   m_Layer: 0
   m_Name: OnSpawnBurst
   m_TagString: Untagged
@@ -6342,6 +6343,18 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vectorLabel1_3: W
+--- !u!114 &284161366
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 284161362}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17e4c617889aafb40a968f337d50dd02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &311835321
 GameObject:
   m_ObjectHideFlags: 0
@@ -8702,7 +8715,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.50253296, y: -50.477737}
+  m_AnchoredPosition: {x: -0.5025635, y: -50.477722}
   m_SizeDelta: {x: -15.145, y: 19.788}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &936137427
@@ -9472,6 +9485,7 @@ GameObject:
   - component: {fileID: 1176665537}
   - component: {fileID: 1176665539}
   - component: {fileID: 1176665538}
+  - component: {fileID: 1176665540}
   m_Layer: 0
   m_Name: OnSpawnExplosion
   m_TagString: Untagged
@@ -14324,6 +14338,18 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vectorLabel1_3: W
+--- !u!114 &1176665540
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1176665536}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17e4c617889aafb40a968f337d50dd02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1245869835
 GameObject:
   m_ObjectHideFlags: 0
