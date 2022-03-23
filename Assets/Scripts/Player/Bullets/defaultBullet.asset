@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 875ea65ad6f5aa24e9b5b2854d0b155f, type: 3}
   m_Name: defaultBullet
   m_EditorClassIdentifier: 
-  attackDmg: 100
+  attackDmg: 150
   cooldown: 1
   movementSpeed: 50
-  bulletHealth: 50
-  bulletForce: 100
+  bulletHealth: 100
+  bulletForce: 200
