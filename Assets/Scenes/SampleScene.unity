@@ -7879,6 +7879,7 @@ MonoBehaviour:
   attackspeed: 0
   spawnBurstParticleSystem: {fileID: 284161365}
   spawnExplosionParticleSystem: {fileID: 1176665539}
+  analog: {fileID: 519420030}
 --- !u!1 &677486789
 GameObject:
   m_ObjectHideFlags: 0
@@ -16164,7 +16165,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CanvasMenue: {fileID: 1860989276}
   MoneyManager: {fileID: 1860989283}
-  playerManagerObject: {fileID: 644140746}
 --- !u!225 &1860989282
 CanvasGroup:
   m_ObjectHideFlags: 0

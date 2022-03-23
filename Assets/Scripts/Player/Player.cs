@@ -11,6 +11,7 @@ public class Player : MonoBehaviour
     public ParticleSystem spawnBurstParticleSystem;
     public ParticleSystem spawnExplosionParticleSystem;
     bool once = false;
+    public AnalogGlitch analog;
 
     private void Start()
     {
@@ -20,7 +21,8 @@ public class Player : MonoBehaviour
 
     private void StartAnim()
     {
-        
+        analog.colorDrift = 1;
+        analog.scanLineJitter = 0.8f;
         var em = spawnBurstParticleSystem.emission;
 
         em.enabled = true;
@@ -41,6 +43,8 @@ public class Player : MonoBehaviour
         em.enabled = false;
         em = spawnExplosionParticleSystem.emission;
         em.enabled = false;
+        analog.colorDrift = 0;
+        analog.scanLineJitter = 0;
     }
     private void OnTriggerExit2D(Collider2D other)
     {
