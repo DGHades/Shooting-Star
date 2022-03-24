@@ -21,6 +21,7 @@ TagManager:
   - TargetBossSquare
   - TargetTriangle
   - TargetCircle
+  - MoneyText
   layers:
   - Default
   - TransparentFX

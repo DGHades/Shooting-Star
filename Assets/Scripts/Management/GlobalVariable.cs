@@ -14,7 +14,7 @@ public class GlobalVariable : MonoBehaviour
     public static float fillbarMin;
     public static float fillbarValue;
     public static int score;
-    public static int money;
+    
     public static int waveCount;
     public static bool ItemSelected;
     public static bool startGame;
@@ -39,7 +39,7 @@ public class GlobalVariable : MonoBehaviour
         startGame = false;
         stopGame = false;
         waveCount = 1;
-        money = 0;
+   
     }
 
     void Update()

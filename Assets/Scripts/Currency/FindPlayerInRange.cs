@@ -5,7 +5,7 @@ using UnityEngine;
 public class FindPlayerInRange : MonoBehaviour
 {
     bool found = false;
-    public float moveSpeed = 0.5f;
+    public float moveSpeed = 1f;
     private Rigidbody2D rb;
     public GameObject Gem;
     // Start is called before the first frame update
@@ -43,6 +43,6 @@ public class FindPlayerInRange : MonoBehaviour
         
 
         rb.MovePosition(Gem.transform.position + (direction * moveSpeed * Time.deltaTime));
-        moveSpeed += 0.01f;
+        moveSpeed += 0.1f;
     }
 }

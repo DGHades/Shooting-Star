@@ -24,7 +24,7 @@ public class TextManager : MonoBehaviour
         }
         if (GlobalVariable.stopGame == true) //Kinda Weird Solution
         {
-            PlayerPrefs.SetInt("Revenue", GlobalVariable.money + PlayerPrefs.GetInt("Revenue"));
+            
             Revenue.text = "Revenue: " + PlayerPrefs.GetInt("Revenue");
             GlobalVariable.stopGame = false;
         }

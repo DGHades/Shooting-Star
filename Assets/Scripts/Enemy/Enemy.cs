@@ -52,7 +52,7 @@ public class Enemy : MonoBehaviour
             destroyed = true;
             GlobalVariable.score += 2;
             GlobalVariable.fillbarValue += 2;
-            GlobalVariable.money += 1;
+            
             
         }
     }
