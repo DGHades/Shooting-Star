@@ -3,7 +3,14 @@ guid: d0a64d0be0c64349aa5d5ac7cbdc04cb
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - particleObject: {instanceID: 0}
+  - destroyParticleSystem: {instanceID: 0}
+  - spawnParticleSystem: {instanceID: 0}
+  - target: {instanceID: 0}
+  - sr: {instanceID: 0}
+  - Camera: {instanceID: 0}
+  - Gem: {fileID: 7725604493697832475, guid: b5908b08f3cd1f1498138e5676577ad2, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

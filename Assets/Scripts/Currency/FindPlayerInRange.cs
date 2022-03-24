@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class FindPlayerInRange : MonoBehaviour
 {
-    bool found = false;
     public float moveSpeed = 1f;
     private Rigidbody2D rb;
     public GameObject Gem;
     // Start is called before the first frame update
     void Start()
     {
-        
+
+        Gem.GetComponent<Rigidbody2D>().AddForce(Random.onUnitSphere * 0.004f);
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -37,7 +37,7 @@ public class FindPlayerInRange : MonoBehaviour
     {
         rb = Gem.GetComponent<Rigidbody2D>();
         Vector3 direction = target.transform.position - Gem.transform.position;
-        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+        
         
         direction.Normalize();
         

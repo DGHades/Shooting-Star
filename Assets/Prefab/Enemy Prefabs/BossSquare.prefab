@@ -5016,8 +5016,7 @@ MonoBehaviour:
   target: {fileID: 0}
   sr: {fileID: 8039462726581228792}
   Camera: {fileID: 0}
-  Glitch: {fileID: 0}
-  Spawner: {fileID: 0}
+  Gem: {fileID: 7725604493697832475, guid: b5908b08f3cd1f1498138e5676577ad2, type: 3}
   spawnAmount: 1
   spawnEachWave: 1
   health: 500

@@ -14,7 +14,7 @@ public class Enemy : MonoBehaviour
     public GameObject target;
     public SpriteRenderer sr;
     public GameObject Camera;
-
+    public GameObject Gem;
     public int spawnAmount;
     public int spawnEachWave;
     public float health;
@@ -49,6 +49,15 @@ public class Enemy : MonoBehaviour
             stopRotation = true;
             lockEnemy();
             Destroy(GetComponent<Collider2D>());
+            Destroy(GetComponent<Rigidbody2D>());
+            
+            for (int i = 0; i < 3; i++)
+            {
+                float rangeX = UnityEngine.Random.Range(-0.1f, 0.1f);
+                float rangeY = UnityEngine.Random.Range(-0.1f, 0.1f);
+                Vector3 newPosition = new Vector3(transform.position.x + rangeX, transform.position.y + rangeY);
+                GameObject newEntity = Instantiate(Gem, newPosition, Quaternion.identity);
+            }
             HelperFunctionsSTATIC.DestroyAnim(this, destroyed);
             destroyed = true;
             GlobalVariable.score += 2;
@@ -100,6 +109,7 @@ public class Enemy : MonoBehaviour
     public void destroyTarget()
     {
         //Seperated for future uses
+        
         
         Destroy(gameObject);
     }

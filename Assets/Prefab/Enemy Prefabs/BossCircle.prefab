@@ -5016,6 +5016,7 @@ MonoBehaviour:
   target: {fileID: 0}
   sr: {fileID: 5642294513713129416}
   Camera: {fileID: 0}
+  Gem: {fileID: 7725604493697832475, guid: b5908b08f3cd1f1498138e5676577ad2, type: 3}
   spawnAmount: 2
   spawnEachWave: 2
   health: 700
@@ -5049,7 +5050,7 @@ Transform:
   m_GameObject: {fileID: 7900273341481275392}
   m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.94, y: 0.34989995, z: 1.2337999}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7883703568998264070}
   m_RootOrder: 1
@@ -5062,7 +5063,7 @@ ParticleSystem:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7900273341481275392}
   serializedVersion: 7
-  lengthInSec: 2
+  lengthInSec: 1.25
   simulationSpeed: 1
   stopAction: 0
   cullingMode: 0
@@ -5137,7 +5138,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 2
+      scalar: 1.25
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -5768,7 +5769,7 @@ ParticleSystem:
     sphericalDirectionAmount: 0
     randomPositionAmount: 0
     radius:
-      value: 4
+      value: 3
       mode: 0
       spread: 0
       speed:
