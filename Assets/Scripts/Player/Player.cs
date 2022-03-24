@@ -91,6 +91,7 @@ public class Player : MonoBehaviour
             stopRight = true;
             BeforeDieMenue.gameObject.SetActive(true);
             GlobalVariable.stopGame = true;
+            gameObject.SetActive(false);
         }
         if (collision.gameObject.name == "BorderTop")
         {
