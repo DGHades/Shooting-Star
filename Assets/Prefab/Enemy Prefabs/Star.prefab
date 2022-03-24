@@ -189,6 +189,51 @@ PrefabInstance:
       propertyPath: spawnEachWave
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4715871432662053284, guid: 693b8d91087e96148ba9dbda35a5e62c,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 0}
+    - {fileID: 4715871432662053284, guid: 693b8d91087e96148ba9dbda35a5e62c, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 693b8d91087e96148ba9dbda35a5e62c, type: 3}
+--- !u!1 &2417711326639808735 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 411108840148918083, guid: 693b8d91087e96148ba9dbda35a5e62c,
+    type: 3}
+  m_PrefabInstance: {fileID: 2610366960211640220}
+  m_PrefabAsset: {fileID: 0}
+--- !u!60 &2984174628712750730
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2417711326639808735}
+  m_Enabled: 0
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.4977789, y: 0.49717188}
+      - {x: 0.0029821396, y: 0.2531457}
+      - {x: -0.50381136, y: 0.505216}
+      - {x: -0.25044632, y: -0.006341934}
+      - {x: -0.503186, y: -0.5063266}
+      - {x: 0.0002641678, y: -0.25604486}
+      - {x: 0.49752885, y: -0.4978422}
+      - {x: 0.2492652, y: -0.0010471642}

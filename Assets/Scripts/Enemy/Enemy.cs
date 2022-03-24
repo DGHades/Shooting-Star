@@ -92,13 +92,13 @@ public class Enemy : MonoBehaviour
     }
     public void unlockEnemyWhenSpawned()
     {
-        gameObject.GetComponent<CircleCollider2D>().enabled = true;
+        gameObject.GetComponent<Collider2D>().enabled = true;
         isSpawned = true;
         movementScript.Direction(gameObject);
     }
     public void lockEnemy()
     {
-        gameObject.GetComponent<CircleCollider2D>().enabled = false;
+        gameObject.GetComponent<Collider2D>().enabled = false;
         isSpawned = false;
         gameObject.GetComponent<Rigidbody2D>().velocity = new Vector3(0, 0);
     }
