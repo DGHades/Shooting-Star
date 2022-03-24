@@ -31,6 +31,7 @@ public class FadeOut : MonoBehaviour
     }
     IEnumerator StartGame()
     {
+        FindPlayerInRange.waveCleared = false;
         CanvasGroup canvasGroup = GetComponent<CanvasGroup>();
         while (canvasGroup.alpha > 0)
         {

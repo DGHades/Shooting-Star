@@ -29,17 +29,18 @@ public class ManageWaves : MonoBehaviour
             StartCoroutine(Shake(duration));
             MoneyManager.MoneyPayment = 0;
             Menue.SetActive(true);
-            Player.transform.position = new Vector3(0,0,0);
+            
 
             GlobalVariable.startGame = false;
             GlobalVariable.stopGame = true;
-
+            FindPlayerInRange.waveCleared = true;
             //KILL ALL ENEMYS
             FillArray("Square");
             FillArray("Triangle");
             FillArray("Circle");
             FillArray("Star");
         }
+        
     }
     void FillArray(string name)
     {

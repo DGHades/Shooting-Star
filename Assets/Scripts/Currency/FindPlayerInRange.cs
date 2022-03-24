@@ -5,12 +5,15 @@ using UnityEngine;
 public class FindPlayerInRange : MonoBehaviour
 {
     public float moveSpeed = 1f;
+    float moveSpeedScale = 0.1f;
     private Rigidbody2D rb;
     public GameObject Gem;
+    public static bool waveCleared = false;
+    Vector3 startScale;
     // Start is called before the first frame update
     void Start()
     {
-
+        startScale = gameObject.GetComponent<Collider2D>().transform.localScale;
         Gem.GetComponent<Rigidbody2D>().AddForce(Random.onUnitSphere * 0.004f);
     }
     private void OnTriggerEnter2D(Collider2D collision)
@@ -30,7 +33,16 @@ public class FindPlayerInRange : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        
+        if (waveCleared)
+        {
+            gameObject.GetComponent<Collider2D>().transform.localScale = new Vector3(100f, 100f);
+            moveSpeedScale = 0.75f;
+        }
+        else
+        {
+            gameObject.GetComponent<Collider2D>().transform.localScale = startScale;
+            moveSpeedScale = 0.1f;
+        }
     }
 
     private void Move(GameObject target) 
@@ -43,6 +55,6 @@ public class FindPlayerInRange : MonoBehaviour
         
 
         rb.MovePosition(Gem.transform.position + (direction * moveSpeed * Time.deltaTime));
-        moveSpeed += 0.1f;
+        moveSpeed += moveSpeedScale;
     }
 }

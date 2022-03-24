@@ -39,6 +39,7 @@ public class AddCurrencyOnPlayerHit : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        
 
     }
 }

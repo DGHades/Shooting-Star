@@ -27,7 +27,7 @@ public class GlobalVariable : MonoBehaviour
     Vector2 PlayerPos;
     void Start()
     {
-        //Set every Gloabl Variable back to standard because
+        //Set every Global Variable back to standard because
         //Global Variable script is started on Respawn
         attackspeed = 0.1f;
         attackDmg = 100;

@@ -11,6 +11,7 @@ public class Player : MonoBehaviour
     public ParticleSystem spawnBurstParticleSystem;
     public ParticleSystem spawnExplosionParticleSystem;
     bool once = false;
+    bool onceTwo = false;
     public AnalogGlitch analog;
 
     private void Start()
@@ -118,7 +119,15 @@ public class Player : MonoBehaviour
             StartAnim();
             once = true;
         }
-        
+        if (FindPlayerInRange.waveCleared && !onceTwo)
+        {
+            StartAnim();
+            onceTwo = true;
+        }
+        if (!FindPlayerInRange.waveCleared)
+        {
+            onceTwo = false;
+        }
 
        
         //Movement

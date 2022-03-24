@@ -13,6 +13,15 @@ public class SpawnAnimPositionSetter : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        gameObject.transform.position = new Vector3(0, 0);
+        if (!FindPlayerInRange.waveCleared)
+        {
+            gameObject.transform.position = new Vector3(0, 0);
+        }
+        else
+        {
+            GameObject player = GameObject.FindGameObjectWithTag("Player");
+            gameObject.transform.position = new Vector3(player.transform.position.x, player.transform.position.y);
+        }
+        
     }
 }
