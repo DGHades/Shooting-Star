@@ -48,6 +48,7 @@ public class Enemy : MonoBehaviour
             StartCoroutine(shake(duration,magnitude));
             stopRotation = true;
             lockEnemy();
+            Destroy(GetComponent<Collider2D>());
             HelperFunctionsSTATIC.DestroyAnim(this, destroyed);
             destroyed = true;
             GlobalVariable.score += 2;
@@ -99,6 +100,7 @@ public class Enemy : MonoBehaviour
     public void destroyTarget()
     {
         //Seperated for future uses
+        
         Destroy(gameObject);
     }
 }
