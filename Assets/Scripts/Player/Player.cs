@@ -70,7 +70,9 @@ public class Player : MonoBehaviour
         }
         // Bit shift the index of the Enemy layer (8) to get a bit mask
         int layerMask = 1 << 8;
-        gun.shoot(Physics2D.OverlapCircle(gameObject.transform.position, 5f, layerMask));
+        Collider2D coll = Physics2D.OverlapCircle(gameObject.transform.position, 5f, layerMask);
+        if (coll != null)
+            gun.shoot(coll.gameObject);
 
         //Movement
         //Block input on Border hit
