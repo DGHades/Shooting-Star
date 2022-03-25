@@ -23,6 +23,7 @@ TagManager:
   - TargetCircle
   - MoneyText
   - Gems
+  - Trigger
   layers:
   - Default
   - TransparentFX

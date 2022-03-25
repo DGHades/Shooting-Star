@@ -15,6 +15,7 @@ public class Enemy : MonoBehaviour
     public SpriteRenderer sr;
     public GameObject Camera;
     public GameObject Gem;
+    public GameObject Trigger;
     public int spawnAmount;
     public int spawnEachWave;
     public float health;
@@ -33,6 +34,7 @@ public class Enemy : MonoBehaviour
     {
         target = GameObject.FindGameObjectWithTag("Player");
         Camera = GameObject.FindGameObjectWithTag("MainCamera");
+        Trigger = GameObject.FindGameObjectWithTag("Trigger");
     }
     // Is called when a bullet hits the enemy in BaseBullet.cs
     public void GotHit(float damage)
@@ -93,6 +95,7 @@ public class Enemy : MonoBehaviour
     public void unlockEnemyWhenSpawned()
     {
         gameObject.GetComponent<Collider2D>().enabled = true;
+        Destroy(Trigger);
         isSpawned = true;
         movementScript.Direction(gameObject);
     }

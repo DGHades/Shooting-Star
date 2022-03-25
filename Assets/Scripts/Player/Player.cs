@@ -6,18 +6,21 @@ public class Player : MonoBehaviour
     public GameObject playerOptic;
     public Canvas BeforeDieMenue;
     public Canvas BeforeStartMenue;
+    public ParticleSystem spawnBurstParticleSystem;
+    public AnalogGlitch analog;
+    public ParticleSystem spawnExplosionParticleSystem;
+    public GameObject EnemyPos;
+    public PolygonCollider2D test;
     public float attackDmg, attackspeed;
     Vector3 _origPos = new Vector3();
-    public ParticleSystem spawnBurstParticleSystem;
-    public ParticleSystem spawnExplosionParticleSystem;
     bool once = false;
     bool onceTwo = false;
-    public AnalogGlitch analog;
 
     private void Start()
     {
         BeforeStartMenue.gameObject.SetActive(true);
         BeforeDieMenue.gameObject.SetActive(false);
+        test = gameObject.GetComponent<PolygonCollider2D>();
     }
 
     private void StartAnim()
@@ -75,10 +78,18 @@ public class Player : MonoBehaviour
             //set rotation
             playerOptic.transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
         }
+        if (other.gameObject.tag == "Trigger")
+        {
+                analog.scanLineJitter = 0;
+        }
     }
 
     void OnTriggerEnter2D(Collider2D collision)
     {
+        if (collision.gameObject.tag.StartsWith("Trigger"))
+        {
+                analog.scanLineJitter = 0.3f;
+        }
         //On Collision with Target, Player Object gest Destroyed aka dies
         //and Activate Respawn Button/Menu before
         if (collision.gameObject.tag.StartsWith("Target"))
@@ -115,6 +126,7 @@ public class Player : MonoBehaviour
     // Controls
     void FixedUpdate()
     {
+        test.transform.rotation = gameObject.transform.rotation;
         if (GlobalVariable.startGame && !once)
         {
             StartAnim();
@@ -129,8 +141,6 @@ public class Player : MonoBehaviour
         {
             onceTwo = false;
         }
-
-       
         //Movement
         //Block input on Border hit
         if (GlobalVariable.startGame)
