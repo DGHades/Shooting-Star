@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4206029432937460227}
   - component: {fileID: 7387886982639597086}
   - component: {fileID: 2625281157367689961}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: DestructExplosion
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4882,7 +4882,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8735604621050131781}
   - component: {fileID: 7188484255408912878}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Trigger
   m_TagString: Trigger
   m_Icon: {fileID: 0}
@@ -4942,7 +4942,7 @@ GameObject:
   - component: {fileID: 6777491281119034684}
   - component: {fileID: -862118971515059013}
   - component: {fileID: 4840807299918201928}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BossSquare
   m_TagString: TargetTriangle
   m_Icon: {fileID: 0}
@@ -5103,7 +5103,7 @@ GameObject:
   - component: {fileID: 8756332352645460482}
   - component: {fileID: 7786744272039351642}
   - component: {fileID: 1117263761399153640}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: SpawnReversedExplosion
   m_TagString: Untagged
   m_Icon: {fileID: 0}

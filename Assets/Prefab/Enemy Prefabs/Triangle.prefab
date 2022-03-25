@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9123735017606086597}
   - component: {fileID: 525475618919515290}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Trigger
   m_TagString: Trigger
   m_Icon: {fileID: 0}
@@ -68,7 +68,7 @@ GameObject:
   - component: {fileID: 4680888522050635590}
   - component: {fileID: 2337556517580319047}
   - component: {fileID: 9081429154251128066}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: SpawnReversedExplosion
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4942,7 +4942,7 @@ GameObject:
   - component: {fileID: 3985650195670458552}
   - component: {fileID: -6440231066218818400}
   - component: {fileID: 7336689888731032281}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Triangle
   m_TagString: TargetTriangle
   m_Icon: {fileID: 0}
@@ -5104,7 +5104,7 @@ GameObject:
   - component: {fileID: 4332179490475462768}
   - component: {fileID: 2197884565099236017}
   - component: {fileID: 3722963266644958984}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: DestructExplosion
   m_TagString: Untagged
   m_Icon: {fileID: 0}

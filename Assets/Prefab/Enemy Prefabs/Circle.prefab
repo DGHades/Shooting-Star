@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7353972477852515696}
   - component: {fileID: 773700051064036618}
   - component: {fileID: 8123210353723346397}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Circle
   m_TagString: TargetSquare
   m_Icon: {fileID: 0}
@@ -163,7 +163,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1190934573178815851}
   - component: {fileID: 1840831911738217982}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Trigger
   m_TagString: Trigger
   m_Icon: {fileID: 0}
@@ -211,7 +211,7 @@ GameObject:
   - component: {fileID: 5865842744716488878}
   - component: {fileID: 643113826136782448}
   - component: {fileID: 8776060698506292898}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: SpawnReversedExplosion
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5083,7 +5083,7 @@ GameObject:
   - component: {fileID: 1986062553173880746}
   - component: {fileID: 6517380606593345334}
   - component: {fileID: 8513467071344805728}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: DestructExplosion
   m_TagString: Untagged
   m_Icon: {fileID: 0}
