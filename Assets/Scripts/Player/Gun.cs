@@ -7,7 +7,7 @@ public class Gun : MonoBehaviour
     public BulletHolder bulletHolder;
     // Start is called before the first frame update
     public Player player;
-   
+
     /// <summary>
     /// Start is called on the frame when a script is enabled just before
     /// any of the Update methods is called the first time.
@@ -15,16 +15,6 @@ public class Gun : MonoBehaviour
     void Start()
     {
         //findUpgradeAndUprade("AutoTargetingBullet");
-    }
-    void OnTriggerStay2D(Collider2D target)
-    {
-        //On Collision with Target, Player Object gest Destroyed aka dies
-        //and Activate Respawn Button/Menu before
-        // TODO
-        if (target.gameObject.tag.StartsWith("Target"))
-        {
-            shoot(target);
-        }
     }
     public void shoot(Collider2D coll)
     {

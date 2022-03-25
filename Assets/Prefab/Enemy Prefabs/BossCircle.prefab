@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4836409107581557926}
   - component: {fileID: 5309286437093796393}
   - component: {fileID: 5614775067067641051}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: DestructExplosion
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4885,7 +4885,7 @@ GameObject:
   - component: {fileID: 8724909414660455963}
   - component: {fileID: 8323499738995475638}
   - component: {fileID: 9219459436689050753}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BossCircle
   m_TagString: TargetTriangle
   m_Icon: {fileID: 0}
@@ -5034,7 +5034,7 @@ GameObject:
   - component: {fileID: 3675058876504535964}
   - component: {fileID: 6350797188769882545}
   - component: {fileID: 2119267367039932499}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: SpawnReversedExplosion
   m_TagString: Untagged
   m_Icon: {fileID: 0}

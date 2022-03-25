@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 411108840148918081}
   - component: {fileID: 4431642538719470671}
   - component: {fileID: 4715871432662053284}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Square
   m_TagString: TargetSquare
   m_Icon: {fileID: 0}
@@ -171,7 +171,7 @@ GameObject:
   - component: {fileID: 7460195576778908715}
   - component: {fileID: 712619505693751429}
   - component: {fileID: 7547685496570022776}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: SpawnReversedExplosion
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5043,7 +5043,7 @@ GameObject:
   - component: {fileID: 6085672232623491286}
   - component: {fileID: 6473031288177134151}
   - component: {fileID: 5078190724053337711}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: DestructExplosion
   m_TagString: Untagged
   m_Icon: {fileID: 0}

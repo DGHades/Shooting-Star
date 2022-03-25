@@ -7294,9 +7294,9 @@ GameObject:
   - component: {fileID: 582585348}
   - component: {fileID: 582585350}
   - component: {fileID: 582585349}
-  - component: {fileID: 582585352}
   - component: {fileID: 582585351}
   - component: {fileID: 582585353}
+  - component: {fileID: 582585352}
   m_Layer: 0
   m_Name: PlayerOptic
   m_TagString: Untagged
@@ -7765,7 +7765,6 @@ GameObject:
   m_Component:
   - component: {fileID: 644140749}
   - component: {fileID: 644140748}
-  - component: {fileID: 644140747}
   - component: {fileID: 644140750}
   m_Layer: 0
   m_Name: PlayerManager
@@ -7774,35 +7773,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!60 &644140747
-PolygonCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 644140746}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: 0, y: 0.5}
-      - {x: -0.50173825, y: -0.4991304}
-      - {x: -0.0028776126, y: -0.25430357}
-      - {x: 0.49887484, y: -0.50485736}
 --- !u!212 &644140748
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -7884,7 +7854,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63430656c49fe3b40a0fcc1cf848492c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerOptic: {fileID: 582585347}
   BeforeDieMenue: {fileID: 1042339931}
   BeforeStartMenue: {fileID: 1042339931}
   attackDmg: 100
@@ -7892,6 +7861,8 @@ MonoBehaviour:
   spawnBurstParticleSystem: {fileID: 284161365}
   spawnExplosionParticleSystem: {fileID: 1176665539}
   analog: {fileID: 519420030}
+  gun: {fileID: 1548862193}
+  playerOptic: {fileID: 582585347}
 --- !u!1 &677486789
 GameObject:
   m_ObjectHideFlags: 0
@@ -15240,22 +15211,6 @@ MonoBehaviour:
   timeStamp: 0
   bulletHolder: {fileID: 1548862192}
   player: {fileID: 644140750}
---- !u!58 &1548862194
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1548862191}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.5
 --- !u!1 &1564815784
 GameObject:
   m_ObjectHideFlags: 0

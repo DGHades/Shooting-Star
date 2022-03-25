@@ -5,12 +5,42 @@ using UnityEngine;
 public class PlayerOpticTurn : MonoBehaviour
 {
     Vector3 _origPos = new Vector3();
+    [SerializeField]
+    private Player player;
     // Start is called before the first frame update
     void Start()
     {
-       
+
     }
-    private void OnTriggerExit2D(Collider2D other)
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+        //On Collision with Target, Player Object gest Destroyed aka dies
+        //and Activate Respawn Button/Menu before
+
+        if (collision.gameObject.name == "BorderTop")
+        {
+            player.stopTop = true;
+        }
+        if (collision.gameObject.name == "BorderBottom")
+        {
+            player.stopBot = true;
+        }
+        if (collision.gameObject.name == "BorderLeft")
+        {
+            player.stopLeft = true;
+        }
+        if (collision.gameObject.name == "BorderRight")
+        {
+            player.stopRight = true;
+        }
+    }
+
+    /// <summary>
+    /// Sent when another object leaves a trigger collider attached to
+    /// this object (2D physics only).
+    /// </summary>
+    /// <param name="other">The other Collider2D involved in this collision.</param>
+    void OnTriggerExit2D(Collider2D other)
     {
         //Change player looking direction in Bullet shooting direction
         if (other.gameObject.tag == "Bullet")
@@ -21,6 +51,26 @@ public class PlayerOpticTurn : MonoBehaviour
             float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg - 90;
             //set rotation
             transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+        }
+        if (other.gameObject.tag.StartsWith("Target"))
+        {
+            player.Die();
+        }
+        if (other.gameObject.name == "BorderTop")
+        {
+            player.stopTop = false;
+        }
+        if (other.gameObject.name == "BorderBottom")
+        {
+            player.stopBot = false;
+        }
+        if (other.gameObject.name == "BorderLeft")
+        {
+            player.stopLeft = false;
+        }
+        if (other.gameObject.name == "BorderRight")
+        {
+            player.stopRight = false;
         }
     }
     // Update is called once per frame
