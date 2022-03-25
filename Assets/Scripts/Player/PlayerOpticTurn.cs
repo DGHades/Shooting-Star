@@ -12,6 +12,7 @@ public class PlayerOpticTurn : MonoBehaviour
     {
 
     }
+
     void OnTriggerEnter2D(Collider2D collision)
     {
         //On Collision with Target, Player Object gest Destroyed aka dies
@@ -32,6 +33,10 @@ public class PlayerOpticTurn : MonoBehaviour
         if (collision.gameObject.name == "BorderRight")
         {
             player.stopRight = true;
+        }
+        if (collision.gameObject.tag.StartsWith("Trigger"))
+        {
+            player.analog.scanLineJitter = 0.3f;
         }
     }
 
@@ -71,6 +76,10 @@ public class PlayerOpticTurn : MonoBehaviour
         if (other.gameObject.name == "BorderRight")
         {
             player.stopRight = false;
+        }
+        if (other.gameObject.tag == "Trigger")
+        {
+            player.analog.scanLineJitter = 0;
         }
     }
     // Update is called once per frame

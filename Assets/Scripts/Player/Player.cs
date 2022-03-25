@@ -5,21 +5,26 @@ public class Player : MonoBehaviour
     public bool stopTop = false, stopBot = false, stopLeft = false, stopRight = false;
     public Canvas BeforeDieMenue;
     public Canvas BeforeStartMenue;
+    public ParticleSystem spawnBurstParticleSystem;
+    public AnalogGlitch analog;
+    public ParticleSystem spawnExplosionParticleSystem;
+    public GameObject EnemyPos;
+    public PolygonCollider2D test;
     public float attackDmg, attackspeed;
     Vector3 _origPos = new Vector3();
-    public ParticleSystem spawnBurstParticleSystem;
-    public ParticleSystem spawnExplosionParticleSystem;
     bool once = false;
     bool onceTwo = false;
-    public AnalogGlitch analog;
+
     [SerializeField]
     private Gun gun;
     [SerializeField]
     private PlayerOpticTurn playerOptic;
+
     private void Start()
     {
         BeforeStartMenue.gameObject.SetActive(true);
         BeforeDieMenue.gameObject.SetActive(false);
+        test = gameObject.GetComponent<PolygonCollider2D>();
     }
 
     private void StartAnim()
@@ -54,6 +59,7 @@ public class Player : MonoBehaviour
     // Controls
     void FixedUpdate()
     {
+        test.transform.rotation = gameObject.transform.rotation;
         if (GlobalVariable.startGame && !once)
         {
             StartAnim();
