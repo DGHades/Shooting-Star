@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 1935b79561400e34f82e3195e4f73467
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - tMP_Font: {fileID: 11400000, guid: e1ec97feee89e004cb52231b246deb5a, type: 2}
+  - FontMat: {fileID: 6887743543412293371, guid: e1ec97feee89e004cb52231b246deb5a,
+      type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
