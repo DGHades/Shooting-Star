@@ -18,8 +18,8 @@ public class MoneyManager : MonoBehaviour
     {
         if (MoneyPayment < PlayerPrefs.GetInt("Revenue"))
         {
-            PlayerPrefs.SetInt("Revenue", PlayerPrefs.GetInt("Revenue") - MoneyPayment);
-            yield return null;
+        PlayerPrefs.SetInt("Revenue", PlayerPrefs.GetInt("Revenue") - MoneyPayment);
+        yield return null;
         }
     }
 }

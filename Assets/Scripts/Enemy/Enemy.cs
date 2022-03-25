@@ -39,7 +39,7 @@ public class Enemy : MonoBehaviour
     // Is called when a bullet hits the enemy in BaseBullet.cs
     public void GotHit(float damage)
     {
-
+        
         float duration = 0.1f;
         float magnitude = 0.2f;
         //Subtract DMG from Health of Object
@@ -47,12 +47,12 @@ public class Enemy : MonoBehaviour
         if (health <= 0)
         {
             //Do destroy Animation before Destroying Object
-            StartCoroutine(shake(duration, magnitude));
+            StartCoroutine(shake(duration,magnitude));
             stopRotation = true;
             lockEnemy();
             Destroy(GetComponent<Collider2D>());
             Destroy(GetComponent<Rigidbody2D>());
-
+            
             for (int i = 0; i < 3; i++)
             {
                 float rangeX = UnityEngine.Random.Range(-0.1f, 0.1f);
@@ -64,8 +64,8 @@ public class Enemy : MonoBehaviour
             destroyed = true;
             GlobalVariable.score += 2;
             GlobalVariable.fillbarValue += 2;
-
-
+            
+            
         }
     }
 
@@ -112,8 +112,8 @@ public class Enemy : MonoBehaviour
     public void destroyTarget()
     {
         //Seperated for future uses
-
-
+        
+        
         Destroy(gameObject);
     }
 }

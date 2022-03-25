@@ -12,11 +12,7 @@ public class BaseBulletBlueprint : ScriptableObject
     public float bulletForce;
 
     // Sets up the bullet Object and all its fields
-    public virtual void SetUpWithOldBlueprint(BaseBulletBlueprint blueprint)
-    {
-
-    }
-    protected virtual void Initialize(Bullet bullet)
+    public virtual void Initialize(Bullet bullet)
     {
         bullet.hasTarget = false;
         bullet.hasHealth = false;
@@ -69,7 +65,7 @@ public class BaseBulletBlueprint : ScriptableObject
             }
         }
     }
-    protected virtual void TakeDamage(float bulletDamage, Bullet bullet)
+    public virtual void TakeDamage(float bulletDamage, Bullet bullet)
     {
         bullet.GetComponent<Bullet>().health -= bulletDamage;
         if (bullet.GetComponent<Bullet>().health <= 0)
