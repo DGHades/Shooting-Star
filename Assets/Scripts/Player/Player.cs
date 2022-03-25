@@ -10,7 +10,7 @@ public class Player : MonoBehaviour
     public AnalogGlitch analog;
     public ParticleSystem spawnExplosionParticleSystem;
     public GameObject EnemyPos;
-    public PolygonCollider2D test;
+    public PolygonCollider2D Coll2D;
     public float attackDmg, attackspeed;
     Vector3 _origPos = new Vector3();
     bool once = false;
@@ -20,7 +20,7 @@ public class Player : MonoBehaviour
     {
         BeforeStartMenue.gameObject.SetActive(true);
         BeforeDieMenue.gameObject.SetActive(false);
-        test = gameObject.GetComponent<PolygonCollider2D>();
+        Coll2D = gameObject.GetComponent<PolygonCollider2D>();
     }
 
     private void StartAnim()
@@ -126,7 +126,7 @@ public class Player : MonoBehaviour
     // Controls
     void FixedUpdate()
     {
-        test.transform.rotation = gameObject.transform.rotation;
+        Coll2D.transform.rotation = gameObject.transform.rotation;
         if (GlobalVariable.startGame && !once)
         {
             StartAnim();
