@@ -19,14 +19,6 @@ public class Gun : MonoBehaviour
         cooldown
     }
     gunState state = new gunState();
-    /// <summary>
-    /// Start is called on the frame when a script is enabled just before
-    /// any of the Update methods is called the first time.
-    /// </summary>
-    void Start()
-    {
-        //findUpgradeAndUprade("AutoTargetingBullet");
-    }
     public void shoot(GameObject gameObj)
     {
 
@@ -77,6 +69,8 @@ public class Gun : MonoBehaviour
 
     public void Upgrade(BaseBulletBlueprint blueprint)
     {
+        BaseBulletBlueprint prevBlueprint = bulletBlueprint;
         bulletBlueprint = blueprint;
+        bulletBlueprint.SetUpWithOldBlueprint(prevBlueprint);
     }
 }
