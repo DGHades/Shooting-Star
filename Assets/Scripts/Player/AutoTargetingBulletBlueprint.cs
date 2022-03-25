@@ -3,13 +3,18 @@
 [CreateAssetMenu]
 public class AutoTargetingBulletBlueprint : BaseBulletBlueprint
 {
-    public void Initialize(Bullet bullet, GameObject target)
+    public override void SetUpWithOldBlueprint(BaseBulletBlueprint blueprint)
     {
-        attackDmg = 100;
-        cooldown = 0.2f;
-        movementSpeed = 0.03f;
-        bulletHealth = 0;
-        bulletForce = 100;
+        attackDmg = blueprint.attackDmg;
+        cooldown = blueprint.cooldown;
+        movementSpeed = blueprint.movementSpeed;
+        bulletHealth = blueprint.bulletHealth;
+        bulletForce = blueprint.bulletForce;
+
+    }
+
+    void Initialize(Bullet bullet, GameObject target)
+    {
         bullet.target = target;
         base.Initialize(bullet);
     }
