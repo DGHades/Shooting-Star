@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using UnityEngine.SceneManagement;
 public class Player : MonoBehaviour
 {
     public bool stopTop = false, stopBot = false, stopLeft = false, stopRight = false;
@@ -8,8 +7,6 @@ public class Player : MonoBehaviour
     public ParticleSystem spawnBurstParticleSystem;
     public AnalogGlitch analog;
     public ParticleSystem spawnExplosionParticleSystem;
-    public GameObject EnemyPos;
-    public PolygonCollider2D test;
     public float attackDmg, attackspeed;
     Vector3 _origPos = new Vector3();
     bool once = false;
@@ -24,7 +21,6 @@ public class Player : MonoBehaviour
     {
         BeforeStartMenue.gameObject.SetActive(true);
         BeforeDieMenue.gameObject.SetActive(false);
-        test = gameObject.GetComponent<PolygonCollider2D>();
     }
 
     private void StartAnim()
@@ -59,7 +55,7 @@ public class Player : MonoBehaviour
     // Controls
     void FixedUpdate()
     {
-        test.transform.rotation = gameObject.transform.rotation;
+
         if (GlobalVariable.startGame && !once)
         {
             StartAnim();
@@ -75,10 +71,13 @@ public class Player : MonoBehaviour
             onceTwo = false;
         }
         // Bit shift the index of the Enemy layer (8) to get a bit mask
-        int layerMask = 1 << 8;
-        Collider2D coll = Physics2D.OverlapCircle(gameObject.transform.position, 5f, layerMask);
-        if (coll != null)
-            gun.shoot(coll.gameObject);
+        if (gun.cooldown <= 0)
+        {
+            int layerMask = 1 << 8;
+            Collider2D coll = Physics2D.OverlapCircle(gameObject.transform.position, 4f, layerMask);
+            if (coll != null && coll.gameObject.tag.Contains("Target"))
+                gun.shoot(coll.gameObject);
+        }
 
         //Movement
         //Block input on Border hit
