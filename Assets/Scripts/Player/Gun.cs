@@ -10,7 +10,7 @@ public class Gun : MonoBehaviour
     private BaseBulletBlueprint bulletBlueprint;
     [SerializeField]
     private Bullet bullet;
-    float cooldown;
+    public float cooldown;
 
     private enum gunState
     {
@@ -21,8 +21,7 @@ public class Gun : MonoBehaviour
     gunState state = new gunState();
     public void shoot(GameObject gameObj)
     {
-
-        if (state == gunState.ready)
+        if (state == gunState.ready && gameObj.GetComponent<Enemy>().isSpawned)
         {
             bulletBlueprint.Spawn(bullet.gameObject, transform, gameObj);
             state = gunState.shot;
