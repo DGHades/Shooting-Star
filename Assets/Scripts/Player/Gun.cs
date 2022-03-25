@@ -4,44 +4,73 @@ using UnityEngine;
 public class Gun : MonoBehaviour
 {
     public float timeStamp;
-    public BulletHolder bulletHolder;
     // Start is called before the first frame update
     public Player player;
-   
-    /// <summary>
-    /// Start is called on the frame when a script is enabled just before
-    /// any of the Update methods is called the first time.
-    /// </summary>
-    void Start()
+    [SerializeField]
+    private BaseBulletBlueprint bulletBlueprint;
+    [SerializeField]
+    private Bullet bullet;
+    float cooldown;
+
+    private enum gunState
     {
-        //findUpgradeAndUprade("AutoTargetingBullet");
+        ready,
+        shot,
+        cooldown
     }
-    void OnTriggerStay2D(Collider2D target)
-    {
-        //On Collision with Target, Player Object gest Destroyed aka dies
-        //and Activate Respawn Button/Menu before
-        // TODO
-        if (target.gameObject.tag.StartsWith("Target"))
-        {
-            shoot(target);
-        }
-    }
-    public void shoot(Collider2D coll)
+    gunState state = new gunState();
+    public void shoot(GameObject gameObj)
     {
 
-        bulletHolder.Spawn(coll.gameObject);
+        if (state == gunState.ready)
+        {
+            bulletBlueprint.Spawn(bullet.gameObject, transform, gameObj);
+            state = gunState.shot;
+        }
     }
 
     public void findUpgradeAndUprade(string name)
     {
         try
         {
-            bulletHolder.Upgrade((BaseBulletBlueprint)ScriptableObject.CreateInstance(name + "Blueprint"));
+            Upgrade((BaseBulletBlueprint)ScriptableObject.CreateInstance(name + "Blueprint"));
         }
         catch (System.Exception)
         {
 
             throw;
         }
+    }
+    /// <summary>
+    /// This function is called every fixed framerate frame, if the MonoBehaviour is enabled.
+    /// </summary>
+    void FixedUpdate()
+    {
+        switch (state)
+        {
+            case gunState.ready:
+                break;
+            case gunState.shot:
+                state = gunState.cooldown;
+                cooldown = bulletBlueprint.cooldown;
+                break;
+            case gunState.cooldown:
+                if (cooldown > 0)
+                {
+                    cooldown -= Time.deltaTime;
+                }
+                else
+                {
+                    state = gunState.ready;
+                }
+                break;
+        }
+    }
+
+    public void Upgrade(BaseBulletBlueprint blueprint)
+    {
+        BaseBulletBlueprint prevBlueprint = bulletBlueprint;
+        bulletBlueprint = blueprint;
+        bulletBlueprint.SetUpWithOldBlueprint(prevBlueprint);
     }
 }

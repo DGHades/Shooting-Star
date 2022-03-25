@@ -11,7 +11,7 @@ public class TextManager : MonoBehaviour
     void Start()
     {
         HighScore.text = "HighScore: " + PlayerPrefs.GetInt("HighScore", 0).ToString();
-        Revenue.text = "Revenue: " + PlayerPrefs.GetInt("Revenue", 0).ToString();
+        Revenue.text = PlayerPrefs.GetInt("Revenue", 0).ToString();
     }
 
     // Update is called once per frame
@@ -25,7 +25,7 @@ public class TextManager : MonoBehaviour
         if (GlobalVariable.stopGame == true) //Kinda Weird Solution
         {
             
-            Revenue.text = "Revenue: " + PlayerPrefs.GetInt("Revenue");
+            Revenue.text = PlayerPrefs.GetInt("Revenue").ToString();
             GlobalVariable.stopGame = false;
         }
     }
