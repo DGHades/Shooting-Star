@@ -146,7 +146,7 @@ MonoBehaviour:
   sr: {fileID: 8859664404222069758}
   Camera: {fileID: 0}
   Gem: {fileID: 7725604493697832475, guid: b5908b08f3cd1f1498138e5676577ad2, type: 3}
-  Trigger: {fileID: 0}
+  Trigger: {fileID: 2681685279930998016}
   spawnAmount: 1
   spawnEachWave: 1
   health: 100
