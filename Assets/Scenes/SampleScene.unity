@@ -7881,11 +7881,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 147b02a36b6e0a54d8c98cdebe87ecf9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeStamp: 0
-  player: {fileID: 644140750}
-  bulletBlueprint: {fileID: 11400000, guid: 55ecbd9abf603f0628071e309c6d4020, type: 2}
-  bullet: {fileID: -4699726641209812194, guid: ec40cc6aeaec7b04fae15961fcd6e91a, type: 3}
-  cooldown: 0
+  blueprint: {fileID: 11400000, guid: 55ecbd9abf603f0628071e309c6d4020, type: 2}
 --- !u!212 &644140748
 SpriteRenderer:
   m_ObjectHideFlags: 0

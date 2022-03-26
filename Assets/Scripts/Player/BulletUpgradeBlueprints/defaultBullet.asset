@@ -12,8 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 875ea65ad6f5aa24e9b5b2854d0b155f, type: 3}
   m_Name: defaultBullet
   m_EditorClassIdentifier: 
-  attackDmg: 150
-  cooldown: 0.3
-  movementSpeed: 50
-  bulletHealth: 100
-  bulletForce: 200
+  displayName: Default bullet
+  displayImgSprite: {fileID: 0}
+  prefab: {fileID: 2788322286696064337, guid: ec40cc6aeaec7b04fae15961fcd6e91a, type: 3}
+  isStackable: 0
+  maxStacks: 0
+  dmgMultiplier: 1
+  movementSpeedMultiplier: 1
+  cooldown: 0.5
