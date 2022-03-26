@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: defaultBullet
   m_EditorClassIdentifier: 
   attackDmg: 150
-  cooldown: 0.5
+  cooldown: 0.3
   movementSpeed: 50
   bulletHealth: 100
   bulletForce: 200
