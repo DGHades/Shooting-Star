@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 public class Player : MonoBehaviour
 {
+    [HideInInspector]
     public bool stopTop = false, stopBot = false, stopLeft = false, stopRight = false;
     public Canvas BeforeDieMenue;
     public Canvas BeforeStartMenue;
@@ -9,8 +10,8 @@ public class Player : MonoBehaviour
     public ParticleSystem spawnExplosionParticleSystem;
     public float attackDmg, attackspeed;
     Vector3 _origPos = new Vector3();
-    bool once = false;
-    bool onceTwo = false;
+    private bool once = false;
+    private bool onceTwo = false;
 
     [SerializeField]
     private Gun gun;
