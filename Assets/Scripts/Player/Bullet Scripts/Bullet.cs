@@ -5,7 +5,7 @@ public class Bullet : MonoBehaviour
 {
     public GameObject target = null;
     public ParticleSystem hitParticleSystem;
-    public bool markedForDestruction = false;
+    protected bool markedForDestruction = false;
     protected float attackDmg;
     protected float movementSpeed;
     protected float bulletHealth;
