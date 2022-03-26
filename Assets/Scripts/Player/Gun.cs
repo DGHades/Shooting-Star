@@ -7,7 +7,6 @@ public class Gun : MonoBehaviour
     [SerializeField]
     private BulletBlueprint blueprint;
     private float cooldown;
-
     private enum gunState
     {
         ready,
@@ -23,7 +22,8 @@ public class Gun : MonoBehaviour
     {
         if (state == gunState.ready && gameObj.GetComponent<Enemy>().isSpawned)
         {
-            blueprint.prefab.GetComponent<Bullet>().Spawn(blueprint.prefab, transform, gameObj);
+            GameObject bullet = Bullet.Spawn(blueprint.prefab, transform, gameObj, 100);
+            bullet.GetComponent<Bullet>().SetBlueprintValues(blueprint);
             state = gunState.shot;
         }
     }
