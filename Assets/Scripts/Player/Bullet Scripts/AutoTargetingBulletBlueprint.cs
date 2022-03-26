@@ -6,17 +6,6 @@ public class AutoTargetingBulletBlueprint : Bullet
     {
         return base.StillAlive() && target != null;
     }
-    public override void Spawn(GameObject bulletObj, Transform currentPos, GameObject target)
-    {
-        GameObject bullet = (GameObject)(Instantiate(bulletObj, currentPos.position, Quaternion.identity));
-        bullet.GetComponent<Rigidbody2D>().AddForce((target.transform.position - currentPos.position) * bulletForce);
-        //Calculate Rotation to Target direction
-        Vector3 dir = target.transform.position - currentPos.position;
-        float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
-        //Set rotation
-        bullet.transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
-        AfterSpawn();
-    }
     // Move is called once per frame
     public override void Move()
     {
@@ -37,7 +26,6 @@ public class AutoTargetingBulletBlueprint : Bullet
                 Enemy enemy = coll.gameObject.GetComponent<Enemy>();
                 enemy.GotHit(attackDmg);
                 TakeDamage(enemy.bulletDamage);
-
             }
 
         }
