@@ -3,14 +3,10 @@ using UnityEngine;
 
 public class Gun : MonoBehaviour
 {
-    public float timeStamp;
     // Start is called before the first frame update
-    public Player player;
     [SerializeField]
-    private BaseBulletBlueprint bulletBlueprint;
-    [SerializeField]
-    private Bullet bullet;
-    public float cooldown;
+    private BulletBlueprint blueprint;
+    private float cooldown;
 
     private enum gunState
     {
@@ -19,25 +15,16 @@ public class Gun : MonoBehaviour
         cooldown
     }
     gunState state = new gunState();
+    public float GetCooldown()
+    {
+        return cooldown;
+    }
     public void shoot(GameObject gameObj)
     {
         if (state == gunState.ready && gameObj.GetComponent<Enemy>().isSpawned)
         {
-            bulletBlueprint.Spawn(bullet.gameObject, transform, gameObj);
+            blueprint.prefab.GetComponent<Bullet>().Spawn(blueprint.prefab, transform, gameObj);
             state = gunState.shot;
-        }
-    }
-
-    public void findUpgradeAndUprade(string name)
-    {
-        try
-        {
-            Upgrade((BaseBulletBlueprint)ScriptableObject.CreateInstance(name + "Blueprint"));
-        }
-        catch (System.Exception)
-        {
-
-            throw;
         }
     }
     /// <summary>
@@ -48,10 +35,11 @@ public class Gun : MonoBehaviour
         switch (state)
         {
             case gunState.ready:
+                //TBD
                 break;
             case gunState.shot:
                 state = gunState.cooldown;
-                cooldown = bulletBlueprint.cooldown;
+                cooldown = blueprint.cooldown;
                 break;
             case gunState.cooldown:
                 if (cooldown > 0)
@@ -66,10 +54,29 @@ public class Gun : MonoBehaviour
         }
     }
 
-    public void Upgrade(BaseBulletBlueprint blueprint)
+
+    public void findUpgradeAndUprade(string name)
     {
-        BaseBulletBlueprint prevBlueprint = bulletBlueprint;
-        bulletBlueprint = blueprint;
-        bulletBlueprint.SetUpWithOldBlueprint(prevBlueprint);
+        try
+        {
+            Upgrade((BulletBlueprint)ScriptableObject.CreateInstance(name + "Blueprint"));
+        }
+        catch (System.Exception)
+        {
+
+            throw;
+        }
+    }
+    public void Upgrade(BulletBlueprint _blueprint)
+    {
+        blueprint.displayName = _blueprint.displayName;
+        blueprint.displayImgSprite = _blueprint.displayImgSprite;
+        blueprint.prefab = _blueprint.prefab;
+        blueprint.isStackable = _blueprint.isStackable;
+        blueprint.maxStacks = _blueprint.maxStacks;
+        blueprint.dmgMultiplier = _blueprint.dmgMultiplier;
+        blueprint.movementSpeedMultiplier = _blueprint.movementSpeedMultiplier;
+        blueprint.cooldown = _blueprint.cooldown;
+        Destroy(_blueprint);
     }
 }
