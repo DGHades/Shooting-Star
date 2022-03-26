@@ -7496,6 +7496,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33188b1fafe0bba459829fc9abcaac57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 644140750}
 --- !u!60 &582585352
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -7868,36 +7869,23 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!60 &644140747
-PolygonCollider2D:
+--- !u!114 &644140747
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 644140746}
   m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: 0, y: 0.5}
-      - {x: -0.5, y: -0.5}
-      - {x: 0, y: -0.25}
-      - {x: 0, y: -0.25}
-      - {x: 0.5, y: -0.5}
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 147b02a36b6e0a54d8c98cdebe87ecf9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeStamp: 0
+  player: {fileID: 644140750}
+  bulletBlueprint: {fileID: 11400000, guid: 55ecbd9abf603f0628071e309c6d4020, type: 2}
+  bullet: {fileID: -4699726641209812194, guid: ec40cc6aeaec7b04fae15961fcd6e91a, type: 3}
+  cooldown: 0
 --- !u!212 &644140748
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -7939,7 +7927,7 @@ SpriteRenderer:
   m_SortingLayer: -1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: ecdca5b1c8bcc2e4691eb48611385db8, type: 3}
-  m_Color: {r: 0, g: 0, b: 0, a: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -7979,16 +7967,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63430656c49fe3b40a0fcc1cf848492c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerOptic: {fileID: 582585347}
+  stopTop: 0
+  stopBot: 0
+  stopLeft: 0
+  stopRight: 0
   BeforeDieMenue: {fileID: 1042339931}
   BeforeStartMenue: {fileID: 1042339931}
   spawnBurstParticleSystem: {fileID: 284161365}
   analog: {fileID: 519420030}
   spawnExplosionParticleSystem: {fileID: 1176665539}
-  EnemyPos: {fileID: 0}
-  Coll2D: {fileID: 0}
   attackDmg: 100
   attackspeed: 0
+  gun: {fileID: 644140747}
+  playerOptic: {fileID: 582585351}
 --- !u!1 &677486789
 GameObject:
   m_ObjectHideFlags: 0
@@ -15377,27 +15368,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1535272031}
   m_CullTransparentMesh: 1
---- !u!1 &1548862191 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8734566007742789119, guid: 5609a3ef7ffa98a42aa479482d5358fe,
-    type: 3}
-  m_PrefabInstance: {fileID: 1844168444}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1548862193
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1548862191}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 147b02a36b6e0a54d8c98cdebe87ecf9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  timeStamp: 0
-  bulletHolder: {fileID: 0}
-  player: {fileID: 644140750}
 --- !u!1 &1564815784
 GameObject:
   m_ObjectHideFlags: 0
