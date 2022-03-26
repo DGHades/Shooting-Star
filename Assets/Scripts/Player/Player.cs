@@ -72,7 +72,7 @@ public class Player : MonoBehaviour
             onceTwo = false;
         }
         // Bit shift the index of the Enemy layer (8) to get a bit mask
-        if (gun.cooldown <= 0)
+        if (gun.GetCooldown() <= 0)
         {
             int layerMask = 1 << 8;
             Collider2D coll = Physics2D.OverlapCircle(gameObject.transform.position, 4f, layerMask);
