@@ -1,11 +1,11 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Gun : MonoBehaviour
 {
     // Start is called before the first frame update
     [SerializeField]
     private BulletBlueprint blueprint;
+
     private float cooldown;
     private enum gunState
     {
@@ -22,7 +22,7 @@ public class Gun : MonoBehaviour
     {
         if (state == gunState.ready && gameObj.GetComponent<Enemy>().isSpawned)
         {
-            GameObject bullet = Bullet.Spawn(blueprint.prefab, transform, gameObj, 100);
+            GameObject bullet = DefaultBulletSpawner.Spawn(blueprint.prefab, transform, gameObj, 100);
             bullet.GetComponent<Bullet>().SetBlueprintValues(blueprint);
             state = gunState.shot;
         }
