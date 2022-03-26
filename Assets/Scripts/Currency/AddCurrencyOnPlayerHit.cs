@@ -17,8 +17,7 @@ public class AddCurrencyOnPlayerHit : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Player")
-        {
-            
+        {  
             PlayerPrefs.SetInt("Revenue", PlayerPrefs.GetInt("Revenue") +1);
             Money.gameObject.GetComponent<TextMeshProUGUI>().text = "Revenue: " + PlayerPrefs.GetInt("Revenue").ToString();
             Destroy(gameObject);
@@ -39,7 +38,5 @@ public class AddCurrencyOnPlayerHit : MonoBehaviour
         {
             Destroy(gameObject);
         }
-        
-
     }
 }

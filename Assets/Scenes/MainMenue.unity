@@ -941,7 +941,6 @@ GameObject:
   - component: {fileID: 692094654}
   - component: {fileID: 692094653}
   - component: {fileID: 692094652}
-  - component: {fileID: 692094651}
   - component: {fileID: 692094650}
   - component: {fileID: 692094649}
   m_Layer: 0
@@ -1072,18 +1071,6 @@ TrailRenderer:
   m_MinVertexDistance: 0.1
   m_Autodestruct: 0
   m_Emitting: 1
---- !u!114 &692094651
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 692094648}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 33188b1fafe0bba459829fc9abcaac57, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!60 &692094652
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -1872,7 +1859,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 14.7435, y: -13.01}
+  m_AnchoredPosition: {x: 14.74, y: -22.305}
   m_SizeDelta: {x: 355.59, y: 64.5809}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1170209825
