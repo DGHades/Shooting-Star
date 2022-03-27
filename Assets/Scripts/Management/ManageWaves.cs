@@ -34,6 +34,8 @@ public class ManageWaves : MonoBehaviour
             GlobalVariable.startGame = false;
             GlobalVariable.stopGame = true;
             FindPlayerInRange.waveCleared = true;
+            Player.transform.position = new Vector2(0, 0);
+
             //KILL ALL ENEMYS
             FillArray("Square");
             FillArray("Triangle");
@@ -50,6 +52,7 @@ public class ManageWaves : MonoBehaviour
             Destroy(MyGameObjectList[i]);
         }
     }
+
     //Need better Solution. For TestCases it works fine 
     public IEnumerator Shake(float duration)
     {

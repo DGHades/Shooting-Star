@@ -8,6 +8,8 @@ public class Player : MonoBehaviour
     public ParticleSystem spawnBurstParticleSystem;
     public AnalogGlitch analog;
     public ParticleSystem spawnExplosionParticleSystem;
+    public ManageWaves WaveManager;
+
     public float attackDmg, attackspeed;
     Vector3 _origPos = new Vector3();
     private bool once = false;
@@ -131,5 +133,6 @@ public class Player : MonoBehaviour
         BeforeDieMenue.gameObject.SetActive(true);
         GlobalVariable.stopGame = true;
         gameObject.SetActive(false);
+        gameObject.transform.position = new Vector2(0, 0);
     }
 }

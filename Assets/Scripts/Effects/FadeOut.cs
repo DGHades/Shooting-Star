@@ -6,6 +6,7 @@ public class FadeOut : MonoBehaviour
 {
     public GameObject CanvasMenue;
     public MoneyManager MoneyManager;
+    public GameObject Player;
     public void StartGameWithUpgrade()
     {
         GlobalVariable.ItemSelected = true;
@@ -31,6 +32,7 @@ public class FadeOut : MonoBehaviour
     }
     IEnumerator StartGame()
     {
+        Player.SetActive(true);
         FindPlayerInRange.waveCleared = false;
         CanvasGroup canvasGroup = GetComponent<CanvasGroup>();
         while (canvasGroup.alpha > 0)
