@@ -22,15 +22,11 @@ public class TextManager : MonoBehaviour
             PlayerPrefs.SetInt("HighScore", GlobalVariable.score);
             HighScore.text = "HighScore: " + GlobalVariable.score.ToString();
         }
-        if (GlobalVariable.stopGame == true) //Kinda Weird Solution
+        if (GlobalVariable.stopGame == true)
         {
             
             Revenue.text = PlayerPrefs.GetInt("Revenue").ToString();
             GlobalVariable.stopGame = false;
         }
-    }
-
-    private void Awake() //AWAKES ON TRUEFALSE SOLUTION
-    {
     }
 }
