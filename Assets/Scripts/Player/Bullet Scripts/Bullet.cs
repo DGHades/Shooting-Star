@@ -3,10 +3,11 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    public GameObject target = null;
-    public ParticleSystem hitParticleSystem;
+    protected GameObject target = null;
+    [SerializeField]
+    protected ParticleSystem hitParticleSystem;
     protected bool markedForDestruction = false;
-    protected float attackDmg = 100;
+    protected float attackDmg = 1000000;
     protected float movementSpeed = 100;
     protected float bulletHealth = 100;
     protected float bulletForce = 100;
@@ -25,7 +26,11 @@ public class Bullet : MonoBehaviour
             SplashAnim();
         }
     }
-
+    public void Spawn(BulletBlueprint blueprint, Transform currentPos, GameObject target, int stackMultiplier = 1)
+    {
+        Bullet bullet = GetComponent<IBulletSpawner>().Spawn(blueprint.prefab, currentPos, target, bulletForce);
+        bullet.SetBlueprintValues(blueprint, stackMultiplier);
+    }
     protected virtual bool StillAlive()
     {
         return !markedForDestruction;
@@ -56,7 +61,6 @@ public class Bullet : MonoBehaviour
             OnTargetHit(coll);
         }
     }
-
     protected virtual void OnTargetHit(Collider2D coll)
     {
         if (coll.gameObject.tag.StartsWith("Target"))

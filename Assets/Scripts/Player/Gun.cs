@@ -22,8 +22,7 @@ public class Gun : MonoBehaviour
     {
         if (state == gunState.ready && gameObj.GetComponent<Enemy>().isSpawned)
         {
-            GameObject bullet = DefaultBulletSpawner.Spawn(blueprint.prefab, transform, gameObj, 100);
-            bullet.GetComponent<Bullet>().SetBlueprintValues(blueprint);
+            blueprint.prefab.GetComponent<Bullet>().Spawn(blueprint, transform, gameObj);
             state = gunState.shot;
         }
     }

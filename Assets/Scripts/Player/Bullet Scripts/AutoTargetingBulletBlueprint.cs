@@ -34,8 +34,5 @@ public class AutoTargetingBulletBlueprint : Bullet
             markedForDestruction = true;
 
         }
-
-
     }
-
 }

@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: -4699726641209812194}
   - component: {fileID: 4508202252769025578}
   - component: {fileID: 1832142800040437860}
+  - component: {fileID: 1144894411202236669}
   m_Layer: 0
   m_Name: Bullet 1 1
   m_TagString: Bullet
@@ -121,12 +122,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7bcc2e1f536cafd879c1c633b4a68901, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 0
-  hasTarget: 0
-  hasHealth: 0
-  target: {fileID: 0}
   hitParticleSystem: {fileID: 5852268913187467184}
-  markedForDestruction: 0
 --- !u!96 &4508202252769025578
 TrailRenderer:
   serializedVersion: 2
@@ -267,6 +263,18 @@ PolygonCollider2D:
       - {x: 0.5, y: -0.005820686}
       - {x: 0.5, y: -0.0012850091}
       - {x: 0.014966354, y: 0.24846321}
+--- !u!114 &1144894411202236669
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2788322286696064337}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be4c49dfd26fde27fa25c8220b0e3f1f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3888638233068794182
 GameObject:
   m_ObjectHideFlags: 0

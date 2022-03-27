@@ -1,8 +1,10 @@
 using UnityEngine;
 // FOR DEFAULT BULLET
-public static class DefaultBulletSpawner
+using System;
+[Serializable]
+public class BulletSpawner : MonoBehaviour, IBulletSpawner
 {
-    public static GameObject Spawn(GameObject bulletObj, Transform currentPos, GameObject target, float bulletForce)
+    public Bullet Spawn(GameObject bulletObj, Transform currentPos, GameObject target, float bulletForce)
     {
         GameObject bullet = (GameObject)(GameObject.Instantiate(bulletObj, currentPos.position, Quaternion.identity));
         bullet.GetComponent<Rigidbody2D>().AddForce((target.transform.position - currentPos.position) * bulletForce);
@@ -11,6 +13,6 @@ public static class DefaultBulletSpawner
         float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
         //Set rotation
         bullet.transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
-        return bullet;
+        return bullet.GetComponent<Bullet>();
     }
 }
