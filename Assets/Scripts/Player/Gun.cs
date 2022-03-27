@@ -1,10 +1,11 @@
 ﻿using UnityEngine;
-
+using System.Collections.Generic;
 public class Gun : MonoBehaviour
 {
     // Start is called before the first frame update
     [SerializeField]
     private BulletBlueprint blueprint;
+    private Dictionary<string, int> upgradeStackCounts;
 
     private float cooldown;
     private enum gunState
@@ -22,10 +23,20 @@ public class Gun : MonoBehaviour
     {
         if (state == gunState.ready && gameObj.GetComponent<Enemy>().isSpawned)
         {
-            GameObject bullet = DefaultBulletSpawner.Spawn(blueprint.prefab, transform, gameObj, 100);
-            bullet.GetComponent<Bullet>().SetBlueprintValues(blueprint);
+            blueprint.prefab.GetComponent<Bullet>().Spawn(blueprint, transform, gameObj);
             state = gunState.shot;
         }
+    }
+
+    /// <summary>
+    /// Start is called on the frame when a script is enabled just before
+    /// any of the Update methods is called the first time.
+    /// </summary>
+    void Start()
+    {
+        upgradeStackCounts = new Dictionary<string, int> { };
+        if (blueprint.isStackable)
+            upgradeStackCounts.Add(blueprint.displayName, 1);
     }
     /// <summary>
     /// This function is called every fixed framerate frame, if the MonoBehaviour is enabled.
@@ -77,6 +88,13 @@ public class Gun : MonoBehaviour
         blueprint.dmgMultiplier = _blueprint.dmgMultiplier;
         blueprint.movementSpeedMultiplier = _blueprint.movementSpeedMultiplier;
         blueprint.cooldown = _blueprint.cooldown;
+        if (_blueprint.isStackable && upgradeStackCounts.TryGetValue(_blueprint.displayName, out int stackCount))
+        {
+            if (stackCount < _blueprint.maxStacks)
+            {
+                upgradeStackCounts[_blueprint.displayName] = stackCount + 1;
+            }
+        }
         Destroy(_blueprint);
     }
 }
