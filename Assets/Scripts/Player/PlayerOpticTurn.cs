@@ -34,7 +34,7 @@ public class PlayerOpticTurn : MonoBehaviour
         {
             player.stopRight = true;
         }
-        if (collision.gameObject.tag.StartsWith("Trigger"))
+        if (collision.gameObject.tag == "Trigger")
         {
             player.analog.scanLineJitter = 0.3f;
         }
