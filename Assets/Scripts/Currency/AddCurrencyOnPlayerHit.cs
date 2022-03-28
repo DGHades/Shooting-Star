@@ -12,7 +12,6 @@ public class AddCurrencyOnPlayerHit : MonoBehaviour
     {
         Money = GameObject.FindGameObjectWithTag("MoneyText");
         color = gameObject.GetComponent<SpriteRenderer>().material.color;
-
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {

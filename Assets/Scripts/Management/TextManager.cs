@@ -17,6 +17,7 @@ public class TextManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Revenue.text = PlayerPrefs.GetInt("Revenue").ToString();
         if (GlobalVariable.score > PlayerPrefs.GetInt("HighScore", 0))
         {
             PlayerPrefs.SetInt("HighScore", GlobalVariable.score);
@@ -24,8 +25,7 @@ public class TextManager : MonoBehaviour
         }
         if (GlobalVariable.stopGame == true)
         {
-            
-            Revenue.text = PlayerPrefs.GetInt("Revenue").ToString();
+           
             GlobalVariable.stopGame = false;
         }
     }

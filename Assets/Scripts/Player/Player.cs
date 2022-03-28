@@ -8,6 +8,8 @@ public class Player : MonoBehaviour
     public ParticleSystem spawnBurstParticleSystem;
     public AnalogGlitch analog;
     public ParticleSystem spawnExplosionParticleSystem;
+    public ManageWaves WaveManager;
+
     public float attackDmg, attackspeed;
     Vector3 _origPos = new Vector3();
     private bool once = false;
@@ -106,20 +108,7 @@ public class Player : MonoBehaviour
         //calculates from != player moving direction
         _origPos = playerOptic.gameObject.transform.position;
     }
-    /// <summary>
-    /// Update is called every frame, if the MonoBehaviour is enabled.
-    /// </summary>
-    void Update()
-    {
-        // Bit shift the index of the Enemy layer (8) to get a bit mask
-        if (gun.GetCooldown() <= 0)
-        {
-            int layerMask = 1 << 8;
-            Collider2D coll = Physics2D.OverlapCircle(gameObject.transform.position, 4f, layerMask);
-            if (coll != null && coll.gameObject.tag.Contains("Target"))
-                gun.shoot(coll.gameObject);
-        }
-    }
+
     public void Die()
     {
         attackDmg = 0;
@@ -131,5 +120,6 @@ public class Player : MonoBehaviour
         BeforeDieMenue.gameObject.SetActive(true);
         GlobalVariable.stopGame = true;
         gameObject.SetActive(false);
+        gameObject.transform.position = new Vector2(0, 0);
     }
 }
