@@ -6,7 +6,8 @@ public class Gun : MonoBehaviour
     [SerializeField]
     private BulletBlueprint blueprint;
     private Dictionary<string, int> upgradeStackCounts;
-
+    [SerializeField]
+    private LayerMask layerMask;
     private float cooldown;
     private enum gunState
     {
@@ -14,6 +15,7 @@ public class Gun : MonoBehaviour
         shot,
         cooldown
     }
+    private GameObject shootNext = null;
     gunState state = new gunState();
     public float GetCooldown()
     {
@@ -21,13 +23,12 @@ public class Gun : MonoBehaviour
     }
     public void shoot(GameObject gameObj)
     {
-        if (state == gunState.ready && gameObj.GetComponent<Enemy>().isSpawned)
+        if (gameObj.GetComponent<Enemy>().isSpawned)
         {
             blueprint.prefab.GetComponent<Bullet>().Spawn(blueprint, transform, gameObj);
             state = gunState.shot;
         }
     }
-
     /// <summary>
     /// Start is called on the frame when a script is enabled just before
     /// any of the Update methods is called the first time.
@@ -43,6 +44,12 @@ public class Gun : MonoBehaviour
     /// </summary>
     void FixedUpdate()
     {
+        Collider2D coll = Physics2D.OverlapCircle(transform.position, 4f, layerMask);
+        // Bit shift the index of the Enemy layer (8) to get a bit mask
+        if (coll != null)
+        {
+            shoot(coll.gameObject);
+        }
         switch (state)
         {
             case gunState.ready:
