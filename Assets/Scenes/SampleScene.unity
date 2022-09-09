@@ -14712,7 +14712,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1246367665}
-  - component: {fileID: 1246367664}
   m_Layer: 0
   m_Name: EnemyManagement
   m_TagString: Untagged
@@ -14720,27 +14719,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1246367664
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1246367663}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9e72e0efded3e12b38a57e147c96064c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  entitiesToSpawn:
-  - {fileID: 0}
-  - {fileID: 1853716694992083923, guid: 063567fecaf1d1f45be55ef0c9f9133b, type: 3}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  spawner: {fileID: 105490733}
-  manageWaves: {fileID: 1268685450}
 --- !u!4 &1246367665
 Transform:
   m_ObjectHideFlags: 0
