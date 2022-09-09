@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public GameObject Circle, CircleBoss, Square, SquareBoss, Triangle, TriangleBoss, Star, StarBoss;
     void Start()
     {
         
